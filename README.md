@@ -10,8 +10,13 @@
 
 | Консоль / Система | Файл базы данных | Раздел RuTracker | Особенности и Title ID / Serial |
 |---|---|---|---|
-| **Sony PSP** | `psp_games.json` | [f=1352](https://rutracker.org/forum/viewforum.php?f=1352) | Код диска: `ULES-xxxxx`, `ULUS-xxxxx`, `NPJH-xxxxx` |
+| **Sony PS2** | `ps2_games.json` | [f=357](https://rutracker.org/forum/viewforum.php?f=357) | Код диска: `SLES-xxxxx`, `SLUS-xxxxx`, `SCES-xxxxx`, `SLPM-xxxxx` |
 | **Sony PS1 (PSX)** | `ps1_games.json` | [f=908](https://rutracker.org/forum/viewforum.php?f=908) | Код диска: `SLUS-xxxxx`, `SLES-xxxxx`, `SCES-xxxxx` |
+| **Sony PSP** | `psp_games.json` | [f=1352](https://rutracker.org/forum/viewforum.php?f=1352) | Код диска: `ULES-xxxxx`, `ULUS-xxxxx`, `NPJH-xxxxx` |
+| **Sony PS Vita** | `psvita_games.json` | [f=595](https://rutracker.org/forum/viewforum.php?f=595) | Код игры: `PCSB-xxxxx`, `PCSE-xxxxx`, `PCSA-xxxxx`, `PCSG-xxxxx` |
+| **Sega Dreamcast** | `dreamcast_games.json` | [f=968](https://rutracker.org/forum/viewforum.php?f=968) | Код диска: `T-xxxxx`, `MK-xxxxx`, `HDR-xxxxx` |
+| **Nintendo 3DS** | `3ds_games.json` | [f=774](https://rutracker.org/forum/viewforum.php?f=774) | 16-значный Title ID (`00040000...`) или Product Code `CTR-P-xxxx` |
+| **Nintendo DS (NDS)** | `nds_games.json` | [f=774](https://rutracker.org/forum/viewforum.php?f=774) | Код картриджа: `NTR-xxxx`, `NTR-P-xxxx`, `TWL-P-xxxx` |
 | **Nintendo Wii U** | `wiiu_games.json` | [f=773](https://rutracker.org/forum/viewforum.php?f=773) | Title ID: `00050000...` или код `WUP-P-xxxx` |
 | **Nintendo Wii** | `wii_games.json` | [f=773](https://rutracker.org/forum/viewforum.php?f=773) | 6-значный ID диска: `RMCE01`, `SB4E01` |
 | **Nintendo GameCube** | `gamecube_games.json` | [f=773](https://rutracker.org/forum/viewforum.php?f=773) | 6-значный ID диска: `GMSE01`, `GALP01` |
@@ -27,7 +32,7 @@
 | **Sega 32X** | `sega_32x_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Расширение Sega 32X |
 
 > [!NOTE]
-> В разделах `f=773` и `f=129` парсинг осуществляется **за один проход**: каждая тема анализируется классификатором и маршрутизируется в соответствующий JSON-файл. Мультиплатформенные сборники (например, `[NES, SNES, Sega]`) автоматически включаются во все подходящие базы.
+> В смешанных разделах `f=774`, `f=773` и `f=129` парсинг осуществляется **за один проход**: каждая тема анализируется классификатором и маршрутизируется в соответствующий JSON-файл. Мультиплатформенные сборники (например, `[NES, SNES, Sega]` или `[3DS / DS]`) автоматически включаются во все подходящие базы.
 
 ---
 
