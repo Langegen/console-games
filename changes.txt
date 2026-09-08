@@ -1,7 +1,135 @@
-=== Обновление баз console-games: 2026-09-08 13:49:26 ===
+=== Обновление баз console-games: 2026-09-08 11:48:03 ===
+
+[PSP] Всего в базе: 872
+  ~ Обновлено (2):
+    ~ Redump - Sony PlayStation Portable [FULL] [ISO] [ENG/JPN/Multi] (2026-05-11)
+    ~ [Обновлено] Monster Hunter Portable 3rd [FULL] [ISO] [ENG v.6.1.0]
+  * Дообогащено (1):
+    * Shin Megami Tensei: Persona 3 Portable + HD Mod [FULL][ISO][RUS] (Перевод kotone
+
+[PS1] Всего в базе: 2119
+  ~ Обновлено (3):
+    ~ [Обновлено] Army Men 3D [SLUS-00491] [Fire Cross] [RUS]
+    ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
+    ~ Spider-Man [SLUS-00875] [Озвучкиа от Фаргус, текст от nikita600] [RUS]
+
+[WIIU] Всего в базе: 50
+  * Дообогащено (2):
+    * NES Remix Pack [NTSC, ENG]
+    * Yoshi's Woolly World [NTSC, RUS]
+
+[WII] Всего в базе: 305
+  + Добавлено (1):
+    + [Обновлено] [Nintendo Wii] dolphin-master-2606-344 x64. Эмуляторы и их обсуждени
+
+[GAMECUBE] Всего в базе: 166
+  + Добавлено (1):
+    + [Обновлено] [Nintendo Wii] dolphin-master-2606-344 x64. Эмуляторы и их обсуждени
+  * Дообогащено (8):
+    * Worms Blast [PAL,ENG]
+    * Metal Gear Solid: The Twin Snakes [NTSC,ENG]
+    * Sonic Riders [NTSC, ENG]
+    * P.N.03 [NTSC, ENG]
+    * XGIII: Extreme G Racing [NTSC, ENG]
+    * Sonic Heroes [NTSC, ENG]
+    * Phantasy Star Online : Episode I & II [PAL, ENG]
+    * The Legend of Zelda Ocarina of Time Master Quest [NTSC, ENG]
+
+[NES] Всего в базе: 47
+
+[SNES] Всего в базе: 26
+
+[N64] Всего в базе: 14
+
+[GBA] Всего в базе: 20
+
+[GBC] Всего в базе: 13
+
+[SEGA_MD] Всего в базе: 56
+
+[SEGA_MS] Всего в базе: 7
+
+[SEGA_GG] Всего в базе: 4
+
+[SEGA_CD] Всего в базе: 11
+  ~ Обновлено (1):
+    ~ [Обновлено] [Sega CD\Mega CD] Sega - Mega CD & Sega CD (2026-08-04) [redump.org]
+
+[SEGA_32X] Всего в базе: 4
+
+[PS2] Всего в базе: 3491
+  ~ Обновлено (1):
+    ~ [Обновлено] The Lord of the Rings: The Fellowship of the Ring [Devil Soft] [Full
+  * Дообогащено (1):
+    * Tom Clancy's Ghost Recon: Jungle Storm [Full RUS/Multi5|PAL]
+
+[PSVITA] Всего в базе: 340
+  ~ Обновлено (11):
+    ~ A Boy and His Blob [NoNpDrm] [RUS]
+    ~ Taco Master [NoNpDrm] [ENG]
+    ~ Jetpack Joyride Deluxe [NoNpDrm] [ENG]
+    ~ Bastion [NoNpDrm] [ENG]
+    ~ Sword Art Online: Lost Song [NoNpDrm] [ENG]
+    ~ Sayonara Umihara Kawase + [NoNpDrm] [ENG]
+    ~ LIMBO [NoNpDrm] [RUS]
+    ~ Hatsune Miku: Project Diva X [NoNpDrm] [ENG]
+    ~ Hatsune Miku: Project DIVA F 2nd [NoNpDrm] [ENG]
+    ~ Hatsune Miku: Project DIVA f [NoNpDrm] [ENG]
+    ~ Taiko no Tatsujin: V Version [NoNpDrm] [ENG/JAP]
+  * Дообогащено (39):
+    * Trillion: God of Destruction [+DLC] [NoNpDrm] [ENG / RUS]
+    * Batman: Arkham Origins Blackgate [NoNpDrm] [RUS]
+    * Ratchet & Clank [NoNpDrm] [ENG]
+    * Ratchet & Clank 3 [NoNpDrm] [ENG]
+    * SteamWorld Dig 2 [NoNpDrm] [RUS]
+    * Sly 2: Band of Thieves [NoNpDrm] [ENG]
+    * Sid Meier's Civilization Revolution 2+ [+DLC] [NoNpDrm] [ENG]
+    * God of War Collection [NoNpDrm] [ENG/RUS]
+    * Oddworld: Munch's Oddysee HD [NoNpDrm] [ENG]
+    * Oddworld: Abe's Oddysee - New 'n' Tasty [NoNpDrm] [RUS]
+    * LittleBigPlanet PS Vita: Marvel Super Hero Edition [NoNpDrm] [RUS]
+    * Plants vs. Zombies [NoNpDrm] [ENG]
+    * Mortal Kombat [NoNpDrm] [ENG]
+    * Tales of Hearts R [+DLC] [NoNpDrm] [ENG]
+    * Rayman Legends [NoNpDrm] [RUS]
+    * Resident Evil: Revelations 2 [NoNpDrm] [RUS]
+    * Soul Sacrifice Delta [+DLC] [NoNpDrm] [ENG]
+    * Dead Nation [+DLC] [NoNpDrm] [RUS]
+    * Ys VIII: Lacrimosa of DANA [NoNpDrm] [ENG]
+    * Dragon Quest Builders [NoNpDrm] [ENG]
+    * Jak 3 HD [NoNpDrm] [RUS]
+    * Silent Hill: Book of Memories [+DLC] [NoNpDrm] [ENG]
+    * Assassin's Creed III: Liberation [NoNpDrm] [RUS]
+    * Helldivers [NoNpDrm] [RUS]
+    * Persona 4 Golden [NoNpDrm] [ENG]
+    * Resistance: Burning Skies [NoNpDrm] [RUS]
+    * Street Fighter X Tekken [+DLC] [NoNpDrm] [RUS]
+    * Persona 3: Dancing Moon Night [+DLC] [NoNpDrm] [ENG]
+    * Corpse Party: Blood Drive [NoNpDrm] [RUS]
+    * Virtua Tennis 4: World Tour Edition (Мировая Серия) [NoNpDrm] [RUS]
+    * Secret of Mana [NoNpDrm] [RUS]
+    * Darkest Dungeon [+DLC] [NoNpDrm] [RUS]
+    * Call of Duty: Black Ops Declassified [NoNpDrm] [RUS]
+    * Jet Set Radio [NoNpDrm] [RUS]
+    * UnMetal [NoNpDrm] [RUS]
+    * Oceanhorn: Monster of Uncharted Seas [NoNpDrm] [RUS]
+    * God Eater 2: Rage Burst [+DLC] [NoNpDrm] [RUS]
+    * Fallen Legion: Flames of Rebellion [NoNpDrm] [RUS]
+    * Grim Fandango Remastered [NoNpDrm] [RUS]
+
+[DREAMCAST] Всего в базе: 549
+  ~ Обновлено (2):
+    ~ [Обновлено] deSPIRIA [RUS]
+    ~ Stupid Invaders [PAL/FullRus] [Порт перевода Nival]
 
 [3DS] Всего в базе: 72
   ~ Обновлено (2):
     ~ 2147 - Fire Emblem Fates: Special Edition [RUS] [CIA]
     ~ 1904 - Kid Icarus: Uprising [RUS]
+  * Дообогащено (3):
+    * Zero Escape: Zero Time Dilemma [EUR / RUS] [Region Free] [Decrypted] (CIA)
+    * 2414 - Metroid: Samus Returns [RUS]
+    * Monster Hunter XX 1.4.0 [ENG]
+
+[NDS] Всего в базе: 74
 
