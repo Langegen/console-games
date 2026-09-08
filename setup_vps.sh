@@ -2,9 +2,11 @@
 # ============================================================
 # Универсальная установка парсера console-games на VPS
 # Debian/Ubuntu, x86_64. Запуск: bash setup_vps.sh
+# Скрипт идемпотентен — повторный запуск только обновляет.
 # ============================================================
 set -e
 
+REPO_URL_DEFAULT="https://github.com/Langegen/console-games.git"
 INSTALL_DIR="${INSTALL_DIR:-/root/console-games-bot}"
 
 log()  { echo -e "\n\033[1;32m[setup]\033[0m $1"; }
@@ -37,53 +39,146 @@ else
     rm -f /tmp/chrome.deb
 fi
 
-# ---------- 3. CloudflareBypassForScraping (Docker) ----------
+# ---------- 2.5 CloudflareBypassForScraping (Docker) ----------
 if [ -z "${SKIP_CF_BYPASS:-}" ] && ! command -v docker >/dev/null 2>&1; then
-    log "Установка Docker..."
+    log "Установка Docker (нужен для CloudflareBypassForScraping)..."
     apt-get install -y -qq docker.io >/dev/null 2>&1 || curl -fsSL https://get.docker.com | sh
     systemctl enable --now docker >/dev/null 2>&1 || true
 fi
 
 if [ -z "${SKIP_CF_BYPASS:-}" ]; then
-    log "Запуск сервиса обхода Cloudflare (cf-bypass)..."
-    if docker ps -a --format '{{.Names}}' | grep -q '^cf-bypass$'; then
-        docker restart cf-bypass >/dev/null
+    avail_mb=$(( $(df -P / | awk 'NR==2 {print $4}') / 1024 ))
+    if [ "$avail_mb" -lt 4096 ]; then
+        log "Мало места на диске (${avail_mb} МБ). Очищаю..."
+        apt-get clean
+        rm -rf /var/lib/apt/lists/*
+        journalctl --vacuum-size=100M >/dev/null 2>&1 || true
+        docker system prune -f >/dev/null 2>&1 || true
+    fi
+    if docker ps --format '{{.Names}}' 2>/dev/null | grep -q '^cf-bypass$'; then
+        log "CloudflareBypassForScraping уже запущен."
     else
+        log "Запуск CloudflareBypassForScraping (docker, порт 8000)..."
+        docker rm -f cf-bypass >/dev/null 2>&1 || true
         docker run -d --name cf-bypass --restart unless-stopped -p 8000:8000 \
             ghcr.io/sarperavci/cloudflarebypassforscraping:latest >/dev/null
+        sleep 5
+        if curl -fsS http://localhost:8000/ >/dev/null 2>&1; then
+            log "Сервис CF-bypass работает: http://localhost:8000"
+        else
+            warn "Сервис не отвечает — проверьте: docker logs cf-bypass"
+        fi
     fi
 fi
 
-# ---------- 4. Клонирование / Настройка репозитория ----------
-if [ ! -d "$INSTALL_DIR" ]; then
-    log "Создание директории $INSTALL_DIR..."
-    mkdir -p "$INSTALL_DIR"
-    cp -r "$(dirname "$0")"/* "$INSTALL_DIR/" 2>/dev/null || true
+# ---------- 3. Репозиторий ----------
+if [ -d "$INSTALL_DIR/.git" ]; then
+    log "Обновление репозитория в $INSTALL_DIR..."
+    git -C "$INSTALL_DIR" pull --rebase || warn "git pull не удался"
+elif [ -f "$(pwd)/run.sh" ] && [ -d "$(pwd)/.git" ]; then
+    INSTALL_DIR="$(pwd)"
+    log "Используем текущий каталог: $INSTALL_DIR"
+else
+    log "Клонирование репозитория в $INSTALL_DIR..."
+    git clone "$REPO_URL_DEFAULT" "$INSTALL_DIR"
 fi
-
 cd "$INSTALL_DIR"
 
-log "Настройка Python venv..."
-if [ ! -d "venv" ]; then
+# ---------- 4. Python-окружение ----------
+if [ ! -x venv/bin/python3 ]; then
+    log "Создание виртуального окружения..."
     python3 -m venv venv
 fi
-./venv/bin/pip install --upgrade pip -q
-./venv/bin/pip install -r requirements.txt -q
+log "Установка Python-зависимостей..."
+./venv/bin/pip install -q --upgrade pip
+./venv/bin/pip install -q -r requirements.txt
 
-# ---------- 5. Настройка .env ----------
-if [ ! -f ".env" ]; then
-    log "Создание .env..."
-    cat > .env <<'EOF'
-RUTRACKER_CF_BYPASS=http://localhost:8000
-EOF
-    chmod 600 .env
+# ---------- 5. GitHub: авторизация для push ----------
+git config user.name "console-games-bot"
+git config user.email "console-games-bot@users.noreply.github.com"
+origin_url="$(git remote get-url origin 2>/dev/null || echo '')"
+case "$origin_url" in
+    https://*@github.com*|git@github.com*)
+        log "Авторизация GitHub уже настроена."
+        ;;
+    *)
+        echo ""
+        echo "Для выгрузки базы в GitHub нужен Personal Access Token:"
+        echo "  GitHub -> Settings -> Developer settings -> Personal access tokens -> Tokens (classic)"
+        echo "  Права: repo (достаточно contents:write)."
+        ask "Вставьте токен (Enter - пропустить, настроить позже): " GH_TOKEN
+        if [ -n "$GH_TOKEN" ]; then
+            repo_path="$(echo "$origin_url" | sed -E 's|https://github.com/||; s|\.git$||')"
+            git remote set-url origin "https://${GH_TOKEN}@github.com/${repo_path}.git"
+            log "GitHub-токен сохранён в remote."
+        else
+            warn "Push без токена работать не будет. Настроить позже:"
+            warn "  git remote set-url origin https://<TOKEN>@github.com/${repo_path:-Langegen/console-games}.git"
+        fi
+        ;;
+esac
+
+# ---------- 6. Куки RuTracker ----------
+need_login=1
+if [ -f .env ] && grep -q "RUTRACKER_COOKIES='[^']\+'" .env; then
+    ask "Куки RuTracker уже есть в .env. Перелогиниться? [y/N]: " RELOGIN
+    case "$RELOGIN" in y|Y|yes|YES) need_login=1 ;; *) need_login=0 ;; esac
+fi
+if [ "$need_login" = "1" ]; then
+    echo ""
+    echo "Как получить куки RuTracker?"
+    echo "  1) Автоматически: вход по логину/паролю на VPS (Chrome в xvfb обходит Cloudflare)"
+    echo "  2) Вручную: вставить куки из браузера на ПК (если Cloudflare не проходится)"
+    ask "Выбор [1]: " COOKIE_MODE
+    COOKIE_MODE="${COOKIE_MODE:-1}"
+    if [ "$COOKIE_MODE" = "2" ]; then
+        ask "Вставьте строку куки (bb_session=...; bb_guid=...): " MANUAL_COOKIES
+        if [ -n "$MANUAL_COOKIES" ]; then
+            printf "RUTRACKER_COOKIES='%s'\n" "$MANUAL_COOKIES" > .env
+            chmod 600 .env
+            log "Куки сохранены в .env"
+        else
+            warn "Куки не вставлены, пропускаю."
+        fi
+    else
+        ask "Логин RuTracker: " RT_USER
+        read -r -s -p "Пароль RuTracker: " RT_PASS < /dev/tty
+        echo ""
+        log "Вход на RuTracker через Chrome (xvfb)..."
+        if xvfb-run -a ./venv/bin/python3 login_rutracker.py "$RT_USER" "$RT_PASS" --gui; then
+            log "Куки получены и сохранены в .env"
+        else
+            warn "Не удалось получить куки. Повторить позже:"
+            warn "  cd $INSTALL_DIR && xvfb-run -a ./venv/bin/python3 login_rutracker.py ЛОГИН ПАРОЛЬ --gui"
+            warn "Или вручную: редактор .env -> RUTRACKER_COOKIES='...'"
+        fi
+    fi
 fi
 
-# ---------- 6. Настройка прав ----------
-chmod +x run.sh || true
+# ---------- 7. Cron: ежедневный запуск ----------
+ask "Час ежедневной проверки обновлений (0-23, по умолчанию 6): " CRON_HOUR
+CRON_HOUR="${CRON_HOUR:-6}"
+case "$CRON_HOUR" in (*[!0-9]*|'') CRON_HOUR=6 ;; esac
+CRON_LINE="0 $CRON_HOUR * * * $INSTALL_DIR/run.sh >> $INSTALL_DIR/cron_log.txt 2>&1"
+( crontab -l 2>/dev/null | grep -vF "$INSTALL_DIR/run.sh"; echo "$CRON_LINE" ) | crontab -
+service cron start >/dev/null 2>&1 || true
+log "Cron настроен: ежедневно в $CRON_HOUR:00"
 
-log "Установка console-games завершена успешно!"
-echo "Для авторизации на RuTracker выполните:"
-echo "  ./venv/bin/python3 login_rutracker.py ЛОГИН ПАРОЛЬ"
-echo "Для запуска обновления:"
-echo "  bash run.sh"
+# ---------- 7.5 CF-bypass в .env ----------
+if docker ps --format '{{.Names}}' 2>/dev/null | grep -q '^cf-bypass$'; then
+    if [ -f .env ] && ! grep -q RUTRACKER_CF_BYPASS .env; then
+        printf "\nRUTRACKER_CF_BYPASS=http://localhost:8000\n" >> .env
+        log "RUTRACKER_CF_BYPASS добавлен в .env"
+    fi
+fi
+
+# ---------- 8. Права и тестовый запуск ----------
+chmod +x run.sh || true
+ask "Запустить парсер прямо сейчас для проверки? [Y/n]: " RUN_NOW
+case "$RUN_NOW" in
+    n|N|no|NO) ;;
+    *) log "Тестовый запуск run.sh..."; bash "$INSTALL_DIR/run.sh" ;;
+esac
+
+log "Готово! Парсер console-games настроен и работает по расписанию."
+log "Логи обновлений: $INSTALL_DIR/cron_log.txt"
