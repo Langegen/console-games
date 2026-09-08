@@ -6,6 +6,7 @@ import time
 
 from core.topic_parser import get_topic_data
 from core.id_extractors import fetch_filelist_id
+from platforms.registry import get_platform_config
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CHANGES_FILE = os.path.join(BASE_DIR, 'changes.txt')
@@ -87,7 +88,8 @@ def enrich_incomplete(data, platform_key, limit=100):
             or (k == 'screenshots' and not item.get(k))
         ]
         # Проверяем title_id для платформ, где он обязателен
-        if platform_key in ('psp', 'ps1', 'wii', 'gamecube', 'wiiu'):
+        cfg = get_platform_config(platform_key)
+        if cfg and cfg.get('has_title_id'):
             if not item.get('title_id'):
                 missing.append('title_id')
         return missing

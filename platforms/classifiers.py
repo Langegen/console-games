@@ -121,14 +121,58 @@ def classify_topic_129(raw_title, text_content=""):
     return matched
 
 
+# ─── ФОРУМ 774: Nintendo 3DS / Nintendo DS ───
+
+RE_3DS = re.compile(r'\[(?:[^\]]*\b)?(3DS|Nintendo\s*3DS|N3DS)\b|\b(3DS|Nintendo\s*3DS|N3DS)\b|\bCTR-[A-Z]', re.IGNORECASE)
+RE_NDS = re.compile(r'\[(?:[^\]]*\b)?(NDS|Nintendo\s*DS|DSiWare)\b|\b(NDS|Nintendo\s*DS|DSiWare)\b|\[DS\]|(?<!3)(?<!3D)\bDS\b|\b(?:NTR|TWL)-[A-Z0-9]', re.IGNORECASE)
+
+
+def classify_topic_774(raw_title, text_content=""):
+    """Классифицирует раздачу из раздела f=774 (3DS / DS).
+
+    Возвращает список платформ: ['3ds'], ['nds'], или ['3ds', 'nds'].
+    """
+    matched = []
+    combined = f"{raw_title} {text_content[:300]}"
+
+    is_3ds = bool(RE_3DS.search(combined))
+
+    # Для проверки NDS удаляем упоминания 3DS, чтобы не было ложного срабатывания на буквосочетание DS
+    temp_no_3ds = re.sub(r'3DS|Nintendo[\s_-]*3DS|N3DS', '', combined, flags=re.IGNORECASE)
+    is_nds = bool(RE_NDS.search(temp_no_3ds))
+
+    if is_3ds:
+        matched.append('3ds')
+    if is_nds:
+        matched.append('nds')
+
+    # Если явных тегов не найдено, проверяем расширения файлов
+    if not matched:
+        if re.search(r'\.(?:cia|3ds|3dsx)\b', combined, re.IGNORECASE):
+            matched.append('3ds')
+        elif re.search(r'\.nds\b', combined, re.IGNORECASE):
+            matched.append('nds')
+
+    return matched
+
+
 def classify_topic(forum_id, raw_title, text_content=""):
     """Универсальная классификация раздачи по forum_id."""
-    if forum_id == '1352':
+    fid = str(forum_id)
+    if fid == '1352':
         return ['psp']
-    elif forum_id == '908':
+    elif fid == '908':
         return ['ps1']
-    elif forum_id == '773':
+    elif fid == '773':
         return classify_topic_773(raw_title, text_content)
-    elif forum_id == '129':
+    elif fid == '129':
         return classify_topic_129(raw_title, text_content)
+    elif fid == '357':
+        return ['ps2']
+    elif fid == '595':
+        return ['psvita']
+    elif fid == '968':
+        return ['dreamcast']
+    elif fid == '774':
+        return classify_topic_774(raw_title, text_content)
     return []

@@ -7,6 +7,10 @@ FORUM_TO_PLATFORMS = {
     '773': ['wiiu', 'wii', 'gamecube'],
     '129': ['nes', 'snes', 'n64', 'gba', 'gbc',
             'sega_md', 'sega_ms', 'sega_gg', 'sega_cd', 'sega_32x'],
+    '357': ['ps2'],
+    '595': ['psvita'],
+    '968': ['dreamcast'],
+    '774': ['3ds', 'nds'],
 }
 
 

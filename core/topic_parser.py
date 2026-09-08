@@ -42,7 +42,9 @@ def clean_title(title, platform_regex=None):
         m = re.match(r'^\[([^\]]+)\]\s*', clean)
         if m:
             tag = m.group(1).lower()
-            if any(k in tag for k in ('psp', 'ps1', 'psx', 'wii', 'gamecube', 'nes', 'snes', 'sega', 'n64', 'gba', 'gbc', 'dendy')):
+            if any(k in tag for k in ('psp', 'ps1', 'psx', 'ps2', 'psvita', 'psv', 'vita',
+                                      'wii', 'gamecube', 'nes', 'snes', 'sega', 'n64',
+                                      'gba', 'gbc', 'dendy', 'dreamcast', 'dc', '3ds', 'nds', 'ds')):
                 clean = clean[m.end():].strip()
             else:
                 break
@@ -132,22 +134,25 @@ def get_topic_data(topic_id, platform_key=None, html=None):
     if post_body:
         text_content = post_text(post_body)
 
+        STOP = r'(?=\s*(?:Жанр|Разработчик|Издатель|Формат|Тип издания|Язык|Озвучка|Мультипле[ей]р|Описание|Работоспособность|Прошивка|Код|Тестировалось)\s*:|\n|$)'
         patterns = {
-            "year": r'(?:Год выпуска|Дата выхода|Год выхода)\s*:\s*([^\n]+)',
-            "genre": r'Жанр\s*:\s*([^\n]+)',
-            "developer": r'Разработчик\s*:\s*([^\n]+)',
-            "publisher": r'Издатель\s*:\s*([^\n]+)',
-            "image_format": r'(?:Формат образа|Тип издания|Формат)\s*:\s*([^\n]+)',
-            "interface_lang": r'Язык интерфейса\s*:\s*([^\n]+)',
-            "voice_lang": r'(?:Язык озвучки|Озвучка)\s*:\s*([^\n]+)',
-            "performance": r'(?:Работоспособность проверена|Прошивка|Тестировалось)\s*:\s*([^\n]+)',
-            "multiplayer": r'Мультиплеер\s*:\s*([^\n]+)',
+            "year": rf'(?:Год выпуска|Дата выхода|Год выхода)\s*:\s*(.+?){STOP}',
+            "genre": rf'Жанр\s*:\s*(.+?){STOP}',
+            "developer": rf'Разработчик\s*:\s*(.+?){STOP}',
+            "publisher": rf'Издатель\s*:\s*(.+?){STOP}',
+            "image_format": rf'(?:Формат образа|Тип издания|Формат)\s*:\s*(.+?){STOP}',
+            "interface_lang": rf'Язык интерфейса\s*:\s*(.+?){STOP}',
+            "voice_lang": rf'(?:Язык озвучки|Озвучка)\s*:\s*(.+?){STOP}',
+            "performance": rf'(?:Работоспособность проверена|Прошивка|Тестировалось)\s*:\s*(.+?){STOP}',
+            "multiplayer": rf'(?:Мультипле[ей]р|Multiplayer)(?:\s*игры)?\s*:\s*(.+?){STOP}',
         }
 
         for key, pat in patterns.items():
             m = re.search(pat, text_content, re.IGNORECASE)
             if m:
-                data[key] = m.group(1).strip()
+                val = m.group(1).strip()
+                if val:
+                    data[key] = val
 
         # Fallback для размера
         if data["size"] == "Unknown":

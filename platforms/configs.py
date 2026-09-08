@@ -118,4 +118,47 @@ PLATFORM_CONFIGS = {
         'strip_tags_re': re.compile(r'\[(32X|Sega[\s_-]*32X|Mega[\s_-]*32X)\]\s*', re.IGNORECASE),
         'has_title_id': False,
     },
+
+    # ─── Форум 357: Sony PlayStation 2 ───
+    'ps2': {
+        'name': 'Sony PlayStation 2',
+        'forum_id': '357',
+        'filename': os.path.join(BASE_DIR, 'ps2_games.json'),
+        'strip_tags_re': re.compile(r'\[(PS2|PlayStation\s*2)\]\s*', re.IGNORECASE),
+        'has_title_id': True,
+    },
+
+    # ─── Форум 595: Sony PlayStation Vita ───
+    'psvita': {
+        'name': 'Sony PlayStation Vita',
+        'forum_id': '595',
+        'filename': os.path.join(BASE_DIR, 'psvita_games.json'),
+        'strip_tags_re': re.compile(r'\[(PSV|PS\s*Vita|PlayStation\s*Vita|PSVita)\]\s*', re.IGNORECASE),
+        'has_title_id': True,
+    },
+
+    # ─── Форум 968: Sega Dreamcast ───
+    'dreamcast': {
+        'name': 'Sega Dreamcast',
+        'forum_id': '968',
+        'filename': os.path.join(BASE_DIR, 'dreamcast_games.json'),
+        'strip_tags_re': re.compile(r'\[(DC|Dreamcast|Sega\s*Dreamcast)\]\s*', re.IGNORECASE),
+        'has_title_id': True,
+    },
+
+    # ─── Форум 774: Nintendo 3DS / Nintendo DS ───
+    '3ds': {
+        'name': 'Nintendo 3DS',
+        'forum_id': '774',
+        'filename': os.path.join(BASE_DIR, '3ds_games.json'),
+        'strip_tags_re': re.compile(r'\[(3DS|Nintendo\s*3DS|N3DS)\]\s*', re.IGNORECASE),
+        'has_title_id': True,
+    },
+    'nds': {
+        'name': 'Nintendo DS',
+        'forum_id': '774',
+        'filename': os.path.join(BASE_DIR, 'nds_games.json'),
+        'strip_tags_re': re.compile(r'\[(NDS|DS|Nintendo\s*DS)\]\s*', re.IGNORECASE),
+        'has_title_id': True,
+    },
 }

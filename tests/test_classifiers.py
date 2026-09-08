@@ -79,9 +79,34 @@ class TestClassifiers(unittest.TestCase):
         self.assertIn('snes', res)
         self.assertIn('sega_md', res)
 
+    def test_forum_774_3ds(self):
+        self.assertEqual(classify_topic('774', "[3DS] The Legend of Zelda: Ocarina of Time 3D [CIA]"), ['3ds'])
+        self.assertEqual(classify_topic('774', "[Nintendo 3DS] Monster Hunter 4 Ultimate [EUR]"), ['3ds'])
+        self.assertEqual(classify_topic('774', "[N3DS] Pokemon Sun [Decrypted]"), ['3ds'])
+
+    def test_forum_774_nds(self):
+        self.assertEqual(classify_topic('774', "[NDS] Grand Theft Auto: Chinatown Wars [RUS]"), ['nds'])
+        self.assertEqual(classify_topic('774', "[Nintendo DS] Pokemon Black Version [USA]"), ['nds'])
+        self.assertEqual(classify_topic('774', "[DS] Chrono Trigger [RUS]"), ['nds'])
+        self.assertEqual(classify_topic('774', "[DSiWare] Shantae: Risky's Revenge"), ['nds'])
+
+    def test_forum_774_isolation(self):
+        # 3DS не должен вызывать NDS
+        res_3ds = classify_topic('774', "[3DS] Super Mario 3D Land")
+        self.assertIn('3ds', res_3ds)
+        self.assertNotIn('nds', res_3ds)
+
+        # Сборник 3DS и DS
+        res_multi = classify_topic('774', "[3DS/NDS] Сборник переводов игр Mario")
+        self.assertIn('3ds', res_multi)
+        self.assertIn('nds', res_multi)
+
     def test_universal_classify(self):
         self.assertEqual(classify_topic('1352', "[PSP] God of War: Ghost of Sparta"), ['psp'])
         self.assertEqual(classify_topic('908', "[PS1] Silent Hill [RUS]"), ['ps1'])
+        self.assertEqual(classify_topic('357', "[PS2] God of War II [RUS]"), ['ps2'])
+        self.assertEqual(classify_topic('595', "[PSV] Persona 4 Golden [NoNpDrm]"), ['psvita'])
+        self.assertEqual(classify_topic('968', "[DC] Shenmue [ENG]"), ['dreamcast'])
 
 
 if __name__ == '__main__':

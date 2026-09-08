@@ -23,6 +23,21 @@ class TestTopicParser(unittest.TestCase):
         nes_re = PLATFORM_CONFIGS['nes']['strip_tags_re']
         self.assertEqual(clean_title("[NES] Battle City [RUS]", nes_re), "Battle City [RUS]")
 
+        ps2_re = PLATFORM_CONFIGS['ps2']['strip_tags_re']
+        self.assertEqual(clean_title("[PS2] Shadow of the Colossus [RUS]", ps2_re), "Shadow of the Colossus [RUS]")
+
+        vita_re = PLATFORM_CONFIGS['psvita']['strip_tags_re']
+        self.assertEqual(clean_title("[PSV] Persona 4 Golden [ENG]", vita_re), "Persona 4 Golden [ENG]")
+
+        dc_re = PLATFORM_CONFIGS['dreamcast']['strip_tags_re']
+        self.assertEqual(clean_title("[DC] Sonic Adventure [ENG]", dc_re), "Sonic Adventure [ENG]")
+
+        n3ds_re = PLATFORM_CONFIGS['3ds']['strip_tags_re']
+        self.assertEqual(clean_title("[3DS] Pokemon X [EUR]", n3ds_re), "Pokemon X [EUR]")
+
+        nds_re = PLATFORM_CONFIGS['nds']['strip_tags_re']
+        self.assertEqual(clean_title("[NDS] Pokemon Platinum [USA]", nds_re), "Pokemon Platinum [USA]")
+
     def test_parse_feed_title(self):
         psp_re = PLATFORM_CONFIGS['psp']['strip_tags_re']
         raw = "[PSP] Tekken 6 [EUR] [850.5 MB]"
