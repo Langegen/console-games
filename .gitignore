@@ -8,3 +8,4 @@ __pycache__/
 cron_log.txt
 enrich_state.json
 unclassified_*.log
+*.tmp
