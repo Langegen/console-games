@@ -26,7 +26,7 @@ else
 fi
 
 echo "[$(date)] Проверка изменений..."
-git add *_games.json changes.txt scraper.py .gitignore
+git add data/*_games.json changes.txt scraper.py .gitignore 2>/dev/null || true
 
 if git diff --staged --quiet; then
     echo "[$(date)] Изменений нет — коммит не требуется."

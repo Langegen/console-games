@@ -1,11 +1,24 @@
+# Окружение и секреты
 .env
+.env.local
+
+# Виртуальные окружения Python
 venv/
+.venv/
+env/
+
+# Кэши Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 .pytest_cache/
+
+# Логи и временные файлы
+*.log
 cron_log.txt
-enrich_state.json
 unclassified_*.log
 *.tmp
+data/*.tmp
+
+# Локальный стейт парсера (курсоры дообогащения)
+enrich_state.json

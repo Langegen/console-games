@@ -14,6 +14,7 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.network import BASE_URL, init_env, PROXY_URL, CF_BYPASS_URL, USER_AGENT, SESSION_COOKIES
 
 TEST_URL = 'https://rutracker.org/forum/index.php'
