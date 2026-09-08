@@ -1,0 +1,154 @@
+# console-games
+
+Мультиплатформенный парсер раздач консольных и ретро-игр с трекера RuTracker. Автоматически собирает базы данных игр в формате JSON (названия, размеры, magnet-ссылки, обложки, скриншоты, описания, коды дисков и Title ID), ежедневно отслеживает новые и обновлённые раздачи через Atom-ленты и выгружает изменения на GitHub.
+
+Создан на основе проверенной архитектуры `switch-games` с модульным расширением для поддержки смешанных разделов и различных поколений игровых систем.
+
+---
+
+## Поддерживаемые игровые платформы и разделы
+
+| Консоль / Система | Файл базы данных | Раздел RuTracker | Особенности и Title ID / Serial |
+|---|---|---|---|
+| **Sony PSP** | `psp_games.json` | [f=1352](https://rutracker.org/forum/viewforum.php?f=1352) | Код диска: `ULES-xxxxx`, `ULUS-xxxxx`, `NPJH-xxxxx` |
+| **Sony PS1 (PSX)** | `ps1_games.json` | [f=908](https://rutracker.org/forum/viewforum.php?f=908) | Код диска: `SLUS-xxxxx`, `SLES-xxxxx`, `SCES-xxxxx` |
+| **Nintendo Wii U** | `wiiu_games.json` | [f=773](https://rutracker.org/forum/viewforum.php?f=773) | Title ID: `00050000...` или код `WUP-P-xxxx` |
+| **Nintendo Wii** | `wii_games.json` | [f=773](https://rutracker.org/forum/viewforum.php?f=773) | 6-значный ID диска: `RMCE01`, `SB4E01` |
+| **Nintendo GameCube** | `gamecube_games.json` | [f=773](https://rutracker.org/forum/viewforum.php?f=773) | 6-значный ID диска: `GMSE01`, `GALP01` |
+| **NES / Dendy** | `nes_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Ромсеты (No-Intro, GoodNES) и отдельные игры |
+| **Super Nintendo (SNES)** | `snes_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Ромсеты и отдельные образы SNES/SFC |
+| **Nintendo 64 (N64)** | `n64_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Образы картриджей N64 |
+| **Game Boy Advance (GBA)** | `gba_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Коллекции и одиночные игры GBA |
+| **Game Boy & GBC** | `gbc_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Классический Game Boy (GB/DMG) + Game Boy Color |
+| **Sega Mega Drive / Genesis** | `sega_md_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | 16-битные SMD / Genesis ромсеты и хаки |
+| **Sega Master System** | `sega_ms_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | 8-битная домашняя консоль SMS |
+| **Sega Game Gear** | `sega_gg_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Портативная приставка Game Gear |
+| **Sega CD / Mega CD** | `sega_cd_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Дисковые образы Sega CD |
+| **Sega 32X** | `sega_32x_games.json` | [f=129](https://rutracker.org/forum/viewforum.php?f=129) | Расширение Sega 32X |
+
+> [!NOTE]
+> В разделах `f=773` и `f=129` парсинг осуществляется **за один проход**: каждая тема анализируется классификатором и маршрутизируется в соответствующий JSON-файл. Мультиплатформенные сборники (например, `[NES, SNES, Sega]`) автоматически включаются во все подходящие базы.
+
+---
+
+## Архитектура проекта
+
+```
+console-games/
+├── core/
+│   ├── network.py           # Запросы, Cloudflare bypass, fallback на Chrome, cookies
+│   ├── cf_utils.py          # Автоматический клик по чекбоксу Cloudflare Turnstile
+│   ├── forum.py             # Парсинг страниц форума, динамический пропуск закреплённых тем
+│   ├── atom.py              # Универсальное чтение Atom-лент разделов RuTracker
+│   ├── topic_parser.py      # Извлечение magnet, размера, описания, обложки, скриншотов
+│   ├── id_extractors.py     # Поиск серийных номеров (PSP, PS1, Wii, GC, Wii U)
+│   └── storage.py           # Атомарная запись JSON, дообогащение, changes.txt
+├── platforms/
+│   ├── configs.py           # Конфигурации всех 15 платформ (имена файлов, теги очистки)
+│   ├── classifiers.py       # Классификаторы тем для f=773 и f=129
+│   └── registry.py          # Реестр платформ и маппинг на форумы
+├── scraper.py               # Главный CLI-парсер
+├── login_rutracker.py       # Авторизация на RuTracker (быстрый curl / Chrome)
+├── test_connection.py       # Диагностика сети, Cloudflare и TLS
+├── run.sh                   # Скрипт для cron: git pull -> парсер -> git commit -> git push
+├── setup_vps.sh             # Автоматическая настройка окружения на VPS одной командой
+├── requirements.txt         # Зависимости Python
+└── README.md
+```
+
+---
+
+## Быстрый старт
+
+### Требования
+- Python 3.10+
+- Google Chrome (для первичного решения Cloudflare)
+- Зависимости из `requirements.txt`
+
+### Установка зависимостей
+```bash
+pip install -r requirements.txt
+```
+
+### Настройка авторизации (.env)
+Куки RuTracker требуются для доступа к магнет-ссылкам и спискам файлов раздач:
+```bash
+python login_rutracker.py ВАШ_ЛОГИН ВАШ_ПАРОЛЬ
+```
+Скрипт автоматически пройдёт авторизацию и запишет сессионные куки в файл `.env`.
+
+---
+
+## Использование `scraper.py`
+
+### 1. Ежедневное обновление (Atom-ленты)
+Проверяет свежие раздачи по всем целевым форумам, классифицирует их по консолям, обновляет JSON-файлы и пишет лог в `changes.txt`:
+```bash
+python scraper.py
+```
+
+### 2. Запуск для конкретной консоли
+```bash
+python scraper.py --platform psp
+python scraper.py --platform ps1
+python scraper.py --platform wiiu
+python scraper.py --platform nes
+```
+
+### 3. Запуск для конкретного форума
+```bash
+python scraper.py --forum 773      # Проверит ленту Wii, Wii U и GameCube
+python scraper.py --forum 129      # Проверит ленту ретро-платформ
+```
+
+### 4. Полный сбор раздела (Full Scrape)
+Если JSON-файл отсутствует, полный сбор запустится автоматически. Для принудительного повторного сбора:
+```bash
+python scraper.py --full --platform psp
+python scraper.py --full --forum 773 --max-pages 5   # Пробный сбор 5 страниц
+```
+
+---
+
+## Формат записи в базе (`*_games.json`)
+
+Формат полностью совместим с форматом `switch_games.json`:
+
+```json
+{
+  "title": "Silent Hill [RUS]",
+  "size": "480.2 MB",
+  "magnet": "magnet:?xt=urn:btih:...",
+  "topic_id": "1234567",
+  "url": "https://rutracker.org/forum/viewtopic.php?t=1234567",
+  "year": "1999",
+  "genre": "Survival Horror, Action",
+  "developer": "Team Silent",
+  "publisher": "Konami",
+  "image_format": "BIN/CUE",
+  "interface_lang": "Русский",
+  "voice_lang": "Английский",
+  "performance": "Да",
+  "multiplayer": "нет",
+  "cover": "https://...",
+  "screenshots": [
+    "https://...",
+    "https://..."
+  ],
+  "description": "Первая часть культовой серии...",
+  "title_id": "SLES-01514"
+}
+```
+
+---
+
+## Развёртывание на VPS
+
+Скрипт `setup_vps.sh` автоматизирует установку на Debian/Ubuntu x86_64:
+- Устанавливает Chrome, xvfb, Docker
+- Разворачивает контейнер `cf-bypass` (порт 8000) для прозрачного обхода Cloudflare
+- Настраивает виртуальное окружение и cron
+
+```bash
+sudo bash setup_vps.sh
+```
