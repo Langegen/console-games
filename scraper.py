@@ -111,8 +111,8 @@ def scrape_full_forum(forum_id, target_platforms=None, max_pages=None, limit=Non
             print(f"[*] Достигнут лимит тем ({limit}).")
             break
 
-        topics = scrape_forum_page(forum_id, page_num=page_num)
-        if not topics:
+        topics, has_next = scrape_forum_page(forum_id, page_num=page_num)
+        if not topics and not has_next:
             print(f"[*] На странице {page_num + 1} нет тем. Конец форума.")
             break
 
@@ -169,8 +169,8 @@ def scrape_full_forum(forum_id, target_platforms=None, max_pages=None, limit=Non
             cfg = get_platform_config(p)
             save_json(plat_data[p], cfg['filename'])
 
-        if len(topics) < 50:
-            print("[*] Последняя страница форума достигнута.")
+        if not has_next:
+            print(f"[*] Последняя страница форума f={forum_id} достигнута (страниц обработано: {page_num + 1}).")
             break
 
         page_num += 1

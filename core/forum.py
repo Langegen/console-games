@@ -116,7 +116,13 @@ def scrape_forum_page(forum_id, page_num=0):
             "url": f"{BASE_URL}viewtopic.php?t={topic_id}"
         })
 
+    # Определяем наличие следующей страницы по наличию ссылки "След."
+    has_next_page = any(
+        any(marker in a.text for marker in ('След', 'Next', '»', '>'))
+        for a in soup.select('a.pg')
+    )
+
     if page_num == 0 and skipped_sticky > 0:
         print(f"[*] Пропущено закреплённых тем (до разделителя 'Темы'): {skipped_sticky}. Найдено обычных раздач: {len(topics)}")
 
-    return topics
+    return topics, has_next_page
