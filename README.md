@@ -171,5 +171,5 @@ python scraper.py --full --forum 773 --max-pages 5   # Пробный сбор 5
 - Настраивает виртуальное окружение и cron
 
 ```bash
-sudo bash setup_vps.sh
+wget -qO setup_vps.sh https://raw.githubusercontent.com/Langegen/console-games/main/setup_vps.sh && sudo bash setup_vps.sh
 ```
