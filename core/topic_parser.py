@@ -17,6 +17,49 @@ def clean_magnet(url):
     return url
 
 
+def get_magnet_btih(url):
+    """Извлекает infohash (BTIH) из magnet-ссылки (hex40 или base32).
+
+    Возвращает строку в нижнем регистре или пустую строку, если хэш не найден.
+    """
+    if not url:
+        return ""
+    m = re.search(r'btih:([A-Fa-f0-9]{40}|[a-zA-Z2-7]{32})', url, re.IGNORECASE)
+    return m.group(1).lower() if m else ""
+
+
+def merge_topic_details(item, details, title=None, feed_size=None, raw_title="", platform_key=None):
+    """Пишет свежие поля темы в существующую запись базы.
+
+    Пустой/Unknown magnet не затирает старый (на случай ошибки парсинга страницы).
+    Возвращает True, если infohash реально сменился (перезаливка раздачи на трекере).
+    """
+    old_hash = get_magnet_btih(item.get("magnet"))
+
+    if title:
+        item["title"] = title
+    if details.get("size") and details["size"] != "Unknown":
+        item["size"] = details["size"]
+    elif feed_size and feed_size != "Unknown":
+        item["size"] = feed_size
+
+    for k, v in details.items():
+        if k == "size":
+            continue
+        if v not in (None, "Unknown", [], ""):
+            item[k] = v
+        elif k not in item:
+            item[k] = v
+
+    if not item.get("title_id") and platform_key and raw_title:
+        tid_cand = extract_platform_id(platform_key, raw_title)
+        if tid_cand:
+            item["title_id"] = tid_cand
+
+    new_hash = get_magnet_btih(details.get("magnet"))
+    return bool(new_hash) and new_hash != old_hash
+
+
 def post_text(post_body):
     """Корректное извлечение текста поста с сохранением переводов строк без разрыва инлайн-тегов."""
     if not post_body:

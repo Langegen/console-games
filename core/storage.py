@@ -4,7 +4,7 @@ import os
 import tempfile
 import time
 
-from core.topic_parser import get_topic_data
+from core.topic_parser import get_topic_data, merge_topic_details
 from core.id_extractors import fetch_filelist_id
 from platforms.registry import get_platform_config
 
@@ -149,12 +149,50 @@ def enrich_incomplete(data, platform_key, limit=100):
     return done, enriched_titles
 
 
+def refresh_stale_magnets(data, platform_key, skip_ids=None, limit=20):
+    """Круговой проход: перечитать magnet у записей вне сегодняшней Atom-ленты.
+
+    skip_ids — topic_id, которые уже качали из Atom. Курсор хранится в enrich_state.json.
+    """
+    skip_ids = skip_ids or set()
+    state = load_enrich_state()
+    n = len(data)
+    if not n:
+        return 0, []
+    cursor_key = f"_magnet_cursor_{platform_key}"
+    try:
+        cursor = int(state.get(cursor_key, 0) or 0) % n
+    except (TypeError, ValueError):
+        cursor = 0
+
+    refreshed = []
+    fetched = 0
+    steps = 0
+    while steps < n and fetched < limit:
+        idx = (cursor + steps) % n
+        steps += 1
+        item = data[idx]
+        tid = str(item.get('topic_id', ''))
+        if not tid or tid in skip_ids:
+            continue
+        print(f"  [*] MAGNET [{platform_key}] [{tid}] {str(item.get('title'))[:50]}...")
+        details = get_topic_data(tid, platform_key=platform_key)
+        fetched += 1
+        if merge_topic_details(item, details, platform_key=platform_key):
+            refreshed.append(str(item.get('title'))[:80])
+        time.sleep(0.2)
+
+    state[cursor_key] = (cursor + steps) % n
+    save_enrich_state(state)
+    return len(refreshed), refreshed
+
+
 def write_changes_log(platform_changes_map):
     """Формирует и записывает итоговый лог changes.txt для всех платформ.
 
     platform_changes_map: dict вида
     {
-        "psp": {"total": 1200, "added": [...], "updated": [...], "enriched": [...]},
+        "psp": {"total": 1200, "added": [...], "updated": [...], "enriched": [...], "magnets": [...]},
         ...
     }
     """
@@ -167,8 +205,9 @@ def write_changes_log(platform_changes_map):
         added = stats.get("added", [])
         updated = stats.get("updated", [])
         enriched = stats.get("enriched", [])
+        magnets = stats.get("magnets", [])
 
-        if added or updated or enriched:
+        if added or updated or enriched or magnets:
             has_any_change = True
 
         lines.append(f"[{plat_key.upper()}] Всего в базе: {total}")
@@ -181,6 +220,9 @@ def write_changes_log(platform_changes_map):
         if enriched:
             lines.append(f"  * Дообогащено ({len(enriched)}):")
             lines += [f"    * {t}" for t in enriched]
+        if magnets:
+            lines.append(f"  # Перезалит magnet ({len(magnets)}):")
+            lines += [f"    # {t}" for t in magnets]
         lines.append("")
 
     if not has_any_change:

@@ -1,6 +1,6 @@
 """Тесты парсера постов, magnet-ссылок и очистки заголовков."""
 import unittest
-from core.topic_parser import clean_magnet, clean_title, parse_feed_title
+from core.topic_parser import clean_magnet, clean_title, parse_feed_title, get_magnet_btih, merge_topic_details
 from platforms.configs import PLATFORM_CONFIGS
 
 
@@ -44,6 +44,51 @@ class TestTopicParser(unittest.TestCase):
         title, size = parse_feed_title(raw, psp_re)
         self.assertEqual(size, "850.5 MB")
         self.assertEqual(title, "Tekken 6 [EUR]")
+
+    def test_get_magnet_btih(self):
+        hex_mag = "magnet:?xt=urn:btih:20033833BB31D948C18D04F4A62BC7DEB07524FE&tr=http%3A%2F%2Fbt.org"
+        self.assertEqual(get_magnet_btih(hex_mag), "20033833bb31d948c18d04f4a62bc7deb07524fe")
+
+        b32_mag = "magnet:?xt=urn:btih:N74V7U5G4T2J5U5QZZZZZZZZZZZZZZZZ&dn=test"
+        self.assertEqual(get_magnet_btih(b32_mag), "n74v7u5g4t2j5u5qzzzzzzzzzzzzzzzz")
+
+        self.assertEqual(get_magnet_btih(""), "")
+        self.assertEqual(get_magnet_btih(None), "")
+        self.assertEqual(get_magnet_btih("http://example.com"), "")
+
+    def test_merge_topic_details(self):
+        item = {
+            "title": "Old Title",
+            "size": "100 MB",
+            "magnet": "magnet:?xt=urn:btih:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "year": "2000",
+        }
+        # 1. Magnet сменился (перезаливка)
+        details_new_hash = {
+            "magnet": "magnet:?xt=urn:btih:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+            "year": "2001",
+        }
+        changed = merge_topic_details(item, details_new_hash, title="New Title")
+        self.assertTrue(changed)
+        self.assertEqual(item["title"], "New Title")
+        self.assertEqual(item["year"], "2001")
+        self.assertIn("BBBBBBBB", item["magnet"])
+
+        # 2. Magnet не сменился
+        details_same_hash = {
+            "magnet": "magnet:?xt=urn:btih:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "developer": "New Dev",
+        }
+        changed = merge_topic_details(item, details_same_hash)
+        self.assertFalse(changed)
+        self.assertEqual(item["developer"], "New Dev")
+
+        # 3. Пустой magnet в details не должен затирать существующий
+        details_empty = {"magnet": None, "genre": "Action"}
+        changed = merge_topic_details(item, details_empty)
+        self.assertFalse(changed)
+        self.assertIn("bbbbbbbb", item["magnet"].lower())
+        self.assertEqual(item["genre"], "Action")
 
 
 if __name__ == '__main__':

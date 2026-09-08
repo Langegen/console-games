@@ -26,13 +26,14 @@ if sys.stdout.encoding != 'utf-8':
         pass
 
 from core.network import BASE_URL, fetch_url, close_driver, init_env
-from core.topic_parser import get_topic_data, clean_title, parse_feed_title
+from core.topic_parser import get_topic_data, clean_title, parse_feed_title, merge_topic_details
 from core.forum import scrape_forum_page
 from core.atom import fetch_atom_feed
 from core.storage import (
     load_json,
     save_json,
     enrich_incomplete,
+    refresh_stale_magnets,
     write_changes_log,
     BASE_DIR
 )
@@ -205,13 +206,16 @@ def update_forum_via_atom(forum_id, target_platforms=None):
         return {}
 
     changes_stats = {
-        p: {"added": [], "updated": [], "enriched": [], "total": len(plat_data[p])}
+        p: {"added": [], "updated": [], "enriched": [], "magnets": [], "total": len(plat_data[p])}
         for p in active_plats
     }
+
+    seen_ids = set()
 
     for item in atom_entries:
         tid = item["topic_id"]
         raw_title = item["raw_title"]
+        seen_ids.add(tid)
 
         matched_platforms = classify_topic(forum_id, raw_title)
         matched_active = [p for p in matched_platforms if p in active_plats]
@@ -227,33 +231,31 @@ def update_forum_via_atom(forum_id, target_platforms=None):
 
             if tid in plat_maps[p]:
                 old_item = plat_maps[p][tid]
-                needs_update = (
+                meta_changed = (
                     old_item.get('title') != clean_t
                     or (feed_sz != "Unknown" and old_item.get('size') != feed_sz)
                     or (cfg.get('has_title_id') and not old_item.get('title_id'))
                     or old_item.get('year') in ('Unknown', '', None)
                 )
-                if needs_update:
-                    print(f"  [~] ОБНОВЛЕНИЕ [{p}] [{tid}] {clean_t[:55]}...")
-                    if cached_details is None:
-                        cached_details = get_topic_data(tid, platform_key=p)
-                    details = dict(cached_details)
 
-                    old_item['title'] = clean_t
-                    if details['size'] != 'Unknown':
-                        old_item['size'] = details['size']
-                    elif feed_sz != 'Unknown':
-                        old_item['size'] = feed_sz
+                # Появление в Atom-ленте — сигнал недавней регистрации/перезаливки раздачи на трекере.
+                # Title и size часто не меняются, но infohash магнета меняется всегда.
+                if cached_details is None:
+                    cached_details = get_topic_data(tid, platform_key=p)
+                details = dict(cached_details)
 
-                    for k, v in details.items():
-                        if k == 'size':
-                            continue
-                        if v not in (None, "Unknown", [], ""):
-                            old_item[k] = v
-                        elif k not in old_item:
-                            old_item[k] = v
+                magnet_changed = merge_topic_details(
+                    old_item, details, title=clean_t, feed_size=feed_sz,
+                    raw_title=raw_title, platform_key=p
+                )
 
-                    changes_stats[p]["updated"].append(clean_t[:80])
+                if magnet_changed or meta_changed:
+                    why = "MAGNET" if magnet_changed else "мета"
+                    print(f"  [~] ОБНОВЛЕНИЕ ({why}) [{p}] [{tid}] {clean_t[:55]}...")
+                    if magnet_changed:
+                        changes_stats[p]["magnets"].append(clean_t[:80])
+                    if meta_changed:
+                        changes_stats[p]["updated"].append(clean_t[:80])
             else:
                 print(f"  [+] НОВАЯ игра [{p}] [{tid}] {clean_t[:55]}...")
                 if cached_details is None:
@@ -268,19 +270,30 @@ def update_forum_via_atom(forum_id, target_platforms=None):
                 plat_maps[p][tid] = new_entry
                 changes_stats[p]["added"].append(clean_t[:80])
 
-    # Дообогащение первых 100 записей каждой базы
+    # Дообогащение первых 100 записей и круговой обход устаревших magnet
     for p in active_plats:
         cfg = get_platform_config(p)
         done_enr, enr_titles = enrich_incomplete(plat_data[p], p, limit=100)
         changes_stats[p]["enriched"] = enr_titles
+
+        # Перезалитые топики выпадают из Atom-ленты за сутки-двое.
+        # Круговой обход проверяет записи каталога вне сегодняшней ленты.
+        try:
+            mag_count, mag_titles = refresh_stale_magnets(plat_data[p], p, skip_ids=seen_ids, limit=20)
+            if mag_titles:
+                changes_stats[p]["magnets"].extend(mag_titles)
+        except Exception as e:
+            print(f"[!] Ошибка круговой проверки magnet для {p}: {e}")
+
         changes_stats[p]["total"] = len(plat_data[p])
 
         # Сохраняем обновленный JSON
         added_cnt = len(changes_stats[p]["added"])
         updated_cnt = len(changes_stats[p]["updated"])
-        if added_cnt > 0 or updated_cnt > 0 or done_enr > 0:
+        mag_cnt = len(changes_stats[p]["magnets"])
+        if added_cnt > 0 or updated_cnt > 0 or done_enr > 0 or mag_cnt > 0:
             save_json(plat_data[p], cfg['filename'])
-            print(f"[+] База {cfg['name']} сохранена: +{added_cnt}, ~{updated_cnt}, *{done_enr}. Всего: {len(plat_data[p])}")
+            print(f"[+] База {cfg['name']} сохранена: +{added_cnt}, ~{updated_cnt}, *{done_enr}, #{mag_cnt}. Всего: {len(plat_data[p])}")
 
     return changes_stats
 
