@@ -41,7 +41,14 @@ RE_NES = re.compile(r'\[(?!S)(?:[^\]]*\b)?(NES|Dendy|Famicom|FC|Денди)\b|(?
 RE_SNES = re.compile(r'\[(?:[^\]]*\b)?(SNES|SFC|Super[\s_-]*Nintendo|Super[\s_-]*Famicom)\b|\b(SNES|SFC|Super[\s_-]*Nintendo|Super[\s_-]*Famicom)\b', re.IGNORECASE)
 RE_N64 = re.compile(r'\[(?:[^\]]*\b)?(N64|Nintendo[\s_-]*64)\b|\b(N64|Nintendo[\s_-]*64)\b', re.IGNORECASE)
 RE_GBA = re.compile(r'\[(?:[^\]]*\b)?(GBA|Game[\s_-]*Boy[\s_-]*Advance)\b|\b(GBA|Game[\s_-]*Boy[\s_-]*Advance)\b', re.IGNORECASE)
-RE_GBC = re.compile(r'\[(?:[^\]]*\b)?(GBC|Game[\s_-]*Boy[\s_-]*Color|Game[\s_-]*Boy|GB)\b|\b(GBC|Game[\s_-]*Boy[\s_-]*Color|Game[\s_-]*Boy|GB)\b', re.IGNORECASE)
+# GBC объединяет GB и GBC, исключая GBA и единицу измерения гигабайт (GB)
+RE_GBC = re.compile(
+    r'\[(?:[^\]]*\b)?(GBC|Game[\s_-]*Boy[\s_-]*Color|Game[\s_-]*Boy|GB)\b|'
+    r'\b(GBC|Game[\s_-]*Boy[\s_-]*Color|Game[\s_-]*Boy)\b|'
+    r'(?<!\d\s)(?<!\d)(?<!\d\.)\bNintendo\s+GB\b|'
+    r'\[GB\]',
+    re.IGNORECASE
+)
 
 # Sega системы
 RE_SEGA_32X = re.compile(r'\[(?:[^\]]*\b)?(32X|Sega[\s_-]*32X)\b|\b(32X|Sega[\s_-]*32X)\b', re.IGNORECASE)
@@ -60,6 +67,10 @@ def classify_topic_129(raw_title, text_content=""):
     """
     matched = []
     combined = f"{raw_title} {text_content[:300]}"
+
+    # Удаляем единицы измерения объёма данных (GB, MB, TB и т.д.), чтобы "GB" не путалось с Game Boy
+    combined = re.sub(r'\b[0-9.,]+\s*(?:GB|MB|KB|TB|ГБ|МБ|КБ|ТБ)\b', '', combined, flags=re.IGNORECASE)
+    combined = re.sub(r'\[\s*[0-9.,]+\s*(?:GB|MB|KB|TB|ГБ|МБ|КБ|ТБ)\s*\]', '', combined, flags=re.IGNORECASE)
 
     # 1. NES / Dendy (проверяем, чтобы это не было SNES)
     # Удаляем SNES из временной строки перед проверкой NES

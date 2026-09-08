@@ -71,7 +71,7 @@ def get_game_entry(topic_id, title, details, raw_title=""):
     }
 
 
-def scrape_full_forum(forum_id, target_platforms=None, max_pages=None):
+def scrape_full_forum(forum_id, target_platforms=None, max_pages=None, limit=None):
     """Полный парсинг раздела форума с автоматической маршрутизацией тем по базам данных."""
     all_forum_plats = get_platforms_for_forum(forum_id)
     if not all_forum_plats:
@@ -82,6 +82,8 @@ def scrape_full_forum(forum_id, target_platforms=None, max_pages=None):
     print(f"\n=======================================================")
     print(f"[*] ПОЛНЫЙ ПАРСИНГ форума f={forum_id}")
     print(f"[*] Активные платформы: {', '.join(active_plats)}")
+    if limit:
+        print(f"[*] Лимит тем: {limit}")
     print(f"=======================================================")
 
     # Загружаем существующие данные или создаем новые списки
@@ -105,6 +107,9 @@ def scrape_full_forum(forum_id, target_platforms=None, max_pages=None):
         if max_pages is not None and page_num >= max_pages:
             print(f"[*] Достигнут лимит страниц ({max_pages}).")
             break
+        if limit is not None and total_new >= limit:
+            print(f"[*] Достигнут лимит тем ({limit}).")
+            break
 
         topics = scrape_forum_page(forum_id, page_num=page_num)
         if not topics:
@@ -113,6 +118,8 @@ def scrape_full_forum(forum_id, target_platforms=None, max_pages=None):
 
         new_on_page = 0
         for top in topics:
+            if limit is not None and total_new >= limit:
+                break
             tid = top["topic_id"]
             raw_title = top["raw_title"]
 
@@ -278,7 +285,7 @@ def update_forum_via_atom(forum_id, target_platforms=None):
     return changes_stats
 
 
-def run(target_platforms=None, target_forums=None, full=False, max_pages=None, enrich_only=False):
+def run(target_platforms=None, target_forums=None, full=False, max_pages=None, enrich_only=False, limit=None):
     """Главная точка входа парсера."""
     init_env()
 
@@ -312,7 +319,7 @@ def run(target_platforms=None, target_forums=None, full=False, max_pages=None, e
 
             if full or any_missing:
                 print(f"[*] Запуск полного парсинга для f={fid} (full={full}, missing={any_missing})...")
-                scrape_full_forum(fid, target_platforms=active_plats, max_pages=max_pages)
+                scrape_full_forum(fid, target_platforms=active_plats, max_pages=max_pages, limit=limit)
                 # После полного сбора обновляем счетчики
                 for p in active_plats:
                     cfg = get_platform_config(p)
@@ -336,6 +343,7 @@ def main():
     parser.add_argument('--forum', type=str, choices=get_all_forum_ids(), help="Запустить для конкретного форума")
     parser.add_argument('--full', action='store_true', help="Принудительный полный парсинг всех страниц")
     parser.add_argument('--max-pages', type=int, default=None, help="Максимальное количество страниц при полном парсинге")
+    parser.add_argument('--limit', type=int, default=None, help="Ограничить количество обрабатываемых тем для тестового прогона")
     parser.add_argument('--enrich-only', action='store_true', help="Только дообогащение метаданных существующих баз")
     args = parser.parse_args()
 
@@ -347,7 +355,8 @@ def main():
         target_forums=target_forums,
         full=args.full,
         max_pages=args.max_pages,
-        enrich_only=args.enrich_only
+        enrich_only=args.enrich_only,
+        limit=args.limit
     )
 
 

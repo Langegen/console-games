@@ -43,8 +43,12 @@ def is_sticky_topic(row):
 def scrape_forum_page(forum_id, page_num=0):
     """Загружает страницу форума и возвращает список найденных тем.
 
+    На первой странице (page_num == 0) на RuTracker темы разделены секциями:
+    Правила -> Объявления -> Прилеплены -> Темы.
+    Все раздачи до строки-разделителя 'Темы' автоматически пропускаются.
+
     Возвращает:
-        list of dict: [{"topic_id": str, "raw_title": str, "url": str, "is_sticky": bool}, ...]
+        list of dict: [{"topic_id": str, "raw_title": str, "url": str}, ...]
     """
     start = page_num * 50
     forum_url = f"{BASE_URL}viewforum.php?f={forum_id}&start={start}"
@@ -56,17 +60,47 @@ def scrape_forum_page(forum_id, page_num=0):
         return []
 
     soup = BeautifulSoup(html, 'html.parser')
-    rows = soup.select('tr.hl-tr')
+    table = soup.select_one('table.vf-table, table.forumline') or soup
+    rows = table.find_all('tr', recursive=False) or table.select('tr')
     if not rows:
         print(f"[*] Тем не найдено на странице {page_num + 1}.")
         return []
 
     topics = []
     skipped_sticky = 0
+
+    # Проверяем наличие разделителя "Темы" на странице
+    has_temy_separator = any(
+        len(r.find_all('td', recursive=False)) == 1 and 'Темы' in r.text
+        for r in rows
+    )
+    in_regular_topics = (page_num > 0) or (not has_temy_separator)
+
     for row in rows:
+        tds = row.find_all('td', recursive=False)
+        if len(tds) == 1:
+            sep_text = tds[0].text.strip()
+            if 'Темы' in sep_text:
+                in_regular_topics = True
+                continue
+            elif not in_regular_topics:
+                continue
+
         link_tag = row.select_one('a.tt-text')
         if not link_tag:
             continue
+
+        if not in_regular_topics:
+            skipped_sticky += 1
+            continue
+
+        # Проверяем, что это не закрепленная тема по иконке
+        img = row.select_one('img.topic_icon')
+        if img:
+            src = img.get('src', '').lower()
+            if 'folder_sticky' in src or 'folder_announce' in src:
+                skipped_sticky += 1
+                continue
 
         href = link_tag.get('href', '')
         if 't=' not in href:
@@ -75,20 +109,14 @@ def scrape_forum_page(forum_id, page_num=0):
         if not topic_id:
             continue
 
-        # На первой странице определяем и пропускаем закрепленные темы
-        if page_num == 0 and is_sticky_topic(row):
-            skipped_sticky += 1
-            continue
-
         raw_title = link_tag.get_text().strip()
         topics.append({
             "topic_id": str(topic_id),
             "raw_title": raw_title,
-            "url": f"{BASE_URL}viewtopic.php?t={topic_id}",
-            "is_sticky": False
+            "url": f"{BASE_URL}viewtopic.php?t={topic_id}"
         })
 
     if page_num == 0 and skipped_sticky > 0:
-        print(f"[*] Пропущено закреплённых тем (правила/объявления): {skipped_sticky}. Обычных тем: {len(topics)}")
+        print(f"[*] Пропущено закреплённых тем (до разделителя 'Темы'): {skipped_sticky}. Найдено обычных раздач: {len(topics)}")
 
     return topics
