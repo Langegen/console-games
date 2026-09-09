@@ -442,6 +442,29 @@ def clean_title_for_display(title: str) -> str:
     return t if t else title[:40]
 
 
+def is_placeholder_image(file_path: Path) -> bool:
+    """Accurately checks if an existing image is an old or new placeholder."""
+    try:
+        with Image.open(file_path) as im:
+            if im.size != (300, 400):
+                return False
+            # Check for old placeholder 'NO COVER ART' (x: 25..80, y: 350..370)
+            for y in range(352, 365):
+                for x in range(25, 75):
+                    px = im.getpixel((x, y))
+                    if 75 <= px[0] <= 165 and 75 <= px[1] <= 165 and 75 <= px[2] <= 165:
+                        return True
+            # Check for '● NO BOXART ●' (x: 90..210, y: 362..372)
+            for y in range(363, 370):
+                for x in range(90, 210):
+                    px = im.getpixel((x, y))
+                    if 80 <= px[0] <= 165 and 80 <= px[1] <= 165 and 80 <= px[2] <= 165:
+                        return True
+    except Exception:
+        pass
+    return False
+
+
 def generate_placeholder(
     title: str, platform: str, target_width: int = 300, target_height: int = 400
 ) -> bytes:
@@ -661,11 +684,8 @@ def process_single_game(
         rel_path = f"covers/{platform}/{topic_id}.{ext}"
 
     if placeholders_only and out_file.exists():
-        try:
-            if out_file.stat().st_size >= 7000:
-                return ("cached", "Already real cover", rel_path)
-        except Exception:
-            pass
+        if not is_placeholder_image(out_file):
+            return ("cached", "Already real cover", rel_path)
     elif out_file.exists() and not force:
         return ("cached", "Already exists", rel_path)
 
@@ -755,14 +775,17 @@ def process_single_game(
 
     # Standardize image dimensions
     try:
-        final_bytes = process_image(
-            raw_bytes,
-            target_width=target_width,
-            target_height=target_height,
-            img_format=img_format,
-            quality=quality,
-            style=style,
-        )
+        if source_used == "placeholder":
+            final_bytes = raw_bytes
+        else:
+            final_bytes = process_image(
+                raw_bytes,
+                target_width=target_width,
+                target_height=target_height,
+                img_format=img_format,
+                quality=quality,
+                style=style,
+            )
         with open(out_file, "wb") as f:
             f.write(final_bytes)
         return (source_used, f"Saved from {source_used}", rel_path)
