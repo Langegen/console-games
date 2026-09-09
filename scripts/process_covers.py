@@ -15,12 +15,16 @@ import time
 import argparse
 import logging
 import urllib.parse
+import struct
+import zlib
 from pathlib import Path
 from typing import Optional, Dict, List, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps, ImageFile
+
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 # Root directory of the repository
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -181,30 +185,43 @@ class LibretroIndex:
                 logger.warning(f"Failed to read cache {self.cache_file}: {e}")
 
         logger.info(f"Fetching Libretro index for {self.platform} ({self.repo})...")
-        url = f"https://api.github.com/repos/libretro-thumbnails/{self.repo}/git/trees/master?recursive=1"
         headers = dict(HEADERS)
         if self.github_token:
             headers["Authorization"] = f"Bearer {self.github_token}"
 
+        # Two-step tree fetch: fetch root tree to find Named_Boxarts SHA, then fetch that tree.
+        # This avoids GitHub API 500/Too Large error on large repos (PS1, PS2, Wii).
+        url_root = f"https://api.github.com/repos/libretro-thumbnails/{self.repo}/git/trees/master"
         try:
-            resp = requests.get(url, headers=headers, timeout=20)
+            resp = requests.get(url_root, headers=headers, timeout=20)
             if resp.status_code == 200:
                 tree = resp.json().get("tree", [])
-                items = []
-                for node in tree:
-                    path = node.get("path", "")
-                    if path.startswith("Named_Boxarts/") and path.lower().endswith(".png"):
-                        filename = path[len("Named_Boxarts/") : -4]
-                        clean_name = clean_title_for_matching(filename)
-                        items.append({"clean": clean_name, "path": path})
-                        self.entries.append((clean_name, path))
+                boxarts_node = next((x for x in tree if x.get("path") == "Named_Boxarts"), None)
+                if boxarts_node:
+                    sha = boxarts_node.get("sha")
+                    url_box = f"https://api.github.com/repos/libretro-thumbnails/{self.repo}/git/trees/{sha}"
+                    resp_box = requests.get(url_box, headers=headers, timeout=30)
+                    if resp_box.status_code == 200:
+                        items = []
+                        for node in resp_box.json().get("tree", []):
+                            fname = node.get("path", "")
+                            if fname.lower().endswith(".png"):
+                                clean_name = clean_title_for_matching(fname[:-4])
+                                full_path = f"Named_Boxarts/{fname}"
+                                items.append({"clean": clean_name, "path": full_path})
+                                self.entries.append((clean_name, full_path))
 
-                self._build_exact_map()
-                with open(self.cache_file, "w", encoding="utf-8") as f:
-                    json.dump(items, f, ensure_ascii=False)
-                logger.info(f"Cached {len(self.entries)} boxart entries for {self.platform}")
+                        self._build_exact_map()
+                        with open(self.cache_file, "w", encoding="utf-8") as f:
+                            json.dump(items, f, ensure_ascii=False)
+                        logger.info(f"Cached {len(self.entries)} boxart entries for {self.platform}")
+                        return
+                    else:
+                        logger.warning(f"GitHub API returned {resp_box.status_code} for {self.repo} Named_Boxarts tree")
+                else:
+                    logger.warning(f"Named_Boxarts not found in {self.repo}")
             else:
-                logger.warning(f"GitHub API returned {resp.status_code} for {self.repo}")
+                logger.warning(f"GitHub API returned {resp.status_code} for {self.repo} root tree")
         except Exception as e:
             logger.warning(f"Error fetching Libretro tree for {self.platform}: {e}")
 
@@ -349,6 +366,32 @@ def generate_placeholder(
     return out_io.getvalue()
 
 
+def sanitize_png_bytes(data: bytes) -> bytes:
+    """Removes corrupted ancillary PNG chunks (e.g. invalid iCCP CRC checksums from old Photoshop tools)."""
+    if not data or not data.startswith(b"\x89PNG\r\n\x1a\n"):
+        return data
+    out = [b"\x89PNG\r\n\x1a\n"]
+    idx = 8
+    n = len(data)
+    while idx + 8 <= n:
+        length = struct.unpack(">I", data[idx : idx + 4])[0]
+        cid = data[idx + 4 : idx + 8]
+        total_chunk = 12 + length
+        if idx + total_chunk > n:
+            break
+        chunk_data = data[idx + 8 : idx + 8 + length]
+        crc = struct.unpack(">I", data[idx + 8 + length : idx + total_chunk])[0]
+        calc_crc = zlib.crc32(cid + chunk_data) & 0xFFFFFFFF
+        if calc_crc == crc or cid in (b"IHDR", b"IDAT", b"IEND", b"PLTE"):
+            if calc_crc != crc:
+                fixed_crc = struct.pack(">I", calc_crc)
+                out.append(data[idx : idx + 8 + length] + fixed_crc)
+            else:
+                out.append(data[idx : idx + total_chunk])
+        idx += total_chunk
+    return b"".join(out)
+
+
 def process_image(
     image_bytes: bytes,
     target_width: int = 300,
@@ -358,7 +401,12 @@ def process_image(
     style: str = "blur",
 ) -> bytes:
     """Resizes and centers the image on a standardized canvas preserving aspect ratio with optional ambient blur."""
-    img = Image.open(io.BytesIO(image_bytes))
+    try:
+        img = Image.open(io.BytesIO(image_bytes))
+        img.load()
+    except Exception:
+        img = Image.open(io.BytesIO(sanitize_png_bytes(image_bytes)))
+        img.load()
 
     # Convert transparency or palletized modes to RGB on dark background
     if img.mode in ("RGBA", "LA") or (img.mode == "P" and "transparency" in img.info):
@@ -707,6 +755,9 @@ def main():
     Path(args.output_dir).mkdir(parents=True, exist_ok=True)
 
     session = requests.Session()
+    adapter = requests.adapters.HTTPAdapter(pool_connections=30, pool_maxsize=30)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
 
     if args.platform == "all":
         platforms = sorted(LIBRETRO_REPOS.keys())
