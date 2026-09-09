@@ -20,7 +20,7 @@ from typing import Optional, Dict, List, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 
 # Root directory of the repository
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -334,8 +334,9 @@ def process_image(
     target_height: int = 400,
     img_format: str = "JPEG",
     quality: int = 85,
+    style: str = "blur",
 ) -> bytes:
-    """Resizes and centers the image on a standardized canvas preserving aspect ratio."""
+    """Resizes and centers the image on a standardized canvas preserving aspect ratio with optional ambient blur."""
     img = Image.open(io.BytesIO(image_bytes))
 
     # Convert transparency or palletized modes to RGB on dark background
@@ -346,18 +347,38 @@ def process_image(
     elif img.mode != "RGB":
         img = img.convert("RGB")
 
-    orig_w, orig_h = img.size
-    ratio = min(target_width / orig_w, target_height / orig_h)
-    new_w = max(1, int(orig_w * ratio))
-    new_h = max(1, int(orig_h * ratio))
+    if style == "blur":
+        # 1. Background: full-bleed crop + gaussian blur + dark tint
+        bg = ImageOps.fit(img, (target_width, target_height), method=Image.Resampling.LANCZOS)
+        bg = bg.filter(ImageFilter.GaussianBlur(radius=18))
+        dark_overlay = Image.new("RGB", (target_width, target_height), (16, 16, 22))
+        canvas = Image.blend(bg, dark_overlay, alpha=0.45)
 
-    resized = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+        # 2. Foreground: fit maintaining aspect ratio with neat margin
+        max_w, max_h = target_width - 16, target_height - 16
+        ratio = min(max_w / img.size[0], max_h / img.size[1])
+        fg_w, fg_h = max(1, int(img.size[0] * ratio)), max(1, int(img.size[1] * ratio))
+        fg = img.resize((fg_w, fg_h), Image.Resampling.LANCZOS)
 
-    # Standard dark canvas #141418
-    canvas = Image.new("RGB", (target_width, target_height), (20, 20, 24))
-    offset_x = (target_width - new_w) // 2
-    offset_y = (target_height - new_h) // 2
-    canvas.paste(resized, (offset_x, offset_y))
+        ox = (target_width - fg_w) // 2
+        oy = (target_height - fg_h) // 2
+
+        # Draw subtle border / shadow around foreground
+        draw = ImageDraw.Draw(canvas)
+        draw.rectangle([(ox - 2, oy - 2), (ox + fg_w + 1, oy + fg_h + 1)], outline=(10, 10, 15), width=2)
+        canvas.paste(fg, (ox, oy))
+    else:
+        # Standard dark canvas #141418
+        orig_w, orig_h = img.size
+        ratio = min(target_width / orig_w, target_height / orig_h)
+        new_w = max(1, int(orig_w * ratio))
+        new_h = max(1, int(orig_h * ratio))
+
+        resized = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+        canvas = Image.new("RGB", (target_width, target_height), (20, 20, 24))
+        offset_x = (target_width - new_w) // 2
+        offset_y = (target_height - new_h) // 2
+        canvas.paste(resized, (offset_x, offset_y))
 
     out_io = io.BytesIO()
     save_fmt = "JPEG" if img_format.upper() in ("JPG", "JPEG") else img_format.upper()
@@ -378,6 +399,7 @@ def process_single_game(
     force: bool,
     source_priority: str,
     flat_naming: bool,
+    style: str = "blur",
 ) -> Tuple[str, str, Optional[str]]:
     """
     Processes a single game:
@@ -463,6 +485,7 @@ def process_single_game(
             target_height=target_height,
             img_format=img_format,
             quality=quality,
+            style=style,
         )
         with open(out_file, "wb") as f:
             f.write(final_bytes)
@@ -532,6 +555,7 @@ def process_platform(
                 args.force,
                 args.source_priority,
                 args.flat,
+                args.style,
             ): game
             for game in games
         }
@@ -587,6 +611,13 @@ def main():
         help="Output image format (default: jpg for maximum Nintendo Switch compatibility)",
     )
     parser.add_argument(
+        "--style",
+        type=str,
+        default="blur",
+        choices=["blur", "dark"],
+        help="Visual style: 'blur' (modern ambient blur matching game colors) or 'dark' (minimalist dark background)",
+    )
+    parser.add_argument(
         "--width",
         type=int,
         default=300,
@@ -630,9 +661,9 @@ def main():
     parser.add_argument(
         "--source-priority",
         type=str,
-        default="tracker_first",
-        choices=["tracker_first", "clean_first"],
-        help="Source priority: 'tracker_first' keeps original live RuTracker art; 'clean_first' prefers Libretro/GameTDB",
+        default="clean_first",
+        choices=["clean_first", "tracker_first"],
+        help="Source priority: 'clean_first' (default) prefers official Libretro/GameTDB boxarts; 'tracker_first' keeps original live RuTracker art",
     )
     parser.add_argument(
         "--flat",
