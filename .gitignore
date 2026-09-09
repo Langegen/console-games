@@ -22,3 +22,4 @@ data/*.tmp
 
 # Локальный стейт парсера (курсоры дообогащения)
 enrich_state.json
+data/.cache/
