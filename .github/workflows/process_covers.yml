@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   generate-covers:
-    if: "!contains(github.event.head_commit.message, '[skip ci'])"
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'skip ci')
     runs-on: ubuntu-latest
 
     steps:
