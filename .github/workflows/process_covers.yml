@@ -1,0 +1,63 @@
+name: Process & Host Game Covers
+run-name: Generate missing working covers for updated games on GitHub
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/*_games.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-covers:
+    if: "!contains(github.event.head_commit.message, '[skip ci'])"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install system dependencies (Cyrillic fonts)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-dejavu-core
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Process missing covers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/process_covers.py \
+            --platform all \
+            --threads 8 \
+            --update-json \
+            --base-url 'https://raw.githubusercontent.com/Langegen/console-games/main'
+
+      - name: Commit and push new covers
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add covers/ data/*_games.json
+          if git diff --staged --quiet; then
+            echo 'All covers are up to date, no new files.'
+          else
+            git commit -m 'chore(covers): auto-generate missing game covers [skip ci]'
+            git pull --rebase origin main
+            git push origin main
+          fi

@@ -46,6 +46,8 @@ def merge_topic_details(item, details, title=None, feed_size=None, raw_title="",
     for k, v in details.items():
         if k == "size":
             continue
+        if k == "cover" and item.get("cover") and "raw.githubusercontent.com" in str(item.get("cover")):
+            continue
         if v not in (None, "Unknown", [], ""):
             item[k] = v
         elif k not in item:

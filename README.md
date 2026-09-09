@@ -157,9 +157,16 @@ python scraper.py --full --forum 773 --max-pages 5   # Пробный сбор 5
     "https://..."
   ],
   "description": "Первая часть культовой серии...",
-  "title_id": "SLES-01514"
+  "title_id": "SLES-01514",
+  "is_romset": false,
+  "content_type": "game"
 }
 ```
+
+> [!NOTE]
+> Все обложки хранятся и раздаются напрямую из репозитория GitHub:  
+> `https://raw.githubusercontent.com/Langegen/console-games/main/covers/{platform}/{topic_id}.jpg`  
+> Для сборников и полных коллекций ромов установлен флаг `"is_romset": true` и `"content_type": "romset"`.
 
 ---
 
@@ -168,8 +175,35 @@ python scraper.py --full --forum 773 --max-pages 5   # Пробный сбор 5
 Скрипт `setup_vps.sh` автоматизирует установку на Debian/Ubuntu x86_64:
 - Устанавливает Chrome, xvfb, Docker
 - Разворачивает контейнер `cf-bypass` (порт 8000) для прозрачного обхода Cloudflare
-- Настраивает виртуальное окружение и cron
+- Настраивает **Git Sparse-Checkout**: репозиторий клонируется **без папки обложек** (`covers/`), экономя диск VPS
+- Настраивает виртуальное окружение и ежедневный cron (`run.sh`)
 
+### Установка на новый VPS:
 ```bash
 wget -qO setup_vps.sh https://raw.githubusercontent.com/Langegen/console-games/main/setup_vps.sh && sudo bash setup_vps.sh
 ```
+
+### Обновление на уже работающем VPS (освобождение диска от covers/):
+Если проект уже был клонирован на сервере ранее, выполните:
+```bash
+cd /root/console-games-bot
+git pull --rebase
+git sparse-checkout init --cone
+git sparse-checkout set core data platforms scripts tests
+```
+Папка `covers/` будет мгновенно удалена с диска VPS, освободив место. На GitHub все обложки останутся целыми и невредимыми.
+
+---
+
+## Автоматическая генерация обложек (GitHub Actions)
+
+На VPS хранить и генерировать обложки не требуется:
+1. VPS находит новую игру и выгружает обновлённый JSON в GitHub.
+2. В репозитории срабатывает workflow `.github/workflows/process_covers.yml`.
+3. В облаке GitHub Actions запускается `process_covers.py`:
+   - Находит официальный боксарт (Libretro / GameTDB / HexFlow / OPL);
+   - Либо обрабатывает обложку с раздачи RuTracker;
+   - Либо создаёт стильный плейсхолдер с Ambient Blur и крупным русским шрифтом;
+   - Конвертирует в единый размер 300x400 JPG и сохраняет в `covers/{platform}/{topic_id}.jpg`.
+4. GitHub Actions автоматически коммитит новую обложку обратно в репозиторий.
+5. На следующий день VPS подтягивает изменения без загрузки картинок.

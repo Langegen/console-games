@@ -10,6 +10,13 @@ if [ -f .env ]; then
     set +a
 fi
 
+# Проверяем и включаем sparse-checkout, чтобы обложки (covers/) не занимали диск VPS
+if [ -d .git ] && ! git sparse-checkout list >/dev/null 2>&1; then
+    echo "[$(date)] Настройка sparse-checkout (исключение covers/ с диска VPS)..."
+    git sparse-checkout init --cone 2>/dev/null || true
+    git sparse-checkout set core data platforms scripts tests 2>/dev/null || true
+fi
+
 echo "[$(date)] Обновление кода из репозитория..."
 git pull --rebase origin main || true
 

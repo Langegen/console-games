@@ -73,14 +73,35 @@ fi
 
 # ---------- 3. Репозиторий ----------
 if [ -d "$INSTALL_DIR/.git" ]; then
-    log "Обновление репозитория в $INSTALL_DIR..."
-    git -C "$INSTALL_DIR" pull --rebase || warn "git pull не удался"
+    log "Настройка репозитория в $INSTALL_DIR..."
+    cd "$INSTALL_DIR"
+    log "Включение sparse-checkout (исключаем папку covers/ с диска VPS)..."
+    git sparse-checkout init --cone 2>/dev/null || true
+    git sparse-checkout set core data platforms scripts tests 2>/dev/null || true
+    git pull --rebase origin main || warn "git pull не удался"
 elif [ -f "$(pwd)/run.sh" ] && [ -d "$(pwd)/.git" ]; then
     INSTALL_DIR="$(pwd)"
     log "Используем текущий каталог: $INSTALL_DIR"
+    cd "$INSTALL_DIR"
+    log "Включение sparse-checkout (исключаем covers/ с диска VPS)..."
+    git sparse-checkout init --cone 2>/dev/null || true
+    git sparse-checkout set core data platforms scripts tests 2>/dev/null || true
+    git pull --rebase origin main || warn "git pull не удался"
 else
-    log "Клонирование репозитория в $INSTALL_DIR..."
-    git clone "$REPO_URL_DEFAULT" "$INSTALL_DIR"
+    log "Клонирование репозитория без обложек (--filter=blob:none, sparse-checkout)..."
+    if git clone --filter=blob:none --no-checkout "$REPO_URL_DEFAULT" "$INSTALL_DIR" 2>/dev/null; then
+        cd "$INSTALL_DIR"
+        git sparse-checkout init --cone
+        git sparse-checkout set core data platforms scripts tests
+        git checkout main
+    else
+        log "Клонирование репозитория в $INSTALL_DIR..."
+        git clone "$REPO_URL_DEFAULT" "$INSTALL_DIR"
+        cd "$INSTALL_DIR"
+        log "Включение sparse-checkout (удаление covers/ с диска VPS)..."
+        git sparse-checkout init --cone
+        git sparse-checkout set core data platforms scripts tests
+    fi
 fi
 cd "$INSTALL_DIR"
 
