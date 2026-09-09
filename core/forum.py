@@ -90,17 +90,24 @@ def scrape_forum_page(forum_id, page_num=0):
         if not link_tag:
             continue
 
-        if not in_regular_topics:
-            skipped_sticky += 1
-            continue
+        raw_title = link_tag.get_text().strip()
+        dl_link = row.select_one('a.f-dl, a[href^="dl.php?t="]')
 
-        # Проверяем, что это не закрепленная тема по иконке
-        img = row.select_one('img.topic_icon')
-        if img:
-            src = img.get('src', '').lower()
-            if 'folder_sticky' in src or 'folder_announce' in src:
+        is_sticky_row = not in_regular_topics
+
+        if is_sticky_row:
+            # В закреплённой секции включаем только реальные раздачи с торрентом
+            if not dl_link or is_sticky_topic(row):
                 skipped_sticky += 1
                 continue
+        else:
+            # Для обычных тем отсекаем повторные объявления
+            img = row.select_one('img.topic_icon')
+            if img:
+                src = img.get('src', '').lower()
+                if 'folder_announce' in src:
+                    skipped_sticky += 1
+                    continue
 
         href = link_tag.get('href', '')
         if 't=' not in href:
@@ -109,12 +116,14 @@ def scrape_forum_page(forum_id, page_num=0):
         if not topic_id:
             continue
 
-        raw_title = link_tag.get_text().strip()
         topics.append({
             "topic_id": str(topic_id),
             "raw_title": raw_title,
-            "url": f"{BASE_URL}viewtopic.php?t={topic_id}"
+            "url": f"{BASE_URL}viewtopic.php?t={topic_id}",
+            "is_sticky": is_sticky_row
         })
+
+
 
     # Определяем наличие следующей страницы по наличию ссылки "След."
     has_next_page = any(

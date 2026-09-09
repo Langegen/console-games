@@ -149,6 +149,26 @@ def _safe_get(driver, url):
             pass
 
 
+def get_chrome_version_main():
+    """Detects installed Chrome major version to prevent chromedriver mismatch."""
+    try:
+        if sys.platform == "win32":
+            import subprocess
+            cmd = ['powershell', '-NoProfile', '-Command', '(Get-Item "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe").VersionInfo.ProductVersion']
+            out = subprocess.check_output(cmd, encoding='utf-8', stderr=subprocess.DEVNULL).strip()
+            if out and out[0].isdigit():
+                return int(out.split('.')[0])
+        elif sys.platform.startswith("linux"):
+            import subprocess
+            out = subprocess.check_output(['google-chrome', '--version'], encoding='utf-8', stderr=subprocess.DEVNULL).strip()
+            for p in out.split():
+                if '.' in p and p[0].isdigit():
+                    return int(p.split('.')[0])
+    except Exception:
+        pass
+    return None
+
+
 def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
     """Запрос через undetected_chromedriver (Cloudflare fallback)."""
     global SESSION_COOKIES, USER_AGENT, CF_SESSION_INITIALIZED, GLOBAL_DRIVER
@@ -173,10 +193,11 @@ def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
             options.add_argument('--disable-gpu')
             options.add_argument('--disable-extensions')
             options.add_argument('--no-first-run')
-            GLOBAL_DRIVER = uc.Chrome(options=options)
+            chrome_ver = get_chrome_version_main()
+            GLOBAL_DRIVER = uc.Chrome(options=options, version_main=chrome_ver)
             GLOBAL_DRIVER.set_script_timeout(30)
             GLOBAL_DRIVER.set_page_load_timeout(25)
-            print("[*] Chrome запущен")
+            print(f"[*] Chrome запущен (версия {chrome_ver or 'default'})")
 
         if is_post:
             _safe_get(GLOBAL_DRIVER, "https://rutracker.org/forum/index.php")

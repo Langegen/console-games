@@ -48,8 +48,12 @@ from platforms.registry import (
 from platforms.classifiers import classify_topic
 
 
+from core.romset_utils import is_romset_title
+
+
 def get_game_entry(topic_id, title, details, raw_title=""):
     """Формирует стандартный словарь записи игры."""
+    is_rom = is_romset_title(title)
     return {
         "title": title,
         "size": details.get("size", "Unknown"),
@@ -69,6 +73,8 @@ def get_game_entry(topic_id, title, details, raw_title=""):
         "screenshots": details.get("screenshots", []),
         "description": details.get("description", ""),
         "title_id": details.get("title_id"),
+        "is_romset": is_rom,
+        "content_type": "romset" if is_rom else "game",
     }
 
 
