@@ -404,40 +404,92 @@ def fetch_url_image(url: str, session: requests.Session, timeout: int = 7) -> Op
     return None
 
 
+def get_font(size: int, bold: bool = True):
+    """Loads a Unicode TrueType font supporting Latin and Cyrillic glyphs with cross-platform fallbacks."""
+    candidates = [
+        "C:/Windows/Fonts/segoeuib.ttf" if bold else "C:/Windows/Fonts/segoeui.ttf",
+        "C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf",
+        "C:/Windows/Fonts/tahomabd.ttf" if bold else "C:/Windows/Fonts/tahoma.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    ]
+    for p in candidates:
+        try:
+            return ImageFont.truetype(p, size)
+        except Exception:
+            continue
+    try:
+        return ImageFont.truetype("arial.ttf", size)
+    except Exception:
+        return ImageFont.load_default()
+
+
+def clean_title_for_display(title: str) -> str:
+    """Cleans technical torrent metadata while preserving real game name in Russian or English."""
+    if not title:
+        return "Unknown Game"
+    t = str(title).strip()
+    # Strip leading dump numbers e.g. '2541 - ', '0041 - '
+    t = re.sub(r"^\s*\d{3,5}\s*[-–—]\s*", "", t)
+    # Remove technical tags in brackets: [ISO], [CSO], [NTSC], [PAL], [ENG], [RUS], etc.
+    tag_pattern = r"\[\s*(?:FULL|RUS|ENG|JAP|PAL|NTSC|MULTI\d*|ISO|CSO|VPK|MOD|SOFT|KUDOS|NONPDRM|REPACK|DUMP|FIX|DLC|UPDATE|SUB|AUDIO|VOICE|CBOX|EMU|GOD).*?\]"
+    t = re.sub(tag_pattern, "", t, flags=re.IGNORECASE)
+    t = re.sub(r"\[.*?\]", "", t)
+    t = re.sub(r"\[[^\]]*$", "", t)
+    t = re.sub(r"\([^)]*$", "", t)
+    # Clean multiple spaces and trailing delimiters
+    t = re.sub(r"\s+", " ", t).strip(" -:|/,\t")
+    return t if t else title[:40]
+
+
 def generate_placeholder(
     title: str, platform: str, target_width: int = 300, target_height: int = 400
 ) -> bytes:
-    """Generates a stylish, clean dark-themed placeholder boxart with platform pill and title."""
-    accent_color = PLATFORM_COLORS.get(platform, (40, 40, 45))
-    canvas = Image.new("RGB", (target_width, target_height), (18, 18, 22))
+    """Generates a stylish, clean dark-themed placeholder boxart with platform pill and large readable title."""
+    accent_color = PLATFORM_COLORS.get(platform, (50, 60, 80))
+    canvas = Image.new("RGB", (target_width, target_height), (16, 17, 22))
     draw = ImageDraw.Draw(canvas)
 
-    # Subtle inner border
-    draw.rectangle(
-        [(8, 8), (target_width - 9, target_height - 9)],
-        outline=(38, 38, 44),
-        width=1,
+    # 1. Subtle card border with slight rounded look
+    draw.rounded_rectangle(
+        [(10, 10), (target_width - 11, target_height - 11)],
+        radius=12,
+        outline=(42, 45, 56),
+        width=2,
     )
 
-    # Top platform pill
-    pill_height = 36
-    draw.rectangle([(16, 16), (target_width - 17, 16 + pill_height)], fill=accent_color)
+    # 2. Top platform header pill
+    pill_font = get_font(14, bold=True)
+    plat_name = platform.upper().replace("_", " ")
+    pill_h = 38
+    draw.rounded_rectangle(
+        [(20, 22), (target_width - 21, 22 + pill_h)],
+        radius=8,
+        fill=accent_color,
+    )
 
-    font = ImageFont.load_default()
+    # Center platform text inside pill
+    bbox = draw.textbbox((0, 0), plat_name, font=pill_font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    draw.text(
+        ((target_width - tw) // 2, 22 + (pill_h - th) // 2 - 1),
+        plat_name,
+        fill=(255, 255, 255),
+        font=pill_font,
+    )
 
-    plat_label = platform.upper().replace("_", " ")
-    draw.text((26, 28), plat_label, fill=(255, 255, 255), font=font)
+    # 3. Game title display (large, bold, vertically centered)
+    display_title = clean_title_for_display(title)
 
-    # Clean title text wrapping
-    clean_text = clean_title_for_matching(title)
-    if not clean_text:
-        clean_text = title[:30]
-
-    words = clean_text.title().split()
+    # Dynamic font sizing with accurate width calculation
+    title_font = get_font(21, bold=True)
+    max_line_w = target_width - 44
+    words = display_title.split()
     lines = []
     curr = []
     for w in words:
-        if len(" ".join(curr + [w])) <= 22:
+        test = " ".join(curr + [w])
+        if draw.textlength(test, font=title_font) <= max_line_w:
             curr.append(w)
         else:
             if curr:
@@ -446,17 +498,39 @@ def generate_placeholder(
     if curr:
         lines.append(" ".join(curr))
 
-    # Center title vertically
-    y_start = 140
-    for line in lines[:5]:
-        draw.text((24, y_start), line, fill=(220, 220, 225), font=font)
-        y_start += 24
+    # If too many lines, downscale slightly to fit comfortably
+    if len(lines) > 4:
+        title_font = get_font(17, bold=True)
+        lines = []
+        curr = []
+        for w in words:
+            test = " ".join(curr + [w])
+            if draw.textlength(test, font=title_font) <= max_line_w:
+                curr.append(w)
+            else:
+                if curr:
+                    lines.append(" ".join(curr))
+                curr = [w]
+        if curr:
+            lines.append(" ".join(curr))
 
-    # Bottom badge
-    draw.text((24, target_height - 35), "NO COVER ART", fill=(120, 120, 130), font=font)
+    line_h = 28 if getattr(title_font, "size", 21) > 18 else 24
+    total_text_h = len(lines[:6]) * line_h
+    y_start = max(80, 70 + (270 - total_text_h) // 2)
+
+    for line in lines[:6]:
+        l_w = draw.textlength(line, font=title_font)
+        draw.text(((target_width - l_w) // 2, y_start), line, fill=(242, 244, 250), font=title_font)
+        y_start += line_h
+
+    # 4. Bottom footer badge
+    foot_font = get_font(12, bold=False)
+    foot_text = "● NO BOXART ●"
+    f_w = draw.textlength(foot_text, font=foot_font)
+    draw.text(((target_width - f_w) // 2, target_height - 34), foot_text, fill=(110, 115, 130), font=foot_font)
 
     out_io = io.BytesIO()
-    canvas.save(out_io, format="JPEG", quality=85, optimize=True)
+    canvas.save(out_io, format="JPEG", quality=88, optimize=True)
     return out_io.getvalue()
 
 
