@@ -139,12 +139,13 @@ def clean_title_for_matching(title: str) -> str:
     # Remove content in brackets and parentheses [RUS/ENG], (v1.1), [NTSC]
     t = re.sub(r"\[.*?\]", " ", t)
     t = re.sub(r"\(.*?\)", " ", t)
-    # Replace punctuation with space
-    t = re.sub(r"[:|/\\_–—\-+*#]", " ", t)
-    # Normalize common grammatical articles
-    words = t.lower().split()
-    if words and words[-1] == "the":
-        words = ["the"] + words[:-1]
+    # Remove trailing unclosed brackets e.g. '[Full RUS/ENG|'
+    t = re.sub(r"\[[^\]]*$", " ", t)
+    t = re.sub(r"\([^)]*$", " ", t)
+    # Replace punctuation with space (including commas, quotes, slashes, ampersands)
+    t = re.sub(r"[:|,/\\_–—\-+*#~`'\"!?;]", " ", t)
+    # Normalize common grammatical articles and conjunctions
+    words = [w.lower() for w in t.split() if w.lower() not in ("the", "and", "&", "a", "an")]
     return " ".join(words)
 
 
@@ -178,7 +179,8 @@ class LibretroIndex:
             try:
                 with open(self.cache_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    self.entries = [(item["clean"], item["path"]) for item in data]
+                    # Re-clean using current cleaning rules
+                    self.entries = [(clean_title_for_matching(item["path"].split("/")[-1][:-4]), item["path"]) for item in data]
                     self._build_exact_map()
                 return
             except Exception as e:
@@ -239,13 +241,44 @@ class LibretroIndex:
             return None
 
         candidates = []
+        # 1. Exact match
         if clean_search in self.exact_map:
             for raw_path in self.exact_map[clean_search]:
                 candidates.append((0, raw_path))
         else:
             for clean_name, raw_path in self.entries:
-                if clean_name.startswith(clean_search) or clean_search.startswith(clean_name):
+                if clean_name == clean_search:
+                    candidates.append((0, raw_path))
+                elif clean_name.startswith(clean_search) or clean_search.startswith(clean_name):
                     candidates.append((1, raw_path))
+                elif clean_name.endswith(" " + clean_search):
+                    candidates.append((2, raw_path))
+                elif len(clean_search) >= 8 and f" {clean_search} " in f" {clean_name} ":
+                    candidates.append((3, raw_path))
+
+        # 2. Try subtitle / split variants (before ':', ' - ', or '/')
+        if not candidates:
+            subs = []
+            if ":" in title:
+                subs.append(title.split(":")[0])
+            if " - " in title:
+                subs.append(title.split(" - ")[0])
+            if "/" in title:
+                subs.extend(title.split("/"))
+
+            for sub in subs:
+                clean_sub = clean_title_for_matching(sub)
+                if clean_sub and clean_sub != clean_search and len(clean_sub) >= 4:
+                    if clean_sub in self.exact_map:
+                        for raw_path in self.exact_map[clean_sub]:
+                            candidates.append((4, raw_path))
+                        break
+                    else:
+                        for clean_name, raw_path in self.entries:
+                            if clean_name.startswith(clean_sub) or clean_sub.startswith(clean_name) or clean_name.endswith(" " + clean_sub):
+                                candidates.append((5, raw_path))
+                        if candidates:
+                            break
 
         if not candidates:
             return None
@@ -293,6 +326,67 @@ def fetch_gametdb_cover(platform: str, title_id: Optional[str], session: request
         except Exception:
             continue
     return None
+
+
+def fetch_hexflow_cover(platform: str, title_id: Optional[str], session: requests.Session) -> Optional[bytes]:
+    """Attempts to fetch boxart from HexFlow-Covers (PSVita, PSP, PS1) using game serial / title_id."""
+    if not title_id:
+        return None
+    clean_id = re.sub(r"[^A-Za-z0-9]", "", str(title_id)).upper()
+    if len(clean_id) < 5:
+        return None
+
+    system_map = {
+        "psvita": "PSVita",
+        "psp": "PSP",
+        "ps1": "PS1",
+    }
+    sys_folder = system_map.get(platform)
+    if not sys_folder:
+        return None
+
+    url = f"https://raw.githubusercontent.com/Andiweli/HexFlow-Covers/main/Covers/{sys_folder}/{clean_id}.png"
+    return fetch_url_image(url, session, timeout=6)
+
+
+def fetch_opl_cover(platform: str, title_id: Optional[str], session: requests.Session) -> Optional[bytes]:
+    """Attempts to fetch boxart from OPL Art Database (PS2, PS1) using disk serial."""
+    if not title_id or platform not in ("ps2", "ps1"):
+        return None
+
+    m = re.search(r"([A-Za-z]{4})[-_ ]?(\d{5})", str(title_id))
+    if not m:
+        return None
+
+    code, num = m.group(1).upper(), m.group(2)
+    serial = f"{code}_{num[:3]}.{num[3:]}"
+    sys_name = platform.upper()
+
+    url_png = f"https://raw.githubusercontent.com/Luden02/psx-ps2-opl-art-database/main/{sys_name}/{serial}/{serial}_COV.png"
+    data = fetch_url_image(url_png, session, timeout=6)
+    if not data:
+        url_jpg = f"https://raw.githubusercontent.com/Luden02/psx-ps2-opl-art-database/main/{sys_name}/{serial}/{serial}_COV.jpg"
+        data = fetch_url_image(url_jpg, session, timeout=6)
+    return data
+
+
+def load_original_tracker_covers() -> Dict[Tuple[str, str], str]:
+    """Loads original RuTracker cover URLs from git commit c3638a1 as fallback for Russian hacks/pirate discs."""
+    import subprocess
+    tracker_covers = {}
+    try:
+        for plat in LIBRETRO_REPOS.keys():
+            cmd = ["git", "show", f"c3638a1:data/{plat}_games.json"]
+            out = subprocess.check_output(cmd, encoding="utf-8", stderr=subprocess.DEVNULL)
+            games = json.loads(out)
+            for g in games:
+                tid = str(g.get("topic_id") or "")
+                c = g.get("cover")
+                if tid and c and not is_dead_domain(c):
+                    tracker_covers[(plat, tid)] = c
+    except Exception as e:
+        logger.warning(f"Could not load git baseline covers: {e}")
+    return tracker_covers
 
 
 def fetch_url_image(url: str, session: requests.Session, timeout: int = 7) -> Optional[bytes]:
@@ -469,10 +563,12 @@ def process_single_game(
     source_priority: str,
     flat_naming: bool,
     style: str = "blur",
+    placeholders_only: bool = False,
+    tracker_covers: Optional[Dict[Tuple[str, str], str]] = None,
 ) -> Tuple[str, str, Optional[str]]:
     """
     Processes a single game:
-    Returns (status: 'cached'|'tracker'|'gametdb'|'libretro'|'placeholder'|'error', details, relative_path)
+    Returns (status: 'cached'|'tracker'|'gametdb'|'hexflow'|'opl'|'libretro'|'placeholder'|'error', details, relative_path)
     """
     topic_id = str(game.get("topic_id") or "")
     if not topic_id:
@@ -490,7 +586,13 @@ def process_single_game(
         out_file = out_dir / f"{topic_id}.{ext}"
         rel_path = f"covers/{platform}/{topic_id}.{ext}"
 
-    if out_file.exists() and not force:
+    if placeholders_only and out_file.exists():
+        try:
+            if out_file.stat().st_size >= 7000:
+                return ("cached", "Already real cover", rel_path)
+        except Exception:
+            pass
+    elif out_file.exists() and not force:
         return ("cached", "Already exists", rel_path)
 
     title = game.get("title", "Unknown")
@@ -502,12 +604,24 @@ def process_single_game(
 
     # Strategy 1: Prioritize tracker or clean
     if source_priority == "clean_first":
-        # 1. GameTDB
-        raw_bytes = fetch_gametdb_cover(platform, title_id, session)
+        # 1. HexFlow (PSVita, PSP, PS1) by title_id
+        raw_bytes = fetch_hexflow_cover(platform, title_id, session)
         if raw_bytes:
-            source_used = "gametdb"
+            source_used = "hexflow"
 
-        # 2. Libretro
+        # 2. OPL Database (PS2, PS1) by serial
+        if not raw_bytes:
+            raw_bytes = fetch_opl_cover(platform, title_id, session)
+            if raw_bytes:
+                source_used = "opl"
+
+        # 3. GameTDB (Wii, GC, 3DS, DS, PS3) by serial
+        if not raw_bytes:
+            raw_bytes = fetch_gametdb_cover(platform, title_id, session)
+            if raw_bytes:
+                source_used = "gametdb"
+
+        # 4. Libretro (clean titles + subtitle fallback)
         if not raw_bytes:
             libretro_url = libretro_index.find_cover_url(title)
             if libretro_url:
@@ -515,17 +629,36 @@ def process_single_game(
                 if raw_bytes:
                     source_used = "libretro"
 
-        # 3. RuTracker live cover
-        if not raw_bytes and raw_cover_url and not is_dead_domain(raw_cover_url):
-            raw_bytes = fetch_url_image(raw_cover_url, session, timeout=6)
-            if raw_bytes:
-                source_used = "tracker"
+        # 5. RuTracker original live cover fallback (from git c3638a1 or JSON)
+        if not raw_bytes:
+            tracker_url = tracker_covers.get((platform, topic_id)) if tracker_covers else None
+            if not tracker_url and raw_cover_url and "raw.githubusercontent" not in raw_cover_url:
+                tracker_url = raw_cover_url
+            if tracker_url and not is_dead_domain(tracker_url):
+                raw_bytes = fetch_url_image(tracker_url, session, timeout=6)
+                if raw_bytes:
+                    source_used = "tracker"
     else:
         # Default: tracker_first (keep Russian/custom cover if live, fallback if dead)
-        if raw_cover_url and not is_dead_domain(raw_cover_url):
-            raw_bytes = fetch_url_image(raw_cover_url, session, timeout=6)
+        tracker_url = tracker_covers.get((platform, topic_id)) if tracker_covers else None
+        if not tracker_url and raw_cover_url and "raw.githubusercontent" not in raw_cover_url:
+            tracker_url = raw_cover_url
+        if tracker_url and not is_dead_domain(tracker_url):
+            raw_bytes = fetch_url_image(tracker_url, session, timeout=6)
             if raw_bytes:
                 source_used = "tracker"
+
+        # Fallback to HexFlow
+        if not raw_bytes:
+            raw_bytes = fetch_hexflow_cover(platform, title_id, session)
+            if raw_bytes:
+                source_used = "hexflow"
+
+        # Fallback to OPL
+        if not raw_bytes:
+            raw_bytes = fetch_opl_cover(platform, title_id, session)
+            if raw_bytes:
+                source_used = "opl"
 
         # Fallback to GameTDB
         if not raw_bytes:
@@ -575,6 +708,7 @@ def process_platform(
     platform: str,
     args: argparse.Namespace,
     session: requests.Session,
+    tracker_covers: Optional[Dict[Tuple[str, str], str]] = None,
 ) -> Dict[str, int]:
     """Processes all games for a single platform."""
     json_path = DATA_DIR / f"{platform}_games.json"
@@ -600,6 +734,8 @@ def process_platform(
         "cached": 0,
         "tracker": 0,
         "gametdb": 0,
+        "hexflow": 0,
+        "opl": 0,
         "libretro": 0,
         "placeholder": 0,
         "error": 0,
@@ -625,6 +761,8 @@ def process_platform(
                 args.source_priority,
                 args.flat,
                 args.style,
+                args.placeholders_only,
+                tracker_covers,
             ): game
             for game in games
         }
@@ -655,8 +793,9 @@ def process_platform(
 
     logger.info(
         f"[{platform.upper()}] Done: {stats['total']} total | "
-        f"{stats['tracker']} tracker | {stats['gametdb']} GameTDB | "
-        f"{stats['libretro']} Libretro | {stats['placeholder']} placeholders | "
+        f"{stats['libretro']} Libretro | {stats['hexflow']} HexFlow | "
+        f"{stats['opl']} OPL | {stats['gametdb']} GameTDB | "
+        f"{stats['tracker']} tracker | {stats['placeholder']} placeholders | "
         f"{stats['cached']} cached | {stats['error']} errors"
     )
     return stats
@@ -728,11 +867,16 @@ def main():
         help="Force re-download and re-process even if file already exists",
     )
     parser.add_argument(
+        "--placeholders-only",
+        action="store_true",
+        help="Only process covers that are currently placeholders (< 7KB) without touching existing real covers",
+    )
+    parser.add_argument(
         "--source-priority",
         type=str,
         default="clean_first",
         choices=["clean_first", "tracker_first"],
-        help="Source priority: 'clean_first' (default) prefers official Libretro/GameTDB boxarts; 'tracker_first' keeps original live RuTracker art",
+        help="Source priority: 'clean_first' (default) prefers official Libretro/GameTDB/HexFlow/OPL boxarts",
     )
     parser.add_argument(
         "--flat",
@@ -759,6 +903,8 @@ def main():
     session.mount("https://", adapter)
     session.mount("http://", adapter)
 
+    tracker_covers = load_original_tracker_covers()
+
     if args.platform == "all":
         platforms = sorted(LIBRETRO_REPOS.keys())
     else:
@@ -780,6 +926,8 @@ def main():
         "cached": 0,
         "tracker": 0,
         "gametdb": 0,
+        "hexflow": 0,
+        "opl": 0,
         "libretro": 0,
         "placeholder": 0,
         "error": 0,
@@ -787,7 +935,7 @@ def main():
 
     start_time = time.time()
     for plat in platforms:
-        plat_stats = process_platform(plat, args, session)
+        plat_stats = process_platform(plat, args, session, tracker_covers)
         for k, v in plat_stats.items():
             total_stats[k] = total_stats.get(k, 0) + v
 
@@ -796,9 +944,11 @@ def main():
     logger.info(f"Cover pipeline completed in {elapsed:.1f}s")
     logger.info(
         f"Total: {total_stats['total']} games | "
-        f"Live Tracker: {total_stats['tracker']} | "
-        f"GameTDB: {total_stats['gametdb']} | "
         f"Libretro: {total_stats['libretro']} | "
+        f"HexFlow: {total_stats['hexflow']} | "
+        f"OPL: {total_stats['opl']} | "
+        f"GameTDB: {total_stats['gametdb']} | "
+        f"Live Tracker: {total_stats['tracker']} | "
         f"Placeholders: {total_stats['placeholder']} | "
         f"Cached: {total_stats['cached']} | "
         f"Errors: {total_stats['error']}"
