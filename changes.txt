@@ -1,56 +1,58 @@
-=== Обновление баз console-games: 2026-09-09 01:02:43 ===
+=== Обновление баз console-games: 2026-09-09 11:17:25 ===
 
-[PSP] Всего в базе: 875
-  + Добавлено (3):
-    + Phase Shift Threats Beyond the Network [Minis] [ISO] [ENG]
-    + Capcom Classics Collection Reloaded [FULL] [ISO] [ENG]
-    + Kamen Rider Super Climax Heroes [FULL] [ISO] [JAP]
+[PSP] Всего в базе: 888
 
-[PS1] Всего в базе: 2120
-  + Добавлено (1):
-    + Harry Potter and the Sorcerer's Stone [SLUS-01415] [Lucky Chance] [RUS]
-  ~ Обновлено (1):
+[PS1] Всего в базе: 2135
+  ~ Обновлено (2):
+    ~ [Обновлено] Harry Potter and the Sorcerer's Stone [SLUS-01415] [RGR Studio] [RUS
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
+  # Перезалит magnet (1):
+    # [Обновлено] Harry Potter and the Sorcerer's Stone [SLUS-01415] [RGR Studio] [RUS
 
-[WIIU] Всего в базе: 50
+[WIIU] Всего в базе: 51
 
-[WII] Всего в базе: 305
+[WII] Всего в базе: 310
 
-[GAMECUBE] Всего в базе: 166
+[GAMECUBE] Всего в базе: 170
 
-[NES] Всего в базе: 47
+[NES] Всего в базе: 53
 
-[SNES] Всего в базе: 26
+[SNES] Всего в базе: 32
 
-[N64] Всего в базе: 14
+[N64] Всего в базе: 16
 
-[GBA] Всего в базе: 20
+[GBA] Всего в базе: 25
 
-[GBC] Всего в базе: 13
+[GBC] Всего в базе: 16
 
-[SEGA_MD] Всего в базе: 56
+[SEGA_MD] Всего в базе: 58
 
 [SEGA_MS] Всего в базе: 7
 
 [SEGA_GG] Всего в базе: 4
 
-[SEGA_CD] Всего в базе: 11
+[SEGA_CD] Всего в базе: 12
 
-[SEGA_32X] Всего в базе: 4
+[SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3491
+[PS2] Всего в базе: 3504
 
-[PSVITA] Всего в базе: 340
+[PSVITA] Всего в базе: 341
 
-[DREAMCAST] Всего в базе: 549
+[DREAMCAST] Всего в базе: 560
   ~ Обновлено (2):
     ~ [Обновлено] deSPIRIA [RUS]
     ~ Stupid Invaders [PAL/FullRus] [Порт перевода Nival]
 
-[3DS] Всего в базе: 72
+[3DS] Всего в базе: 79
   ~ Обновлено (2):
     ~ 2147 - Fire Emblem Fates: Special Edition [RUS] [CIA]
     ~ 1904 - Kid Icarus: Uprising [RUS]
+  * Дообогащено (4):
+    * CIA Mega Pack
+    * Сборник патчей и загружаемого контента (DLC) для Nintendo 3DS [USA/EUR/JPN/ALL] 
+    * Сборник Русских версий игр Nintendo 3DS [E] [RUS/RUSSOUND]
+    * Сборник из 81 переводов игр + 12 moflex фильмов для Nintendo 3DS (CIA) [RUS]
 
-[NDS] Всего в базе: 74
+[NDS] Всего в базе: 82
 
