@@ -150,8 +150,20 @@ class LibretroIndex:
     def __init__(self, platform: str, github_token: Optional[str] = None):
         self.platform = platform
         self.repo = LIBRETRO_REPOS.get(platform)
+        if not github_token and not os.getenv("GITHUB_TOKEN"):
+            env_file = ROOT_DIR / ".env"
+            if env_file.exists():
+                try:
+                    for line in env_file.read_text(encoding="utf-8").splitlines():
+                        if line.startswith("GITHUB_PAT=") or line.startswith("GITHUB_TOKEN="):
+                            _, val = line.split("=", 1)
+                            os.environ["GITHUB_TOKEN"] = val.strip().strip('"').strip("'")
+                            break
+                except Exception:
+                    pass
         self.github_token = github_token or os.getenv("GITHUB_TOKEN")
         self.entries: List[Tuple[str, str]] = []  # [(clean_title, raw_path)]
+        self.exact_map: Dict[str, List[str]] = {}
         CACHE_DIR.mkdir(parents=True, exist_ok=True)
         self.cache_file = CACHE_DIR / f"libretro_{platform}.json"
         if self.repo:
@@ -163,6 +175,7 @@ class LibretroIndex:
                 with open(self.cache_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     self.entries = [(item["clean"], item["path"]) for item in data]
+                    self._build_exact_map()
                 return
             except Exception as e:
                 logger.warning(f"Failed to read cache {self.cache_file}: {e}")
@@ -186,6 +199,7 @@ class LibretroIndex:
                         items.append({"clean": clean_name, "path": path})
                         self.entries.append((clean_name, path))
 
+                self._build_exact_map()
                 with open(self.cache_file, "w", encoding="utf-8") as f:
                     json.dump(items, f, ensure_ascii=False)
                 logger.info(f"Cached {len(self.entries)} boxart entries for {self.platform}")
@@ -193,6 +207,11 @@ class LibretroIndex:
                 logger.warning(f"GitHub API returned {resp.status_code} for {self.repo}")
         except Exception as e:
             logger.warning(f"Error fetching Libretro tree for {self.platform}: {e}")
+
+    def _build_exact_map(self):
+        self.exact_map = {}
+        for clean_name, raw_path in self.entries:
+            self.exact_map.setdefault(clean_name, []).append(raw_path)
 
     def find_cover_url(self, title: str) -> Optional[str]:
         if not self.entries or not self.repo:
@@ -203,11 +222,13 @@ class LibretroIndex:
             return None
 
         candidates = []
-        for clean_name, raw_path in self.entries:
-            if clean_name == clean_search:
+        if clean_search in self.exact_map:
+            for raw_path in self.exact_map[clean_search]:
                 candidates.append((0, raw_path))
-            elif clean_name.startswith(clean_search) or clean_search.startswith(clean_name):
-                candidates.append((1, raw_path))
+        else:
+            for clean_name, raw_path in self.entries:
+                if clean_name.startswith(clean_search) or clean_search.startswith(clean_name):
+                    candidates.append((1, raw_path))
 
         if not candidates:
             return None
