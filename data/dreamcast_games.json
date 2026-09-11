@@ -1,5 +1,37 @@
 [
     {
+        "title": "Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)",
+        "size": "779.19 GB",
+        "magnet": "magnet:?xt=urn:btih:74D0043491FB4EECEFD10CCDDCBF5E70854C5920&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6906237",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6906237",
+        "year": "1998—2021",
+        "genre": "Action, Adventure, RPG, Racing, Fighting и многие другие",
+        "developer": "Sega, Ubisoft, Capcom, Visual Concepts, Sonic Team и другие",
+        "publisher": "Sega, Ubisoft, Capcom, Namco, Activision, Acclaim и другие",
+        "image_format": "Лицензия (кроме изданий с меткой \"Unl\")",
+        "interface_lang": "русский, английский, японский, другие",
+        "voice_lang": "русский, английский, японский, другие",
+        "performance": "Unknown",
+        "multiplayer": "более 4x / 4x / 2x / нет",
+        "cover": "https://i128.fastpic.org/big/2026/0909/0d/2ff737508e7f7286411f534fecad560d.png",
+        "screenshots": [
+            "https://i128.fastpic.org/thumb/2026/0909/ec/_e859f8a3dddcbf84a8a31a9e5ebc6fec.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/b7/_5d82b0f6b9f24e5f60c134c3281a6db7.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/de/4010afde90115240afd356d5ae9a61de.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/09/74e69e6aba4836fa703f53fb662e5409.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/59/c10f70cca71653249d6837bdbf6aea59.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/75/ac81d892ccd8924ab560ddc8e3792775.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/b8/_14bb97e30337996ab76c5d9f616616b8.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/21/_6d04c4ac4640ff739fe779e172b1a021.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0909/d6/_2999737b2ab171b53d72831bc1cb25d6.jpeg"
+        ],
+        "description": "Sega Dreamcast — игровая консоль шестого поколения, разработанная и выпущенная компанией Sega. Она стала преемницей Sega Saturn, первой консолью шестого поколения и последней приставкой от Sega. Вышла в Японии в 1998 году, а в Северной Америке и Европе — в 1999 году. Dreamcast использовала оптические диски собственного формата GD-ROM и получила широкую известность благодаря поддержке онлайн-игр, встроенному модему в ряде регионов и большому числу популярных игр вроде Sonic Adventure, Shenmue и Crazy Taxi. Несмотря на несколько снижений цены на приставку подряд, её продажи не оправдали ожиданий, поэтому после смены руководства Sega, выпуск Dreamcast был прекращен в 2001 году, Sega покинула рынок игровых консолей.",
+        "title_id": null,
+        "is_romset": true,
+        "content_type": "romset"
+    },
+    {
         "title": "Эмулятор Flycast [ENG]",
         "size": "19.1 MB",
         "magnet": "magnet:?xt=urn:btih:74205698E5C4461A4792E3DA533A9F9B02A3E67E&tr=http%3A%2F%2Fbt.t-ru.org%2Fann%3Fmagnet",
