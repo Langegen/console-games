@@ -1,15 +1,10 @@
-=== Обновление баз console-games: 2026-09-11 08:38:20 ===
+=== Обновление баз console-games: 2026-09-12 01:03:30 ===
 
 [PSP] Всего в базе: 891
-  + Добавлено (3):
-    + MX vs. ATV: Untamed [FULL] [ISO] [ENG]
-    + ATV Offroad Fury: Blazin’ Trails [FULL] [ISO] [ENG]
-    + Capcom Classics Collection: Remixed [FULL] [ISO] [ENG]
 
 [PS1] Всего в базе: 2136
-  + Добавлено (1):
-    + Half-Life [Homebrew Port] [None] [ENG]
-  ~ Обновлено (1):
+  ~ Обновлено (2):
+    ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
 
 [WIIU] Всего в базе: 51
@@ -40,15 +35,17 @@
 
 [PS2] Всего в базе: 3504
 
-[PSVITA] Всего в базе: 343
-  + Добавлено (2):
-    + Danganronpa Another Episode: Ultra Despair Girls [NoNpDrm] [ENG]
-    + Akiba's Trip: Undead & Undressed [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 348
+  + Добавлено (5):
+    + Zero Escape: Zero Time Dilemma [NoNpDrm] [ENG]
+    + Corpse Party: Blood Drive [NoNpDrm] [ENG]
+    + Iconoclasts [NoNpDrm] [ENG]
+    + KickBeat [NoNpDrm] [ENG]
+    + MXGP: The Official Motocross Videogame [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 561
-  + Добавлено (1):
-    + Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
-  ~ Обновлено (1):
+  ~ Обновлено (2):
+    ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
     ~ [Обновлено] deSPIRIA [RUS]
 
 [3DS] Всего в базе: 79
