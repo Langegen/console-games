@@ -1,8 +1,10 @@
-=== Обновление баз console-games: 2026-09-12 01:03:30 ===
+=== Обновление баз console-games: 2026-09-13 01:03:26 ===
 
 [PSP] Всего в базе: 891
 
-[PS1] Всего в базе: 2136
+[PS1] Всего в базе: 2137
+  + Добавлено (1):
+    + [Обновлено] Grand Theft Auto [SLES-00032] [Лисы] [RUS]
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
@@ -36,12 +38,8 @@
 [PS2] Всего в базе: 3504
 
 [PSVITA] Всего в базе: 348
-  + Добавлено (5):
-    + Zero Escape: Zero Time Dilemma [NoNpDrm] [ENG]
-    + Corpse Party: Blood Drive [NoNpDrm] [ENG]
-    + Iconoclasts [NoNpDrm] [ENG]
-    + KickBeat [NoNpDrm] [ENG]
-    + MXGP: The Official Motocross Videogame [NoNpDrm] [ENG]
+  ~ Обновлено (1):
+    ~ [Обновлено] Danganronpa Another Episode: Ultra Despair Girls [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
