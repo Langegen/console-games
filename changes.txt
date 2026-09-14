@@ -1,13 +1,18 @@
-=== Обновление баз console-games: 2026-09-09 11:17:25 ===
+=== Обновление баз console-games: 2026-09-14 01:03:22 ===
 
-[PSP] Всего в базе: 888
+[PSP] Всего в базе: 897
+  + Добавлено (6):
+    + Summon Night 4 [FULL] [ISO] [JAP]
+    + Suto*Mani: Strobe * Mania [FULL] [ISO] [JAP]
+    + Sengoku Tenka Touitsu [FULL] [ISO] [JAP]
+    + Sengoku Hime: Senran ni Mau Otometachi [FULL] [ISO] [JAP]
+    + Ore no Shikabane o Koete Yuke [FULL] [ISO] [JAP]
+    + Boxer's Road 2: The Real [FULL] [ISO] [JAP]
 
-[PS1] Всего в базе: 2135
+[PS1] Всего в базе: 2137
   ~ Обновлено (2):
-    ~ [Обновлено] Harry Potter and the Sorcerer's Stone [SLUS-01415] [RGR Studio] [RUS
+    ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
-  # Перезалит magnet (1):
-    # [Обновлено] Harry Potter and the Sorcerer's Stone [SLUS-01415] [RGR Studio] [RUS
 
 [WIIU] Всего в базе: 51
 
@@ -35,24 +40,25 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3504
+[PS2] Всего в базе: 3505
+  + Добавлено (1):
+    + Tales of Destiny 2 [RUS/JPN|NTSC] [JAP / Repack]
+  ~ Обновлено (1):
+    ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
+  # Перезалит magnet (1):
+    # [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 341
+[PSVITA] Всего в базе: 348
 
-[DREAMCAST] Всего в базе: 560
+[DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
+    ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
     ~ [Обновлено] deSPIRIA [RUS]
-    ~ Stupid Invaders [PAL/FullRus] [Порт перевода Nival]
 
 [3DS] Всего в базе: 79
   ~ Обновлено (2):
     ~ 2147 - Fire Emblem Fates: Special Edition [RUS] [CIA]
     ~ 1904 - Kid Icarus: Uprising [RUS]
-  * Дообогащено (4):
-    * CIA Mega Pack
-    * Сборник патчей и загружаемого контента (DLC) для Nintendo 3DS [USA/EUR/JPN/ALL] 
-    * Сборник Русских версий игр Nintendo 3DS [E] [RUS/RUSSOUND]
-    * Сборник из 81 переводов игр + 12 moflex фильмов для Nintendo 3DS (CIA) [RUS]
 
 [NDS] Всего в базе: 82
 
