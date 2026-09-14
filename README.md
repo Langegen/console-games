@@ -41,6 +41,7 @@
 ```
 console-games/
 ├── data/                    # Базы данных JSON (20 платформ, 8 200+ игр)
+│   ├── emulators.json       # Каталог эмуляторов для TorrentShopNX (Switch)
 │   ├── ps2_games.json
 │   ├── ps1_games.json
 │   ├── psp_games.json
@@ -62,11 +63,17 @@ console-games/
 │   ├── classifiers.py       # Классификаторы тем для f=774, f=773 и f=129
 │   └── registry.py          # Реестр платформ и маппинг на форумы
 ├── scripts/                 # Вспомогательные скрипты
+│   ├── update_emulators.py  # Обновление версий и ссылок data/emulators.json
+│   ├── process_covers.py    # Пакетная обработка и хостинг обложек
 │   └── test_connection.py   # Диагностика сети, Cloudflare и TLS
 ├── tests/                   # Набор модульных тестов (unittest)
+│   ├── test_emulators.py
 │   ├── test_classifiers.py
 │   ├── test_id_extractors.py
 │   └── test_parser.py
+├── .github/workflows/
+│   ├── process_covers.yml   # Автохостинг обложек
+│   └── update_emulators.yml # Ежедневное обновление релизов эмуляторов
 ├── .env.example             # Шаблон конфигурации окружения
 ├── changes.txt              # Лог последних изменений баз
 ├── scraper.py               # Главный CLI-парсер
@@ -207,3 +214,31 @@ git sparse-checkout set core data platforms scripts tests
    - Конвертирует в единый размер 300x400 JPG и сохраняет в `covers/{platform}/{topic_id}.jpg`.
 4. GitHub Actions автоматически коммитит новую обложку обратно в репозиторий.
 5. На следующий день VPS подтягивает изменения без загрузки картинок.
+
+---
+
+## Манифест эмуляторов для TorrentShopNX (`data/emulators.json`)
+
+Клиент **TorrentShopNX** (Nintendo Switch) динамически загружает `data/emulators.json` для отображения каталога эмуляторов и установки подходящих приложений под каждую из 20 ретро-платформ.
+
+### Реестр эмуляторов (17 пакетов):
+- **Nintendo 3DS**: Dekopon (Citra) от `PalindromicBreadLoaf`
+- **Sony PS2, GameCube, Wii, PS Vita, Wii U, NDS**: нативные порты Horizon от `NaGaa95` (`NetherSX2-nx`, `dolphin-nx`, `Vita3K-nx`, `Cemu-nx`, `DrasticDS-nx`)
+- **Nintendo DS / DSi**: `melonDS` от `ArcDelta`
+- **Sony PS1**: `DuckStation` от `shooterspps`
+- **Sony PSP**: `PPSSPP` от `SirSamael`
+- **Sega Dreamcast**: `Flycast` от `flyinghead`
+- **SNES, NES, Sega MD/MS/GG/CD, GBA**: сборки на базе pemu от `Cpasjuste` (`pSNES`, `pNES`, `pGEN`, `pGBA`)
+- **GBA / GBC**: `mGBA` от `mgba-emu`
+- **N64, Sega 32X**: официальные ядра Libretro для RetroArch Switch (`mupen64plus_next`, `picodrive`)
+
+### Обновление манифеста:
+Скрипт `scripts/update_emulators.py` отслеживает последние релизы через GitHub API и ночные сборки Libretro Buildbot:
+```bash
+# Проверить и обновить манифест:
+python scripts/update_emulators.py
+
+# Только валидация без записи:
+python scripts/update_emulators.py --check-only
+```
+Манифест также автоматически обновляется ежедневно через GitHub Actions workflow `.github/workflows/update_emulators.yml`.

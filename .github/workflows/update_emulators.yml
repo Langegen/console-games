@@ -1,0 +1,45 @@
+name: Update Emulators Manifest
+run-name: Check and update emulator releases in data/emulators.json
+
+on:
+  schedule:
+    # Запуск каждый день в 04:00 UTC
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-emulators:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update emulators manifest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/update_emulators.py
+
+      - name: Commit and push updated manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/emulators.json
+          if git diff --staged --quiet; then
+            echo 'Emulators manifest is already up to date.'
+          else
+            git commit -m 'chore(emulators): auto-update emulators manifest [skip ci]'
+            git pull --rebase origin main
+            git push origin main
+          fi

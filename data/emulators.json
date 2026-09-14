@@ -1,0 +1,398 @@
+[
+  {
+    "id": "dekopon",
+    "name": "Dekopon (Citra)",
+    "author": "PalindromicBreadLoaf",
+    "version": "2.2.2",
+    "description": "Порт эмулятора Nintendo 3DS (Citra) для Switch от PalindromicBreadLoaf. Поддержка Horizon OS, аппаратного ускорения и стабильной кадровой частоты.",
+    "category": "nintendo",
+    "download_url": "https://github.com/PalindromicBreadLoaf/dekopon/releases/download/v2.2.2/dekopon.nro",
+    "filename": "dekopon.nro",
+    "install_path": "sdmc:/switch/dekopon/dekopon.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 36948012,
+    "supported_console_ids": [
+      "3ds"
+    ],
+    "color": [
+      230,
+      0,
+      18,
+      255
+    ]
+  },
+  {
+    "id": "nethersx2",
+    "name": "NetherSX2-nx",
+    "author": "NaGaa95",
+    "version": "1.2.5",
+    "description": "Порт эмулятора Sony PlayStation 2 для Switch от NaGaa95. Высокая производительность при разгоне, поддержка widescreen-патчей и кастомных текстур.",
+    "category": "sony",
+    "download_url": "https://github.com/NaGaa95/NetherSX2_nx/releases/download/1.2.5/NetherSX2.nro",
+    "filename": "NetherSX2.nro",
+    "install_path": "sdmc:/switch/NetherSX2/NetherSX2.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 98396210,
+    "supported_console_ids": [
+      "ps2"
+    ],
+    "color": [
+      0,
+      67,
+      156,
+      255
+    ]
+  },
+  {
+    "id": "dolphin",
+    "name": "Dolphin-nx",
+    "author": "NaGaa95",
+    "version": "1.0.4",
+    "description": "Порт эмулятора Nintendo GameCube и Wii для Switch от NaGaa95. Поддержка графики Vulkan, эмуляции контроллеров и высокого разрешения.",
+    "category": "nintendo",
+    "download_url": "https://github.com/NaGaa95/dolphin-nx/releases/download/1.0.4/dolphin.nro",
+    "filename": "dolphin.nro",
+    "install_path": "sdmc:/switch/dolphin/dolphin.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 47125292,
+    "supported_console_ids": [
+      "gamecube",
+      "wii"
+    ],
+    "color": [
+      85,
+      71,
+      163,
+      255
+    ]
+  },
+  {
+    "id": "vita3k",
+    "name": "Vita3K-nx",
+    "author": "NaGaa95",
+    "version": "1.2.0",
+    "description": "Экспериментальный порт эмулятора PlayStation Vita для Switch от NaGaa95. Запуск коммерческих игр формата VPK и NoNpDrm с рендерингом Vulkan.",
+    "category": "sony",
+    "download_url": "https://github.com/NaGaa95/Vita3K-nx/releases/download/1.2.0/Vita3K.nro",
+    "filename": "Vita3K.nro",
+    "install_path": "sdmc:/switch/Vita3K/Vita3K.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 69786752,
+    "supported_console_ids": [
+      "psvita"
+    ],
+    "color": [
+      0,
+      150,
+      214,
+      255
+    ]
+  },
+  {
+    "id": "cemu",
+    "name": "Cemu-nx",
+    "author": "NaGaa95",
+    "version": "1.1.3",
+    "description": "Порт эмулятора Nintendo Wii U для Switch от NaGaa95. Требует максимального разгона (OC) CPU/GPU, воспроизводит нетребовательные игры и 2D-хиты.",
+    "category": "nintendo",
+    "download_url": "https://github.com/NaGaa95/Cemu-nx/releases/download/1.1.3/cemu.nro",
+    "filename": "cemu.nro",
+    "install_path": "sdmc:/switch/cemu/cemu.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 82521714,
+    "supported_console_ids": [
+      "wiiu"
+    ],
+    "color": [
+      0,
+      158,
+      219,
+      255
+    ]
+  },
+  {
+    "id": "drasticds",
+    "name": "DraSticDS-nx",
+    "author": "NaGaa95",
+    "version": "1.1.1",
+    "description": "Нативный порт легендарного эмулятора DraStic Nintendo DS от NaGaa95. Стабильные 60 FPS на базовых частотах, поддержка сенсорного экрана.",
+    "category": "nintendo",
+    "download_url": "https://github.com/NaGaa95/DrasticDS_nx/releases/download/1.1.1/DrasticDS.nro",
+    "filename": "DrasticDS.nro",
+    "install_path": "sdmc:/switch/DrasticDS/DrasticDS.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 87151985,
+    "supported_console_ids": [
+      "nds"
+    ],
+    "color": [
+      231,
+      76,
+      60,
+      255
+    ]
+  },
+  {
+    "id": "melonds",
+    "name": "melonDS",
+    "author": "ArcDelta",
+    "version": "7.2.1",
+    "description": "Точный опенсорсный эмулятор Nintendo DS и DSi. Сенсорное управление, качественный звук, эмуляция микрофона и поддержка разгона.",
+    "category": "nintendo",
+    "download_url": "https://github.com/ArcDelta/melonDS/releases/download/7.2.1/melonDS.nro",
+    "filename": "melonDS.nro",
+    "install_path": "sdmc:/switch/melonds/melonDS.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 3252598,
+    "supported_console_ids": [
+      "nds"
+    ],
+    "color": [
+      243,
+      156,
+      18,
+      255
+    ]
+  },
+  {
+    "id": "duckstation",
+    "name": "DuckStation",
+    "author": "shooterspps",
+    "version": "prerelease-2",
+    "description": "Высокоточный эмулятор Sony PlayStation 1 для Switch. PGXP для устранения дрожания полигонов, масштабирование внутреннего разрешения и шейдеры.",
+    "category": "sony",
+    "download_url": "https://github.com/shooterspps/duckstation/releases/download/prerelease-2/duckstation_switch_prerelease_2-a7feccf-260807.zip",
+    "filename": "duckstation_switch.zip",
+    "install_path": "sdmc:/switch/duckstation/duckstation.nro",
+    "extract_dir": "sdmc:/switch/duckstation",
+    "is_archive": true,
+    "file_size": 10991703,
+    "supported_console_ids": [
+      "ps1"
+    ],
+    "color": [
+      41,
+      128,
+      185,
+      255
+    ]
+  },
+  {
+    "id": "ppsspp",
+    "name": "PPSSPP",
+    "author": "SirSamael",
+    "version": "0.6.5",
+    "description": "Оптимизированная сборка эмулятора Sony PlayStation Portable для Switch. Рендеринг OpenGL, апскейл вплоть до 1080p, пост-обработка и читы.",
+    "category": "sony",
+    "download_url": "https://github.com/SirSamael/ppsspp-switch-community-build/releases/download/v0.6.5/PPSSPP-Switch-0.6.5.zip",
+    "filename": "PPSSPP-Switch.zip",
+    "install_path": "sdmc:/switch/ppsspp/PPSSPP_GL.nro",
+    "extract_dir": "sdmc:/switch/ppsspp",
+    "is_archive": true,
+    "file_size": 42575790,
+    "supported_console_ids": [
+      "psp"
+    ],
+    "color": [
+      33,
+      74,
+      135,
+      255
+    ]
+  },
+  {
+    "id": "flycast",
+    "name": "Flycast",
+    "author": "flyinghead",
+    "version": "2.7",
+    "description": "Нативный мультисистемный эмулятор Sega Dreamcast, Naomi и Atomiswave. Высокая производительность, поддержка широкоформатных хаков и 60 FPS.",
+    "category": "sega",
+    "download_url": "https://github.com/flyinghead/flycast/releases/download/v2.7/flycast-2.7.nro",
+    "filename": "flycast.nro",
+    "install_path": "sdmc:/switch/flycast/flycast.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 31907635,
+    "supported_console_ids": [
+      "dreamcast"
+    ],
+    "color": [
+      230,
+      100,
+      20,
+      255
+    ]
+  },
+  {
+    "id": "psnes",
+    "name": "pSNES",
+    "author": "Cpasjuste",
+    "version": "7.2",
+    "description": "Порт эмулятора Super Nintendo (Snes9x) на базе оболочки pemu. Удобный графический интерфейс, фильтры изображения, предпросмотр обложек и перемотка.",
+    "category": "nintendo",
+    "download_url": "https://github.com/Cpasjuste/pemu/releases/download/v7.2/psnes.nro",
+    "filename": "psnes.nro",
+    "install_path": "sdmc:/switch/pSNES/psnes.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 32052730,
+    "supported_console_ids": [
+      "snes"
+    ],
+    "color": [
+      142,
+      68,
+      173,
+      255
+    ]
+  },
+  {
+    "id": "pnes",
+    "name": "pNES",
+    "author": "Cpasjuste",
+    "version": "7.2",
+    "description": "Эмулятор NES и Dendy на базе pemu. Поддержка Famicom Disk System, быстрое сохранение, настраиваемые фильтры и идеальная скорость.",
+    "category": "nintendo",
+    "download_url": "https://github.com/Cpasjuste/pemu/releases/download/v7.2/pnes.nro",
+    "filename": "pnes.nro",
+    "install_path": "sdmc:/switch/pNES/pnes.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 32694687,
+    "supported_console_ids": [
+      "nes"
+    ],
+    "color": [
+      192,
+      57,
+      43,
+      255
+    ]
+  },
+  {
+    "id": "pgen",
+    "name": "pGEN",
+    "author": "Cpasjuste",
+    "version": "7.2",
+    "description": "Эмулятор Sega Mega Drive, Master System, Game Gear и Sega CD на базе Genesis Plus GX. Высокая точность звука и синхронизации.",
+    "category": "sega",
+    "download_url": "https://github.com/Cpasjuste/pemu/releases/download/v7.2/pgen.nro",
+    "filename": "pgen.nro",
+    "install_path": "sdmc:/switch/pGEN/pgen.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 32539784,
+    "supported_console_ids": [
+      "sega_md",
+      "sega_ms",
+      "sega_gg",
+      "sega_cd"
+    ],
+    "color": [
+      0,
+      102,
+      204,
+      255
+    ]
+  },
+  {
+    "id": "mgba",
+    "name": "mGBA",
+    "author": "mgba-emu",
+    "version": "0.10.5",
+    "description": "Один из самых точных и быстрых эмуляторов Game Boy Advance, Game Boy и Game Boy Color. Богатый выбор цветовых палитр и оверкварца.",
+    "category": "nintendo",
+    "download_url": "https://github.com/mgba-emu/mgba/releases/download/0.10.5/mGBA-0.10.5-switch.7z",
+    "filename": "mGBA-switch.7z",
+    "install_path": "sdmc:/switch/mGBA/mGBA.nro",
+    "extract_dir": "sdmc:/switch/mGBA",
+    "is_archive": true,
+    "file_size": 2211306,
+    "supported_console_ids": [
+      "gba",
+      "gbc"
+    ],
+    "color": [
+      102,
+      51,
+      153,
+      255
+    ]
+  },
+  {
+    "id": "pgba",
+    "name": "pGBA",
+    "author": "Cpasjuste",
+    "version": "7.2",
+    "description": "Эмулятор Game Boy Advance на базе pemu. Интуитивный интерфейс с предпросмотром скриншотов, сохранение состояний и поддержка читов.",
+    "category": "nintendo",
+    "download_url": "https://github.com/Cpasjuste/pemu/releases/download/v7.2/pgba.nro",
+    "filename": "pgba.nro",
+    "install_path": "sdmc:/switch/pGBA/pgba.nro",
+    "extract_dir": "",
+    "is_archive": false,
+    "file_size": 31144928,
+    "supported_console_ids": [
+      "gba"
+    ],
+    "color": [
+      44,
+      62,
+      80,
+      255
+    ]
+  },
+  {
+    "id": "mupen64plus_next",
+    "name": "Mupen64Plus-Next (RetroArch Core)",
+    "author": "Libretro",
+    "version": "nightly-2026.09.13",
+    "description": "Высокопроизводительное ядро эмулятора Nintendo 64 для RetroArch на Nintendo Switch. Отличная совместимость с популярными 3D-играми N64.",
+    "category": "retroarch",
+    "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/mupen64plus_next_libretro_libnx.nro.zip",
+    "filename": "mupen64plus_next_libretro_libnx.nro.zip",
+    "install_path": "sdmc:/retroarch/cores/mupen64plus_next_libretro_libnx.nro",
+    "extract_dir": "sdmc:/retroarch/cores",
+    "is_archive": true,
+    "file_size": 8627690,
+    "supported_console_ids": [
+      "n64"
+    ],
+    "color": [
+      46,
+      204,
+      113,
+      255
+    ]
+  },
+  {
+    "id": "picodrive",
+    "name": "PicoDrive (RetroArch Core)",
+    "author": "Libretro",
+    "version": "nightly-2026.09.13",
+    "description": "Быстрое ядро эмулятора Sega 32X и Mega Drive для RetroArch на Nintendo Switch с поддержкой специфического чипсета 32X.",
+    "category": "retroarch",
+    "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/picodrive_libretro_libnx.nro.zip",
+    "filename": "picodrive_libretro_libnx.nro.zip",
+    "install_path": "sdmc:/retroarch/cores/picodrive_libretro_libnx.nro",
+    "extract_dir": "sdmc:/retroarch/cores",
+    "is_archive": true,
+    "file_size": 7282783,
+    "supported_console_ids": [
+      "sega_32x"
+    ],
+    "color": [
+      52,
+      73,
+      94,
+      255
+    ]
+  }
+]
