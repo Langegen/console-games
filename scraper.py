@@ -9,7 +9,8 @@ socket.setdefaulttimeout(45)
 - f=129  -> NES, SNES, N64, GBA, GBC (GB+GBC), Sega (MD, MS, GG, CD, 32X)
 
 Использование:
-  python scraper.py                  # Инкрементальное обновление всех систем через Atom-ленты
+  python scraper.py                  # Быстрое инкрементальное обновление баз через Atom-ленты (только свежие темы)
+  python scraper.py --sweep          # Обновление через Atom + фоновый круговой обход magnet и дообогащение
   python scraper.py --platform psp   # Обновление только PSP
   python scraper.py --forum 773      # Обновление всех систем раздела f=773
   python scraper.py --full --platform ps1 # Полный парсинг PS1
@@ -189,7 +190,7 @@ def scrape_full_forum(forum_id, target_platforms=None, max_pages=None, limit=Non
     return plat_data
 
 
-def update_forum_via_atom(forum_id, target_platforms=None):
+def update_forum_via_atom(forum_id, target_platforms=None, sweep=False):
     """Инкрементальное обновление баз форума через Atom-ленту (последние 50 раздач)."""
     all_forum_plats = get_platforms_for_forum(forum_id)
     active_plats = [p for p in target_platforms if p in all_forum_plats] if target_platforms else all_forum_plats
@@ -278,20 +279,22 @@ def update_forum_via_atom(forum_id, target_platforms=None):
                 plat_maps[p][tid] = new_entry
                 changes_stats[p]["added"].append(clean_t[:80])
 
-    # Дообогащение первых 100 записей и круговой обход устаревших magnet
+    # Круговой обход устаревших magnet и дообогащение (только если sweep=True)
     for p in active_plats:
         cfg = get_platform_config(p)
-        done_enr, enr_titles = enrich_incomplete(plat_data[p], p, limit=100)
-        changes_stats[p]["enriched"] = enr_titles
+        done_enr = 0
+        if sweep:
+            done_enr, enr_titles = enrich_incomplete(plat_data[p], p, limit=100)
+            changes_stats[p]["enriched"] = enr_titles
 
-        # Перезалитые топики выпадают из Atom-ленты за сутки-двое.
-        # Круговой обход проверяет записи каталога вне сегодняшней ленты.
-        try:
-            mag_count, mag_titles = refresh_stale_magnets(plat_data[p], p, skip_ids=seen_ids, limit=20)
-            if mag_titles:
-                changes_stats[p]["magnets"].extend(mag_titles)
-        except Exception as e:
-            print(f"[!] Ошибка круговой проверки magnet для {p}: {e}")
+            # Перезалитые топики выпадают из Atom-ленты за сутки-двое.
+            # Круговой обход проверяет записи каталога вне сегодняшней ленты.
+            try:
+                mag_count, mag_titles = refresh_stale_magnets(plat_data[p], p, skip_ids=seen_ids, limit=20)
+                if mag_titles:
+                    changes_stats[p]["magnets"].extend(mag_titles)
+            except Exception as e:
+                print(f"[!] Ошибка круговой проверки magnet для {p}: {e}")
 
         changes_stats[p]["total"] = len(plat_data[p])
 
@@ -306,7 +309,7 @@ def update_forum_via_atom(forum_id, target_platforms=None):
     return changes_stats
 
 
-def run(target_platforms=None, target_forums=None, full=False, max_pages=None, enrich_only=False, limit=None):
+def run(target_platforms=None, target_forums=None, full=False, max_pages=None, enrich_only=False, limit=None, sweep=False):
     """Главная точка входа парсера."""
     init_env()
 
@@ -347,7 +350,7 @@ def run(target_platforms=None, target_forums=None, full=False, max_pages=None, e
                     data = load_json(cfg['filename'])
                     all_stats[p] = {"added": [f"Полный парсинг ({len(data)} записей)"], "updated": [], "enriched": [], "total": len(data)}
             else:
-                stats = update_forum_via_atom(fid, target_platforms=active_plats)
+                stats = update_forum_via_atom(fid, target_platforms=active_plats, sweep=sweep)
                 all_stats.update(stats)
 
         # Записываем общий лог изменений
@@ -366,6 +369,7 @@ def main():
     parser.add_argument('--max-pages', type=int, default=None, help="Максимальное количество страниц при полном парсинге")
     parser.add_argument('--limit', type=int, default=None, help="Ограничить количество обрабатываемых тем для тестового прогона")
     parser.add_argument('--enrich-only', action='store_true', help="Только дообогащение метаданных существующих баз")
+    parser.add_argument('--sweep', action='store_true', help="Включить фоновый круговой обход magnet и дообогащение (по умолчанию отключено)")
     args = parser.parse_args()
 
     target_plats = [args.platform] if args.platform else None
@@ -377,7 +381,8 @@ def main():
         full=args.full,
         max_pages=args.max_pages,
         enrich_only=args.enrich_only,
-        limit=args.limit
+        limit=args.limit,
+        sweep=args.sweep
     )
 
 
