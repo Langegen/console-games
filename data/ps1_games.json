@@ -1,5 +1,37 @@
 [
     {
+        "title": "Dino Crisis [SLUS-00922] [Paradox] [Full RUS]",
+        "size": "211.2 MB",
+        "magnet": "magnet:?xt=urn:btih:4F4001975DA0EE90EA5CEAAEFECC9D19B830FD1E&tr=http%3A%2F%2Fbt.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6908584",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6908584",
+        "year": "1999",
+        "genre": "Action / Shooter / Survival Horror",
+        "developer": "Capcom Production Studio 4./Capcom Co., Ltd.",
+        "publisher": "Unknown",
+        "image_format": "Unknown",
+        "interface_lang": "RUS",
+        "voice_lang": "Unknown",
+        "performance": "Unknown",
+        "multiplayer": "нет",
+        "cover": "https://i128.fastpic.org/big/2026/0914/c9/96c0ac4fcec321d23829c484f28e4bc9.jpg",
+        "screenshots": [
+            "http://i64.fastpic.ru/big/2015/0201/19/3302c92380c09b4c54415d0644ad9219.png",
+            "https://i128.fastpic.org/thumb/2026/0914/32/f5217e701eb2b50f819d9777ea9e0c32.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0914/84/5a336e65d16b6a9abca54cd4f67ecf84.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0914/96/428283639b5e19e20abf36103c302696.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0914/c9/1bb077797e1536679226c1fd4ffa4bc9.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0914/ce/3ab881dc4fad777cbcaa89e009aa3ace.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0914/15/7609ce9cc40cf17062d0ec16269a5615.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0914/94/d6a0e7c2de2d8ac280dd6d349e98ab94.jpeg",
+            "http://i64.fastpic.ru/big/2014/1221/36/362e805e71a6e78a45e3cd5ea48efa36.gif"
+        ],
+        "description": "Dino Crisis повествует о том, что в очередной раз стремление человека побыть Богом привело его к катастрофе. Отвергнутый собственным правительством ученый, на деньги неизвестных спонсоров создает на небольшом островке в Тихом океане секретную лабораторию. Но правительство очень не любит, когда что-то создается в тайне от него. С целью выяснить, чем там занимаются люди в белых халатах, на остров высылается отряд специального назначения. Прибывших спецназовцев на острове ждут обезображенные трупы со следами страшных когтей, разодранный металл и неизвестность, которая сменяется ужасом с появлением первых доисторических тварей. С этими жуткими порождениями Юрского периода и вступает в неравную схватку отважная девушка Регина - командир боевой тройки специального назначения.\n\n\n\nО переводе\n\n\nParadox украли текстовый перевод у RGR Studio, переделали его, озвучка украдена у Golden Leon. В игре не работают бонусы (существует исправление от DruchaPucha).",
+        "title_id": "SLUS-00922",
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "[Обновлено] Grand Theft Auto [SLES-00032] [Лисы] [RUS]",
         "size": "715.1 MB",
         "magnet": "magnet:?xt=urn:btih:8CC32D0689D11716651D683C194654E770C6CC29&tr=http%3A%2F%2Fbt3.t-ru.org%2Fann%3Fmagnet",
@@ -4722,7 +4754,7 @@
         "multiplayer": "Unknown",
         "cover": "https://raw.githubusercontent.com/Langegen/console-games/main/covers/ps1/914504.jpg",
         "screenshots": [],
-        "description": "Новая версия одного из популярнейших эмуляторов PlayStation One и PSOne. Эмулятор обладает хорошей совместимостью и тонкой настройкой, которая позволяет добиться наилучших показателей графики и звука.\nРусифицировалось с раздачи Halyazium\n\nПереведена на 85-90%\nСодержимое раздачи SFX архив:\n\nePSXe v1.7.0 RUS\n\nePSXe v1.7.0 ENG\n\n16 биосов\n\nGPU - плагины для эмуляции графического процессора:\n\nP.E.Op.S. Soft Driver 1.18 - 25 мая 2008\n\nPete's D3D Driver 1.77 - 24 мая 2008\n\nPete's DX6 D3D Driver 1.77 - 24 мая 2008\n\nPete's OpenGL Driver 1.77 - 24 мая 2008\n\nPete's OpenGL2 Driver 2.9 - 24 мая 2008\n\nSPU - плагины для эмуляции звукового процессора:\n\nePSXe SPU core 1.7.0 (стандартый вшитый в эмулятор)\n\nP.E.Op.S. DSound Audio Driver 1.9 - 19 сентебря 2004\n\nPete's MIDAS Audio Driver 1.7 - 2 февраля 2001\n\nCDR - плагины для эмуляции CD-ROM:\n\nePSXe CDR ASPI core 1.7.0 (стандартый вшитый в эмулятор)\n\nePSXe CDR WNT/W2K core 1.7.0. (стандартый вшитый в эмулятор)\n\nP.E.Op.S. CDR Driver 1.4 - 9 июня 2003\n\nNET - плагины для игры по сети:\n\nDisabled Netplay (режим без поддержки сетивой игры)\n\n\n\nИзменения\n\n\nМногочисленные изменения в поддержке джойстиков.\n\nВнутренний SPU плагин был обновлен до версии1.7.0.\n\nИсходный код поддержки iso формата был полностью переписан.\n\nТак же был переписан и для MDEC декодера.\n\nВ новойверсии был добавлена новая версия Pete's плагина программного рендеринга.\n\nТеперь работает поддержка XA/CDDA.\n\nА так же многое другое вдекодере cd-rom и ядра.",
+        "description": "Новая версия одного из популярнейших эмуляторов PlayStation One и PSOne. Эмулятор обладает хорошей совместимостью и тонкой настройкой, которая позволяет добиться наилучших показателей графики и звука.\nРусифицировалось с раздачи Halyazium\n\nПереведена на 85-90%\nСодержимое раздачи SFX архив:\n\nePSXe v1.7.0 RUS\n\nePSXe v1.7.0 ENG\n\n16 биосов\n\nGPU - плагины для эмуляции графического процессора:\n\nP.E.Op.S. Soft Driver 1.18 - 25 мая 2008\n\nPete's D3D Driver 1.77 - 24 мая 2008\n\nPete's DX6 D3D Driver 1.77 - 24 мая 2008\n\nPete's OpenGL Driver 1.77 - 24 мая 2008\n\nPete's OpenGL2 Driver 2.9 - 24 мая 2008\n\nSPU - плагины для эмуляции звукового процессора:\n\nePSXe SPU core 1.7.0 (стандартый вшитый в эмулятор)\n\nP.E.Op.S. DSound Audio Driver 1.9 - 19 сентебря 2004\n\nPete's MIDAS Audio Driver 1.7 - 2 февраля 2001\n\nCDR - плагины для эмуляции CD-ROM:\n\nePSXe CDR ASPI core 1.7.0 (стандартый вшитый в эмулятор)\n\nePSXe CDR WNT/W2K core 1.7.0. (стандартый вшитый в эмулятор)\n\nP.E.Op.S. CDR Driver 1.4 - 9 июня 2003\n\nNET - плагины для игры по сети:\n\nDisabled Netplay (режим без поддержки сетивой игры)\n\n\n\nИзменения\n\n\nМногочисленные изменения в поддержке джойстиков.\n\nВнутренний SPU плагин был обновлен до версии1.7.0.\n\nИсходный код поддержки iso формата был полностью переписан.\n\nТак же был переписан и для MDEC декодера.\n\nВ новойверсии был добавлена новая версия Pete's плагина программного рендеринга.\n\nТеперь работает поддержка XA/CDDA.\n\nА так же многое другое вдекодере cd-rom и ядра.\n\n\n \n \n\n Помощь | Донаты | Donations",
         "title_id": null,
         "is_romset": false,
         "content_type": "game"

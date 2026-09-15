@@ -1,15 +1,10 @@
-=== Обновление баз console-games: 2026-09-14 01:03:22 ===
+=== Обновление баз console-games: 2026-09-15 04:17:42 ===
 
 [PSP] Всего в базе: 897
-  + Добавлено (6):
-    + Summon Night 4 [FULL] [ISO] [JAP]
-    + Suto*Mani: Strobe * Mania [FULL] [ISO] [JAP]
-    + Sengoku Tenka Touitsu [FULL] [ISO] [JAP]
-    + Sengoku Hime: Senran ni Mau Otometachi [FULL] [ISO] [JAP]
-    + Ore no Shikabane o Koete Yuke [FULL] [ISO] [JAP]
-    + Boxer's Road 2: The Real [FULL] [ISO] [JAP]
 
-[PS1] Всего в базе: 2137
+[PS1] Всего в базе: 2138
+  + Добавлено (1):
+    + Dino Crisis [SLUS-00922] [Paradox] [Full RUS]
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
@@ -41,14 +36,24 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3505
-  + Добавлено (1):
-    + Tales of Destiny 2 [RUS/JPN|NTSC] [JAP / Repack]
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
-  # Перезалит magnet (1):
-    # [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
 [PSVITA] Всего в базе: 348
+  ~ Обновлено (6):
+    ~ [Обновлено] Akiba's Trip: Undead & Undressed [NoNpDrm] [ENG] [DLC]
+    ~ [Обновлено] Hatsune Miku: Project DIVA F 2nd [NoNpDrm] [ENG] [DLC]
+    ~ [Обновлено] Hatsune Miku: Project DIVA f [NoNpDrm] [ENG] [DLC]
+    ~ [Обновлено] Hatsune Miku: Project Diva X [NoNpDrm] [ENG] [DLC]
+    ~ [Обновлено] Taiko no Tatsujin: V Version [NoNpDrm] [ENG/JAP] [DLC]
+    ~ [Обновлено] Danganronpa Another Episode: Ultra Despair Girls [NoNpDrm] [ENG/JAP]
+  # Перезалит magnet (6):
+    # [Обновлено] Akiba's Trip: Undead & Undressed [NoNpDrm] [ENG] [DLC]
+    # [Обновлено] Hatsune Miku: Project DIVA F 2nd [NoNpDrm] [ENG] [DLC]
+    # [Обновлено] Hatsune Miku: Project DIVA f [NoNpDrm] [ENG] [DLC]
+    # [Обновлено] Hatsune Miku: Project Diva X [NoNpDrm] [ENG] [DLC]
+    # [Обновлено] Taiko no Tatsujin: V Version [NoNpDrm] [ENG/JAP] [DLC]
+    # [Обновлено] Danganronpa Another Episode: Ultra Despair Girls [NoNpDrm] [ENG/JAP]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
