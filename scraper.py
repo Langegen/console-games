@@ -1,3 +1,5 @@
+import socket
+socket.setdefaulttimeout(45)
 """Главный CLI-парсер игровых баз RuTracker для консольных систем.
 
 Поддерживаемые разделы:

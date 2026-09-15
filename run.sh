@@ -3,24 +3,23 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 cd "$(dirname "$0")"
 
-# Защита от параллельного запуска нескольких копий
-LOCK_FILE="/tmp/console-games.lock"
+# Взаимная блокировка (оба бота не должны работать одновременно)
+LOCK_FILE="/tmp/rutracker-scraper.lock"
 exec 200>"$LOCK_FILE"
-if ! flock -n 200; then
-    echo "[$(date)] Процесс console-games уже выполняется (lockfile: $LOCK_FILE). Выход."
-    exit 0
+if ! flock -w 7200 200; then
+    echo "[$(date)] Другой парсер всё ещё активен спустя 2 часа ожидания. Выход."
+    exit 1
 fi
 
-# Загружаем переменные окружения из .env, если есть
 if [ -f .env ]; then
     set -a
     . ./.env
     set +a
 fi
 
-# Проверяем и включаем sparse-checkout, чтобы обложки (covers/) не занимали диск VPS
+# Проверяем и включаем sparse-checkout
 if [ -d .git ] && ! git sparse-checkout list >/dev/null 2>&1; then
-    echo "[$(date)] Настройка sparse-checkout (исключение covers/ с диска VPS)..."
+    echo "[$(date)] Настройка sparse-checkout..."
     git sparse-checkout init --cone 2>/dev/null || true
     git sparse-checkout set core data platforms scripts tests 2>/dev/null || true
 fi
@@ -35,9 +34,9 @@ if [ ! -f "$PYTHON_EXEC" ]; then
 fi
 
 if command -v xvfb-run >/dev/null 2>&1; then
-    xvfb-run -a $PYTHON_EXEC scraper.py "$@"
+    timeout 7200 xvfb-run -a $PYTHON_EXEC scraper.py "$@"
 else
-    $PYTHON_EXEC scraper.py "$@"
+    timeout 7200 $PYTHON_EXEC scraper.py "$@"
 fi
 
 echo "[$(date)] Проверка изменений..."
