@@ -1,10 +1,8 @@
-=== Обновление баз console-games: 2026-09-15 04:17:42 ===
+=== Обновление баз console-games: 2026-09-16 01:00:53 ===
 
 [PSP] Всего в базе: 897
 
 [PS1] Всего в базе: 2138
-  + Добавлено (1):
-    + Dino Crisis [SLUS-00922] [Paradox] [Full RUS]
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
@@ -35,25 +33,17 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3505
+[PS2] Всего в базе: 3506
+  + Добавлено (1):
+    + Jak and Daxter: The Precursor Legacy [USA / RUS / текст DivergentFour + звук Kud
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 348
-  ~ Обновлено (6):
-    ~ [Обновлено] Akiba's Trip: Undead & Undressed [NoNpDrm] [ENG] [DLC]
-    ~ [Обновлено] Hatsune Miku: Project DIVA F 2nd [NoNpDrm] [ENG] [DLC]
-    ~ [Обновлено] Hatsune Miku: Project DIVA f [NoNpDrm] [ENG] [DLC]
-    ~ [Обновлено] Hatsune Miku: Project Diva X [NoNpDrm] [ENG] [DLC]
-    ~ [Обновлено] Taiko no Tatsujin: V Version [NoNpDrm] [ENG/JAP] [DLC]
-    ~ [Обновлено] Danganronpa Another Episode: Ultra Despair Girls [NoNpDrm] [ENG/JAP]
-  # Перезалит magnet (6):
-    # [Обновлено] Akiba's Trip: Undead & Undressed [NoNpDrm] [ENG] [DLC]
-    # [Обновлено] Hatsune Miku: Project DIVA F 2nd [NoNpDrm] [ENG] [DLC]
-    # [Обновлено] Hatsune Miku: Project DIVA f [NoNpDrm] [ENG] [DLC]
-    # [Обновлено] Hatsune Miku: Project Diva X [NoNpDrm] [ENG] [DLC]
-    # [Обновлено] Taiko no Tatsujin: V Version [NoNpDrm] [ENG/JAP] [DLC]
-    # [Обновлено] Danganronpa Another Episode: Ultra Despair Girls [NoNpDrm] [ENG/JAP]
+[PSVITA] Всего в базе: 351
+  + Добавлено (3):
+    + Hyperdevotion Noire: Goddess Black Heart [NoNpDrm] [ENG] [DLC]
+    + Hyperdimension Neptunia: Producing Perfection [NoNpDrm] [ENG] [DLC]
+    + Don't Starve: Giant Edition [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
