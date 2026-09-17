@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-09-16 01:00:53 ===
+=== Обновление баз console-games: 2026-09-17 02:17:39 ===
 
 [PSP] Всего в базе: 897
 
@@ -34,26 +34,20 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3506
-  + Добавлено (1):
-    + Jak and Daxter: The Precursor Legacy [USA / RUS / текст DivergentFour + звук Kud
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 351
-  + Добавлено (3):
-    + Hyperdevotion Noire: Goddess Black Heart [NoNpDrm] [ENG] [DLC]
-    + Hyperdimension Neptunia: Producing Perfection [NoNpDrm] [ENG] [DLC]
-    + Don't Starve: Giant Edition [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 352
+  + Добавлено (1):
+    + Tokyo Twilight Ghost Hunters: Daybreak Special Gigs [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 561
-  ~ Обновлено (2):
+  ~ Обновлено (1):
     ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
-    ~ [Обновлено] deSPIRIA [RUS]
 
 [3DS] Всего в базе: 79
-  ~ Обновлено (2):
+  ~ Обновлено (1):
     ~ 2147 - Fire Emblem Fates: Special Edition [RUS] [CIA]
-    ~ 1904 - Kid Icarus: Uprising [RUS]
 
 [NDS] Всего в базе: 82
 
