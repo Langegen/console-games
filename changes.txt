@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-09-17 02:17:39 ===
+=== Обновление баз console-games: 2026-09-18 01:00:45 ===
 
 [PSP] Всего в базе: 897
 
@@ -37,9 +37,12 @@
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 352
-  + Добавлено (1):
-    + Tokyo Twilight Ghost Hunters: Daybreak Special Gigs [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 354
+  + Добавлено (2):
+    + Malicious Rebirth [NoNpDrm] [ENG] [DLC]
+    + Senran Kagura Bon Appétit! [NoNpDrm] [ENG] [DLC]
+  ~ Обновлено (1):
+    ~ Tokyo Twilight Ghost Hunters: Daybreak Special Gigs [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (1):
