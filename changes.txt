@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-09-18 01:00:45 ===
+=== Обновление баз console-games: 2026-09-19 01:00:42 ===
 
 [PSP] Всего в базе: 897
 
@@ -37,12 +37,13 @@
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 354
-  + Добавлено (2):
-    + Malicious Rebirth [NoNpDrm] [ENG] [DLC]
-    + Senran Kagura Bon Appétit! [NoNpDrm] [ENG] [DLC]
-  ~ Обновлено (1):
-    ~ Tokyo Twilight Ghost Hunters: Daybreak Special Gigs [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 359
+  + Добавлено (5):
+    + BlazBlue: Continuum Shift Extend [NoNpDrm] [ENG] [DLC]
+    + BlazBlue Chrono Phantasma Extend [NoNpDrm] [ENG] [DLC]
+    + Yomawari Night Alone / htol#NiQ The Firefly Diary [NoNpDrm] [ENG]
+    + htoL#NiQ: The Firefly Diary (Hotaru no Nikki) [NoNpDrm] [ENG]
+    + Psycho-Pass: Mandatory Happiness [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (1):
