@@ -1,17 +1,13 @@
-=== Обновление баз console-games: 2026-09-19 01:00:42 ===
+=== Обновление баз console-games: 2026-09-20 01:00:34 ===
 
-[PSP] Всего в базе: 897
+[PSP] Всего в базе: 898
+  + Добавлено (1):
+    + [Обновлено] Legend of Heroes, The: Trails in the Sky [FULL] [ISO] [RUS]
 
 [PS1] Всего в базе: 2138
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
-
-[WIIU] Всего в базе: 51
-
-[WII] Всего в базе: 310
-
-[GAMECUBE] Всего в базе: 170
 
 [NES] Всего в базе: 53
 
@@ -37,17 +33,10 @@
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 359
-  + Добавлено (5):
-    + BlazBlue: Continuum Shift Extend [NoNpDrm] [ENG] [DLC]
-    + BlazBlue Chrono Phantasma Extend [NoNpDrm] [ENG] [DLC]
-    + Yomawari Night Alone / htol#NiQ The Firefly Diary [NoNpDrm] [ENG]
-    + htoL#NiQ: The Firefly Diary (Hotaru no Nikki) [NoNpDrm] [ENG]
-    + Psycho-Pass: Mandatory Happiness [NoNpDrm] [ENG]
-
-[DREAMCAST] Всего в базе: 561
-  ~ Обновлено (1):
-    ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
+[PSVITA] Всего в базе: 361
+  + Добавлено (2):
+    + Arcana Heart 3 Love Max!!!!! [NoNpDrm] [ENG]
+    + Ninja Gaiden Sigma 2 Plus [NoNpDrm] [ENG]
 
 [3DS] Всего в базе: 79
   ~ Обновлено (1):
