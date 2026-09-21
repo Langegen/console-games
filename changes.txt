@@ -1,13 +1,17 @@
-=== Обновление баз console-games: 2026-09-20 01:00:34 ===
+=== Обновление баз console-games: 2026-09-21 01:00:34 ===
 
 [PSP] Всего в базе: 898
-  + Добавлено (1):
-    + [Обновлено] Legend of Heroes, The: Trails in the Sky [FULL] [ISO] [RUS]
 
 [PS1] Всего в базе: 2138
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
+
+[WIIU] Всего в базе: 51
+
+[WII] Всего в базе: 310
+
+[GAMECUBE] Всего в базе: 170
 
 [NES] Всего в базе: 53
 
@@ -33,10 +37,10 @@
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 361
+[PSVITA] Всего в базе: 363
   + Добавлено (2):
-    + Arcana Heart 3 Love Max!!!!! [NoNpDrm] [ENG]
-    + Ninja Gaiden Sigma 2 Plus [NoNpDrm] [ENG]
+    + Swordbreaker The Game / Мечелом [NoNpDrm] [RUS]
+    + Attack on Titan: Wings of Freedom [NoNpDrm] [ENG]
 
 [3DS] Всего в базе: 79
   ~ Обновлено (1):
