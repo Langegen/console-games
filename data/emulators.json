@@ -353,7 +353,7 @@
     "id": "mupen64plus_next",
     "name": "Mupen64Plus-Next (RetroArch Core)",
     "author": "Libretro",
-    "version": "nightly-2026.09.20",
+    "version": "nightly-2026.09.21",
     "description": "Высокопроизводительное ядро эмулятора Nintendo 64 для RetroArch на Nintendo Switch. Отличная совместимость с популярными 3D-играми N64.",
     "category": "retroarch",
     "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/mupen64plus_next_libretro_libnx.nro.zip",
@@ -376,7 +376,7 @@
     "id": "picodrive",
     "name": "PicoDrive (RetroArch Core)",
     "author": "Libretro",
-    "version": "nightly-2026.09.19",
+    "version": "nightly-2026.09.20",
     "description": "Быстрое ядро эмулятора Sega 32X и Mega Drive для RetroArch на Nintendo Switch с поддержкой специфического чипсета 32X.",
     "category": "retroarch",
     "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/picodrive_libretro_libnx.nro.zip",
@@ -384,7 +384,7 @@
     "install_path": "sdmc:/retroarch/cores/picodrive_libretro_libnx.nro",
     "extract_dir": "sdmc:/retroarch/cores",
     "is_archive": true,
-    "file_size": 7360367,
+    "file_size": 7368882,
     "supported_console_ids": [
       "sega_32x"
     ],
