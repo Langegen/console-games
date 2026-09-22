@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-09-21 01:00:34 ===
+=== Обновление баз console-games: 2026-09-22 01:00:40 ===
 
 [PSP] Всего в базе: 898
 
@@ -37,10 +37,27 @@
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 363
+[PSVITA] Всего в базе: 365
   + Добавлено (2):
-    + Swordbreaker The Game / Мечелом [NoNpDrm] [RUS]
-    + Attack on Titan: Wings of Freedom [NoNpDrm] [ENG]
+    + Iconoclasts [NoNpDrm] [RUS]
+    + [Обновлено] Crypt of NecroDancer [NoNpDrm] [RUS] [DLC]
+  ~ Обновлено (4):
+    ~ [Обновлено] Jetpack Joyride Deluxe [NoNpDrm] [ENG]
+    ~ [Обновлено] A Boy and His Blob [NoNpDrm] [RUS]
+    ~ [Обновлено] Zero Escape: Zero Time Dilemma [NoNpDrm] [ENG]
+    ~ [Обновлено] Senran Kagura Bon Appétit! [NoNpDrm] [ENG] [DLC]
+  # Перезалит magnet (4):
+    # [Обновлено] Jetpack Joyride Deluxe [NoNpDrm] [ENG]
+    # [Обновлено] A Boy and His Blob [NoNpDrm] [RUS]
+    # [Обновлено] Zero Escape: Zero Time Dilemma [NoNpDrm] [ENG]
+    # [Обновлено] Senran Kagura Bon Appétit! [NoNpDrm] [ENG] [DLC]
+
+[DREAMCAST] Всего в базе: 561
+  ~ Обновлено (2):
+    ~ [Обновлено] Resident Evil 2 [PAL/RUS/ENG] [Akella] [Team Raccoon v2.0] (2026)
+    ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
+  # Перезалит magnet (1):
+    # [Обновлено] Resident Evil 2 [PAL/RUS/ENG] [Akella] [Team Raccoon v2.0] (2026)
 
 [3DS] Всего в базе: 79
   ~ Обновлено (1):
