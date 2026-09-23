@@ -223,10 +223,9 @@ git sparse-checkout set core data platforms scripts tests
 
 ### Реестр эмуляторов (17 пакетов):
 - **Nintendo 3DS**: Dekopon (Citra) от `PalindromicBreadLoaf`
-- **Sony PS2, GameCube, Wii, PS Vita, Wii U, NDS**: нативные порты Horizon от `NaGaa95` (`NetherSX2-nx`, `dolphin-nx`, `Vita3K-nx`, `Cemu-nx`, `DrasticDS-nx`)
+- **Sony PS2, PSP, GameCube, Wii, PS Vita, Wii U, NDS**: нативные порты Horizon от `NaGaa95` (`NetherSX2-nx`, `PPSSPP-nx`, `dolphin-nx`, `Vita3K-nx`, `Cemu-nx`, `DrasticDS-nx`)
 - **Nintendo DS / DSi**: `melonDS` от `ArcDelta`
 - **Sony PS1**: `DuckStation` от `shooterspps`
-- **Sony PSP**: `PPSSPP` от `SirSamael`
 - **Sega Dreamcast**: `Flycast` от `flyinghead`
 - **SNES, NES, Sega MD/MS/GG/CD, GBA**: сборки на базе pemu от `Cpasjuste` (`pSNES`, `pNES`, `pGEN`, `pGBA`)
 - **GBA / GBC**: `mGBA` от `mgba-emu`

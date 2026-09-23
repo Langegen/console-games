@@ -64,32 +64,27 @@ class TestEmulatorsManifest(unittest.TestCase):
             "vita3k": ("psvita", "sdmc:/switch/Vita3K/Vita3K.nro"),
             "cemu": ("wiiu", "sdmc:/switch/cemu/cemu.nro"),
             "drasticds": ("nds", "sdmc:/switch/DrasticDS/DrasticDS.nro"),
+            "ppsspp": ("psp", "sdmc:/switch/ppsspp/PPSSPP.nro"),
         }
         for eid, (expected_platforms, path) in expected.items():
             emu = next((e for e in self.manifest if e["id"] == eid), None)
             self.assertIsNotNone(emu, f"Missing {eid}")
             self.assertEqual(emu["author"], "NaGaa95")
             self.assertEqual(emu["install_path"], path)
+            self.assertFalse(emu["is_archive"])
             if isinstance(expected_platforms, list):
                 for p in expected_platforms:
                     self.assertIn(p, emu["supported_console_ids"])
             else:
                 self.assertIn(expected_platforms, emu["supported_console_ids"])
 
-    def test_duckstation_and_ppsspp_archives(self):
+    def test_duckstation_archive(self):
         duck = next((e for e in self.manifest if e["id"] == "duckstation"), None)
         self.assertIsNotNone(duck)
         self.assertTrue(duck["is_archive"])
         self.assertEqual(duck["extract_dir"], "sdmc:/switch/duckstation")
         self.assertEqual(duck["install_path"], "sdmc:/switch/duckstation/duckstation.nro")
         self.assertEqual(duck["author"], "shooterspps")
-
-        psp = next((e for e in self.manifest if e["id"] == "ppsspp"), None)
-        self.assertIsNotNone(psp)
-        self.assertTrue(psp["is_archive"])
-        self.assertEqual(psp["extract_dir"], "sdmc:/switch/ppsspp")
-        self.assertEqual(psp["install_path"], "sdmc:/switch/ppsspp/PPSSPP_GL.nro")
-        self.assertEqual(psp["author"], "SirSamael")
 
     def test_libretro_cores(self):
         mupen = next((e for e in self.manifest if e["id"] == "mupen64plus_next"), None)
