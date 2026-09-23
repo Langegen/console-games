@@ -376,7 +376,7 @@
     "id": "picodrive",
     "name": "PicoDrive (RetroArch Core)",
     "author": "Libretro",
-    "version": "nightly-2026.09.21",
+    "version": "nightly-2026.09.22",
     "description": "Быстрое ядро эмулятора Sega 32X и Mega Drive для RetroArch на Nintendo Switch с поддержкой специфического чипсета 32X.",
     "category": "retroarch",
     "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/picodrive_libretro_libnx.nro.zip",
@@ -384,7 +384,7 @@
     "install_path": "sdmc:/retroarch/cores/picodrive_libretro_libnx.nro",
     "extract_dir": "sdmc:/retroarch/cores",
     "is_archive": true,
-    "file_size": 7370075,
+    "file_size": 7372390,
     "supported_console_ids": [
       "sega_32x"
     ],
