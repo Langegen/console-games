@@ -1,10 +1,8 @@
-=== Обновление баз console-games: 2026-09-23 01:30:41 ===
+=== Обновление баз console-games: 2026-09-24 01:30:39 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2139
-  + Добавлено (1):
-    + Need For Speed III: Hot Pursuit [SLUS-00620] [ViT Co. & Maus] [RUS]
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
@@ -15,36 +13,21 @@
 
 [GAMECUBE] Всего в базе: 170
 
-[NES] Всего в базе: 53
-
-[SNES] Всего в базе: 32
-
-[N64] Всего в базе: 16
-
-[GBA] Всего в базе: 25
-
-[GBC] Всего в базе: 16
-
-[SEGA_MD] Всего в базе: 58
-
-[SEGA_MS] Всего в базе: 7
-
-[SEGA_GG] Всего в базе: 4
-
-[SEGA_CD] Всего в базе: 12
-
-[SEGA_32X] Всего в базе: 5
-
 [PS2] Всего в базе: 3506
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 369
-  + Добавлено (4):
-    + Berserk and the Band of the Hawk [NoNpDrm] [ENG] [DLC]
-    + Air [NoNpDrm] [RUS]
-    + Clannad [NoNpDrm] [RUS]
-    + Rewrite [NoNpDrm] [RUS]
+[PSVITA] Всего в базе: 374
+  + Добавлено (5):
+    + Deep Ones [NoNpDrm] [RUS/ENG]
+    + Breeder Homegrown [NoNpDrm] [ENG]
+    + Plants vs Zombies [NoNpDrm] [RUS/ENG]
+    + Freedom Wars [NoNpDrm] [ENG] [DLC]
+    + Gravity Rush [NoNpDrm] [RUS/ENG] [DLC]
+  ~ Обновлено (1):
+    ~ [Обновлено] Bastion [NoNpDrm] [RUS/ENG]
+  # Перезалит magnet (1):
+    # [Обновлено] Bastion [NoNpDrm] [RUS/ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
