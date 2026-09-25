@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-09-24 01:30:39 ===
+=== Обновление баз console-games: 2026-09-25 01:30:42 ===
 
 [PSP] Всего в базе: 898
 
@@ -13,21 +13,38 @@
 
 [GAMECUBE] Всего в базе: 170
 
+[NES] Всего в базе: 53
+
+[SNES] Всего в базе: 32
+
+[N64] Всего в базе: 16
+
+[GBA] Всего в базе: 25
+
+[GBC] Всего в базе: 16
+
+[SEGA_MD] Всего в базе: 58
+
+[SEGA_MS] Всего в базе: 7
+
+[SEGA_GG] Всего в базе: 4
+
+[SEGA_CD] Всего в базе: 12
+
+[SEGA_32X] Всего в базе: 5
+
 [PS2] Всего в базе: 3506
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 374
-  + Добавлено (5):
-    + Deep Ones [NoNpDrm] [RUS/ENG]
-    + Breeder Homegrown [NoNpDrm] [ENG]
-    + Plants vs Zombies [NoNpDrm] [RUS/ENG]
-    + Freedom Wars [NoNpDrm] [ENG] [DLC]
-    + Gravity Rush [NoNpDrm] [RUS/ENG] [DLC]
+[PSVITA] Всего в базе: 376
+  + Добавлено (2):
+    + The Wolf Among Us [NoNpDrm] [RUS,ENG]
+    + Final Fantasy X HD Remaster [NoNpDrm] [RUS/ENG]
   ~ Обновлено (1):
-    ~ [Обновлено] Bastion [NoNpDrm] [RUS/ENG]
+    ~ [Обновлено] Zero Escape: Zero Time Dilemma [NoNpDrm] [RUS/ENG]
   # Перезалит magnet (1):
-    # [Обновлено] Bastion [NoNpDrm] [RUS/ENG]
+    # [Обновлено] Zero Escape: Zero Time Dilemma [NoNpDrm] [RUS/ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
