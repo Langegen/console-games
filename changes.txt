@@ -1,8 +1,10 @@
-=== Обновление баз console-games: 2026-09-25 01:30:42 ===
+=== Обновление баз console-games: 2026-09-26 10:26:55 ===
 
 [PSP] Всего в базе: 898
 
-[PS1] Всего в базе: 2139
+[PS1] Всего в базе: 2140
+  + Добавлено (1):
+    + Persona 2: Eternal Punishment (Batsu) [SLPS-02825] + BONUS CD [SLPS-02826] [JPN/
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
@@ -33,18 +35,17 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3506
+[PS2] Всего в базе: 3507
+  + Добавлено (1):
+    + Burnout Dominator [RUS|NTSC] [Переработанный перевод]
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 376
-  + Добавлено (2):
-    + The Wolf Among Us [NoNpDrm] [RUS,ENG]
-    + Final Fantasy X HD Remaster [NoNpDrm] [RUS/ENG]
-  ~ Обновлено (1):
-    ~ [Обновлено] Zero Escape: Zero Time Dilemma [NoNpDrm] [RUS/ENG]
-  # Перезалит magnet (1):
-    # [Обновлено] Zero Escape: Zero Time Dilemma [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 379
+  + Добавлено (3):
+    + J-Stars Victory Vs+ [NoNpDrm] [ENG]
+    + Dragon Ball Z: Battle of Z [NoNpDrm] [ENG] [DLC]
+    + Ninja Gaiden Sigma Plus [NoNpDrm] [RUS/ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
