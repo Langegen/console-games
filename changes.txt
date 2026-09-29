@@ -1,8 +1,10 @@
-=== Обновление баз console-games: 2026-09-27 01:30:38 ===
+=== Обновление баз console-games: 2026-09-29 01:30:31 ===
 
 [PSP] Всего в базе: 898
 
-[PS1] Всего в базе: 2140
+[PS1] Всего в базе: 2141
+  + Добавлено (1):
+    + Mortal Kombat Mythologies: Sub-Zero [SLUS-00476] [RGR Studio] [RUS]
   ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
@@ -11,7 +13,9 @@
 
 [WII] Всего в базе: 310
 
-[GAMECUBE] Всего в базе: 170
+[GAMECUBE] Всего в базе: 171
+  + Добавлено (1):
+    + Metal Gear Solid: The Twin Snakes [NTSC-U / RUS] [ViT Company]
 
 [NES] Всего в базе: 53
 
@@ -37,13 +41,21 @@
   ~ Обновлено (1):
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 380
-  + Добавлено (1):
-    + Soul Sacrifice Delta [NoNpDrm] [RUS/ENG]
-  ~ Обновлено (1):
-    ~ [Обновлено] Ninja Gaiden Sigma 2 Plus [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 391
+  + Добавлено (11):
+    + Bullet Girls Phantasia [NoNpDrm] [ENG] [DLC]
+    + Farming Simulator 14 [NoNpDrm] [RUS]
+    + Farming Simulator 16 [NoNpDrm] [RUS]
+    + Senran Kagura Shinovi Versus [NoNpDrm] [ENG] [DLC]
+    + Russian Subway Dogs / Собаки российского метро [NoNpDrm] [RUS]
+    + Witchcrafty [NoNpDrm] [ENG]
+    + Deemo: The Last Recital [NoNpDrm] [ENG]
+    + Yomawari: Night Alone [NoNpDrm] [RUS]
+    + ScourgeBringer [NoNpDrm] [RUS/ENG]
+    + Farming Simulator 18 [NoNpDrm] [RUS]
+    + The Unfinished Swan / Лебединый эскиз [NoNpDrm] [RUS]
   # Перезалит magnet (1):
-    # [Обновлено] Ninja Gaiden Sigma 2 Plus [NoNpDrm] [RUS/ENG]
+    # [Обновлено] Taiko no Tatsujin: V Version [NoNpDrm] [ENG/JAP] [DLC]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
