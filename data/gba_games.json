@@ -1,5 +1,36 @@
 [
     {
+        "title": "Breath of Fire II [RUS]",
+        "size": "3 MB",
+        "magnet": "magnet:?xt=urn:btih:B8FBEEF7F49E8E565C3E3E8482DDC519C06853C0&tr=http%3A%2F%2Fbt2.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6916190",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6916190",
+        "year": "2001",
+        "genre": "JRPG",
+        "developer": "Capcom",
+        "publisher": "Unknown",
+        "image_format": "Unknown",
+        "interface_lang": "RUS",
+        "voice_lang": "Unknown",
+        "performance": "Unknown",
+        "multiplayer": "Unknown",
+        "cover": "https://i128.fastpic.org/big/2026/0930/49/ceb6e97098e4b37b53344544483e2149.jpg",
+        "screenshots": [
+            "https://i128.fastpic.org/thumb/2026/0930/f7/ddfb2ec17d09a70309971adb0be6dcf7.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/f5/6d23352df0ec9155f266aeaafd1ef0f5.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/1d/96f98b944919b5fe24f2b1391b518e1d.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/1b/67a83f2925dd76faa280ff10c149921b.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/c1/f9a523678041dbdf40345dfee84556c1.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/be/7c8722295a471b1e0ff9ddea1df4e0be.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/35/9408cc134951d543646204f4b2f6bd35.jpeg",
+            "https://i128.fastpic.org/thumb/2026/0930/c4/2d88ef1ee7416f855a71ad1f127458c4.jpeg"
+        ],
+        "description": "Хороший порт со SNES с улучшениями. Сюжет игры разворачивается вокруг сироты по имени Рю спустя 500 лет после первой части. История восьми героев прошлого теперь только в памяти людей, однако человек-дракон и крылатая принцесса всё ещё решают проблемы этого мира, пусть и в новых телах. Выполнение заданий разбавлено пошаговыми боями. Важным нововведением является функция строительства города, которая позволяет заселить свою деревню особыми персонажами. Как и в первой части, при переносе на GBA появился бег, новые заставки, изменены портреты персонажей, переработан боевой интерфейс и добавлена возможность обмена предметами по кабелю.\nПеревод\nПеревод и работа над русской версией: RedNose\n\nШрифты: Guyver(X.B.M.)\n\nТестирование: pav13\n\nЗвуковой микшер: ipatix",
+        "title_id": null,
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "Сборник русифицированных игр Game Boy Advance [EmuELEC][Batocera][Retrobat][Recalbox]",
         "size": "9.27 GB",
         "magnet": "magnet:?xt=urn:btih:0439B1817C9BF7D9265BE40B6A145C151846DBFB&tr=http%3A%2F%2Fbt3.t-ru.org%2Fann%3Fmagnet",

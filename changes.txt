@@ -1,14 +1,11 @@
-=== Обновление баз console-games: 2026-09-30 01:30:33 ===
+=== Обновление баз console-games: 2026-10-01 01:30:35 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2141
-  ~ Обновлено (3):
-    ~ [Обновлено] Silent Hill Коллекция [SCUS-94278, SLUS-90050/80707/00707/45678, SLP
+  ~ Обновлено (2):
     ~ Half-Life [Homebrew Port] [None] [ENG]
     ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
-  # Перезалит magnet (1):
-    # [Обновлено] Silent Hill Коллекция [SCUS-94278, SLUS-90050/80707/00707/45678, SLP
 
 [WIIU] Всего в базе: 51
 
@@ -22,7 +19,9 @@
 
 [N64] Всего в базе: 16
 
-[GBA] Всего в базе: 25
+[GBA] Всего в базе: 26
+  + Добавлено (1):
+    + Breath of Fire II [RUS]
 
 [GBC] Всего в базе: 16
 
@@ -36,24 +35,24 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3508
+[PS2] Всего в базе: 3509
   + Добавлено (1):
-    + The Simpsons: Hit And Run [EUR / ENG / Лицензия]
-  ~ Обновлено (1):
-    ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
-
-[PSVITA] Всего в базе: 395
-  + Добавлено (4):
-    + A Hole New World [NoNpDrm] [RUS/ENG]
-    + Lumines Electronic Symphony [NoNpDrm] [ENG]
-    + DJMax Technika Tune [NoNpDrm] [ENG]
-    + Guilty Gear XX Accent Core Plus R [NoNpDrm] [ENG]
+    + Prince of Persia [Region Free / ENG / Homebrew]
   ~ Обновлено (2):
-    ~ [Обновлено] MXGP: The Official Motocross Videogame [NoNpDrm] [RUS/ENG]
-    ~ [Обновлено] Attack on Titan: Wings of Freedom [NoNpDrm] [RUS/ENG]
-  # Перезалит magnet (2):
-    # [Обновлено] MXGP: The Official Motocross Videogame [NoNpDrm] [RUS/ENG]
-    # [Обновлено] Attack on Titan: Wings of Freedom [NoNpDrm] [RUS/ENG]
+    ~ [Обновлено] Burnout Dominator [RUS|NTSC] [Переработанный перевод]
+    ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
+  # Перезалит magnet (1):
+    # [Обновлено] Burnout Dominator [RUS|NTSC] [Переработанный перевод]
+
+[PSVITA] Всего в базе: 402
+  + Добавлено (7):
+    + Бой в реальности / Reality Fighters [NoNpDrm] [RUS] [DLC]
+    + Escape Plan / План побега [NoNpDrm] [RUS] [DLC]
+    + Terraria [NoNpDrm] [RUS/ENG]
+    + WRC 5 FIA World Rally Championship [NoNpDrm] [RUS/ENG]
+    + Бесконечное лето / Everlasting Summer [VPK] [RUS/ENG] [Homebrew]
+    + Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
+    + Undertale [NoNpDrm] [RUS/ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
