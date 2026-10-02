@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-10-01 01:30:35 ===
+=== Обновление баз console-games: 2026-10-02 01:30:36 ===
 
 [PSP] Всего в базе: 898
 
@@ -20,8 +20,6 @@
 [N64] Всего в базе: 16
 
 [GBA] Всего в базе: 26
-  + Добавлено (1):
-    + Breath of Fire II [RUS]
 
 [GBC] Всего в базе: 16
 
@@ -36,23 +34,16 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3509
-  + Добавлено (1):
-    + Prince of Persia [Region Free / ENG / Homebrew]
   ~ Обновлено (2):
-    ~ [Обновлено] Burnout Dominator [RUS|NTSC] [Переработанный перевод]
+    ~ Prince of Persia [Region Free / ENG / Homebrew]
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
-  # Перезалит magnet (1):
-    # [Обновлено] Burnout Dominator [RUS|NTSC] [Переработанный перевод]
 
-[PSVITA] Всего в базе: 402
-  + Добавлено (7):
-    + Бой в реальности / Reality Fighters [NoNpDrm] [RUS] [DLC]
-    + Escape Plan / План побега [NoNpDrm] [RUS] [DLC]
-    + Terraria [NoNpDrm] [RUS/ENG]
-    + WRC 5 FIA World Rally Championship [NoNpDrm] [RUS/ENG]
-    + Бесконечное лето / Everlasting Summer [VPK] [RUS/ENG] [Homebrew]
-    + Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
-    + Undertale [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 403
+  + Добавлено (1):
+    + Bad Piggies [VPK] [ENG] [Homebrew]
+  ~ Обновлено (2):
+    ~ Бесконечное лето / Everlasting Summer [VPK] [RUS/ENG] [Homebrew]
+    ~ Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (2):
