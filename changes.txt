@@ -1,11 +1,10 @@
-=== Обновление баз console-games: 2026-10-02 01:30:36 ===
+=== Обновление баз console-games: 2026-10-03 01:30:35 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2141
-  ~ Обновлено (2):
+  ~ Обновлено (1):
     ~ Half-Life [Homebrew Port] [None] [ENG]
-    ~ [Обновлено] Эмулятор hpsx64 v0490 / hps2x64 v0490 (Highly-Experimental Playstati
 
 [WIIU] Всего в базе: 51
 
@@ -38,9 +37,12 @@
     ~ Prince of Persia [Region Free / ENG / Homebrew]
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 403
-  + Добавлено (1):
-    + Bad Piggies [VPK] [ENG] [Homebrew]
+[PSVITA] Всего в базе: 407
+  + Добавлено (4):
+    + Mortal Kombat [NoNpDrm] [RUS/ENG]
+    + Jump King [VPK] [ENG] [Homebrew]
+    + 2048 [VPK] [ENG] [Homebrew]
+    + Sound Shapes [NoNpDrm] [RUS/ENG] [DLC]
   ~ Обновлено (2):
     ~ Бесконечное лето / Everlasting Summer [VPK] [RUS/ENG] [Homebrew]
     ~ Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
