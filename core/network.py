@@ -315,8 +315,8 @@ def fetch_url(url, forum_url=False, is_post=False, post_data=None, wait_keywords
     2. Пробуем curl_cffi с cookies.
     3. При ошибке/challenge — Chrome fallback (undetected_chromedriver).
     """
-    keywords = ('hl-tr', 'forumtable') if forum_url else ('post_body', 'attach_link')
-    wait_kw = wait_keywords or (('hl-tr', 'forumtable') if forum_url else ('post_body', 'attach_link', 'viewtopic'))
+    keywords = wait_keywords or (('hl-tr', 'forumtable') if forum_url else ('post_body', 'attach_link'))
+    wait_kw = keywords
 
     if CF_BYPASS_URL:
         html = _bypass_request(url, is_post=is_post, post_data=post_data)

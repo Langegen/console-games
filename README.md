@@ -49,6 +49,7 @@ console-games/
 │   ├── dreamcast_games.json
 │   ├── 3ds_games.json
 │   ├── nds_games.json
+│   ├── console_games_stats.json # статистика раздач (сиды, пиры, загрузки, дата добавления)
 │   └── ...
 ├── core/                    # Ядро парсера и сетевой слой
 │   ├── network.py           # Запросы, Cloudflare bypass, fallback на Chrome, cookies
@@ -57,6 +58,7 @@ console-games/
 │   ├── atom.py              # Универсальное чтение Atom-лент разделов RuTracker
 │   ├── topic_parser.py      # Извлечение magnet, BTIH, описания, обложки, скриншотов
 │   ├── id_extractors.py     # Поиск серийных номеров (PS2, PS1, PSP, Vita, 3DS, DS, Wii, GC)
+│   ├── stats.py             # 3-фазный сбор статистики раздач (tracker.php & viewtopic.php)
 │   └── storage.py           # Атомарная запись JSON, дообогащение, sweep магнетов, changes.txt
 ├── platforms/               # Конфигурации и классификаторы консолей
 │   ├── configs.py           # Конфигурации всех 20 платформ (пути data/, теги очистки)
@@ -134,6 +136,39 @@ python scraper.py --forum 129      # Проверит ленту ретро-пл
 ```bash
 python scraper.py --full --platform psp
 python scraper.py --full --forum 773 --max-pages 5   # Пробный сбор 5 страниц
+```
+
+### 5. Сбор статистики раздач (сиды, пиры, скачивания, дата добавления)
+По умолчанию 3-фазный сбор статистики запускается автоматически после обновления баз игр.
+- **Только сбор статистики**:
+  ```bash
+  python scraper.py --stats-only
+  python scraper.py --stats-only --platform psp
+  python scraper.py --stats-only --forum 357
+  ```
+- **Быстрый сбор статистики** (только срезы `tracker.php` без точечного обхода тем):
+  ```bash
+  python scraper.py --stats-quick
+  ```
+- **Пропустить сбор статистики** (только обновление каталога игр):
+  ```bash
+  python scraper.py --skip-stats
+  ```
+
+---
+
+## Формат файла статистики (`data/console_games_stats.json`)
+
+```json
+{
+  "6890951": {
+    "seeds": 15,
+    "leeches": 2,
+    "downloads": 1250,
+    "registered_at": "2024-09-15 14:20:00",
+    "updated_at": "2026-10-04 13:30:00"
+  }
+}
 ```
 
 ---

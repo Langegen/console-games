@@ -52,6 +52,7 @@ from platforms.classifiers import classify_topic
 
 
 from core.romset_utils import is_romset_title
+from core.stats import scrape_torrents_stats, STATS_FILE
 
 
 def get_game_entry(topic_id, title, details, raw_title=""):
@@ -309,9 +310,25 @@ def update_forum_via_atom(forum_id, target_platforms=None, sweep=False):
     return changes_stats
 
 
-def run(target_platforms=None, target_forums=None, full=False, max_pages=None, enrich_only=False, limit=None, sweep=False):
+def run(target_platforms=None, target_forums=None, full=False, max_pages=None, enrich_only=False, limit=None, sweep=False,
+        stats_only=False, skip_stats=False, stats_quick=False, stats_max_pages=None):
     """Главная точка входа парсера."""
     init_env()
+
+    # Если запрошен только сбор статистики
+    if stats_only:
+        try:
+            stats_info = scrape_torrents_stats(
+                target_forums=target_forums,
+                target_platforms=target_platforms,
+                max_pages=stats_max_pages,
+                full_scan=not stats_quick
+            )
+            write_changes_log({}, stats_info=stats_info)
+            print("\n[+] Сбор статистики завершён. Лог записан в changes.txt")
+        finally:
+            close_driver()
+        return
 
     # Определяем список целевых форумов
     if target_forums:
@@ -353,8 +370,21 @@ def run(target_platforms=None, target_forums=None, full=False, max_pages=None, e
                 stats = update_forum_via_atom(fid, target_platforms=active_plats, sweep=sweep)
                 all_stats.update(stats)
 
+        # Сбор статистики раздач (сиды, личи, загрузки, дата добавления)
+        stats_info = None
+        if not skip_stats:
+            try:
+                stats_info = scrape_torrents_stats(
+                    target_forums=forums_to_run,
+                    target_platforms=target_platforms,
+                    max_pages=stats_max_pages,
+                    full_scan=not stats_quick
+                )
+            except Exception as e:
+                print(f"(!) Ошибка сбора статистики: {e}")
+
         # Записываем общий лог изменений
-        write_changes_log(all_stats)
+        write_changes_log(all_stats, stats_info=stats_info)
         print("\n[+] Обновление завершено. Лог записан в changes.txt")
 
     finally:
@@ -362,7 +392,7 @@ def run(target_platforms=None, target_forums=None, full=False, max_pages=None, e
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Мультиплатформенный парсер раздач RuTracker")
+    parser = argparse.ArgumentParser(description="Мультиплатформенный парсер раздач RuTracker и сборщик статистики")
     parser.add_argument('--platform', type=str, choices=get_all_platforms(), help="Запустить для конкретной платформы")
     parser.add_argument('--forum', type=str, choices=get_all_forum_ids(), help="Запустить для конкретного форума")
     parser.add_argument('--full', action='store_true', help="Принудительный полный парсинг всех страниц")
@@ -370,20 +400,34 @@ def main():
     parser.add_argument('--limit', type=int, default=None, help="Ограничить количество обрабатываемых тем для тестового прогона")
     parser.add_argument('--enrich-only', action='store_true', help="Только дообогащение метаданных существующих баз")
     parser.add_argument('--sweep', action='store_true', help="Включить фоновый круговой обход magnet и дообогащение (по умолчанию отключено)")
+    parser.add_argument('--stats-only', action='store_true', help="Собрать только статистику раздач (tracker.php & viewtopic.php)")
+    parser.add_argument('--skip-stats', action='store_true', help="Пропустить сбор статистики (только обновление баз игр)")
+    parser.add_argument('--stats-quick', action='store_true', help="Быстрый сбор статистики (только срезы tracker.php без точечного обхода тем)")
+    parser.add_argument('--stats-max-pages', type=int, default=None, help="Лимит страниц/тем при сборе статистики (для тестов)")
     args = parser.parse_args()
 
     target_plats = [args.platform] if args.platform else None
     target_forums = [args.forum] if args.forum else None
 
-    run(
-        target_platforms=target_plats,
-        target_forums=target_forums,
-        full=args.full,
-        max_pages=args.max_pages,
-        enrich_only=args.enrich_only,
-        limit=args.limit,
-        sweep=args.sweep
-    )
+    kwargs = {
+        'target_platforms': target_plats,
+        'target_forums': target_forums,
+        'full': getattr(args, 'full', False),
+        'max_pages': getattr(args, 'max_pages', None),
+        'enrich_only': getattr(args, 'enrich_only', False),
+        'limit': getattr(args, 'limit', None),
+        'sweep': getattr(args, 'sweep', False),
+    }
+    if getattr(args, 'stats_only', False):
+        kwargs['stats_only'] = True
+    if getattr(args, 'skip_stats', False):
+        kwargs['skip_stats'] = True
+    if getattr(args, 'stats_quick', False):
+        kwargs['stats_quick'] = True
+    if getattr(args, 'stats_max_pages', None) is not None:
+        kwargs['stats_max_pages'] = args.stats_max_pages
+
+    run(**kwargs)
 
 
 if __name__ == '__main__':

@@ -187,7 +187,7 @@ def refresh_stale_magnets(data, platform_key, skip_ids=None, limit=20):
     return len(refreshed), refreshed
 
 
-def write_changes_log(platform_changes_map):
+def write_changes_log(platform_changes_map, stats_info=None):
     """Формирует и записывает итоговый лог changes.txt для всех платформ.
 
     platform_changes_map: dict вида
@@ -195,6 +195,7 @@ def write_changes_log(platform_changes_map):
         "psp": {"total": 1200, "added": [...], "updated": [...], "enriched": [...], "magnets": [...]},
         ...
     }
+    stats_info: dict с результатами сбора статистики (total, total_seeds, total_downloads, coverage_pct).
     """
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
     lines = [f"=== Обновление баз console-games: {timestamp} ===", ""]
@@ -223,6 +224,19 @@ def write_changes_log(platform_changes_map):
         if magnets:
             lines.append(f"  # Перезалит magnet ({len(magnets)}):")
             lines += [f"    # {t}" for t in magnets]
+        lines.append("")
+
+    if stats_info:
+        has_any_change = True
+        lines.append("=== Статистика раздач (tracker.php & viewtopic.php) ===")
+        lines.append(f"Всего в базе статистики: {stats_info.get('total', 0)} раздач")
+        if stats_info.get('coverage_pct') is not None:
+            cov = stats_info.get('coverage_pct', 0)
+            cov_t = stats_info.get('covered_topics', stats_info.get('total', 0))
+            tar_t = stats_info.get('target_topics', 0)
+            lines.append(f"  * Покрытие базы: {cov_t}/{tar_t} ({cov:.1f}%)" if tar_t else f"  * Покрытие базы: {cov:.1f}%")
+        lines.append(f"  * Активных сидов: {stats_info.get('total_seeds', 0)}")
+        lines.append(f"  * Всего загрузок: {stats_info.get('total_downloads', 0)}")
         lines.append("")
 
     if not has_any_change:
