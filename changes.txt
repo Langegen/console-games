@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-10-04 01:49:29 ===
+=== Обновление баз console-games: 2026-10-04 10:43:29 ===
 
 [PSP] Всего в базе: 898
 
@@ -38,10 +38,6 @@
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
 [PSVITA] Всего в базе: 410
-  + Добавлено (3):
-    + LEGO Harry Potter: Years 5-7 [NoNpDrm] [RUS/ENG]
-    + Ys Origin [NoNpDrm] [RUS/ENG]
-    + Michael Jackson The Experience HD [NoNpDrm] [ENG]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
