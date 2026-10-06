@@ -353,7 +353,7 @@
     "id": "mupen64plus_next",
     "name": "Mupen64Plus-Next (RetroArch Core)",
     "author": "Libretro",
-    "version": "nightly-2026.10.05",
+    "version": "nightly-2026.10.06",
     "description": "Высокопроизводительное ядро эмулятора Nintendo 64 для RetroArch на Nintendo Switch. Отличная совместимость с популярными 3D-играми N64.",
     "category": "retroarch",
     "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/mupen64plus_next_libretro_libnx.nro.zip",
@@ -361,7 +361,7 @@
     "install_path": "sdmc:/retroarch/cores/mupen64plus_next_libretro_libnx.nro",
     "extract_dir": "sdmc:/retroarch/cores",
     "is_archive": true,
-    "file_size": 8827598,
+    "file_size": 8884319,
     "supported_console_ids": [
       "n64"
     ],
