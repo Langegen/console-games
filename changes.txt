@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-10-05 02:13:12 ===
+=== Обновление баз console-games: 2026-10-06 02:15:56 ===
 
 [PSP] Всего в базе: 898
 
@@ -32,14 +32,17 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3509
+[PS2] Всего в базе: 3510
+  + Добавлено (1):
+    + [Обновлено] Serious Sam: Next Encounter [EUR / RUS / переработанный перевод]
   ~ Обновлено (2):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 411
-  + Добавлено (1):
-    + Horizon Chase Turbo [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 413
+  + Добавлено (2):
+    + Dragon’s Crown [NoNpDrm] [RUS/ENG] [DLC]
+    + Full Throttle Remastered [NoNpDrm] [RUS/ENG]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -52,8 +55,8 @@
     ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8632 раздач
-  * Покрытие базы: 8365/8365 (100.0%)
-  * Активных сидов: 50825
-  * Всего загрузок: 22057507
+Всего в базе статистики: 8635 раздач
+  * Покрытие базы: 8368/8368 (100.0%)
+  * Активных сидов: 47701
+  * Всего загрузок: 22062371
 
