@@ -1,10 +1,8 @@
-=== Обновление баз console-games: 2026-10-08 02:06:53 ===
+=== Обновление баз console-games: 2026-10-09 02:10:39 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2142
-  + Добавлено (1):
-    + Medal of Honor: Underground [SLES-03124] [II+Vitan+Vector+ViT Company] [RUS]
   ~ Обновлено (1):
     ~ Half-Life [Homebrew Port] [None] [ENG]
 
@@ -39,9 +37,10 @@
     ~ Prince of Persia [Region Free / ENG / Homebrew]
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
 
-[PSVITA] Всего в базе: 415
-  + Добавлено (1):
-    + To Love-Ru Trouble Darkness: Battle Ecstasy [NoNpDrm] [RUS/JAP]
+[PSVITA] Всего в базе: 417
+  + Добавлено (2):
+    + Catherine: Full Body [NoNpDrm] [RUS/JAP] [DLC]
+    + [Обновлено] Catherine: Full Body [NoNpDrm] [RUS/ENG] [DLC]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -54,8 +53,8 @@
     ~ Redump - Sega Dreamcast [ENG/JPN/Multi] (2026-08-13)
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8641 раздач
-  * Покрытие базы: 8371/8371 (100.0%)
-  * Активных сидов: 45774
-  * Всего загрузок: 22059645
+Всего в базе статистики: 8644 раздач
+  * Покрытие базы: 8373/8373 (100.0%)
+  * Активных сидов: 45421
+  * Всего загрузок: 22061784
 
