@@ -11,6 +11,9 @@ if ! flock -w 7200 200; then
     exit 1
 fi
 
+# Очистка осиротевших временных папок браузера/xvfb
+rm -rf /tmp/tmp* /tmp/playwright* /tmp/xvfb* 2>/dev/null || true
+
 if [ -f .env ]; then
     set -a
     . ./.env
@@ -39,8 +42,11 @@ else
     timeout 7200 $PYTHON_EXEC scraper.py "$@"
 fi
 
+rm -rf /tmp/tmp* /tmp/playwright* /tmp/xvfb* 2>/dev/null || true
+truncate -s 0 /var/lib/docker/containers/*/*-json.log 2>/dev/null || true
+
 echo "[$(date)] Проверка изменений..."
-git add data/*_games.json data/console_games_stats.json changes.txt scraper.py run.sh .gitignore 2>/dev/null || true
+git add data/*_games.json data/console_games_stats.json changes.txt scraper.py run.sh core/network.py .gitignore 2>/dev/null || true
 
 if git diff --staged --quiet; then
     echo "[$(date)] Изменений нет — коммит не требуется."
@@ -49,6 +55,7 @@ else
     git commit -m "Auto-update console-games: $(date +'%Y-%m-%d %H:%M:%S')"
     git pull --rebase origin main || true
     git push origin main
+    git gc --auto 2>/dev/null || true
     echo "[$(date)] Успешно завершено!"
 fi
 

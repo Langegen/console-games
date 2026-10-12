@@ -210,6 +210,8 @@ def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
                 try:
                     GLOBAL_DRIVER.add_cookie({'name': k, 'value': v, 'domain': '.rutracker.org'})
                 except Exception as e:
+                    if 'invalid session id' in str(e).lower() or 'disconnected' in str(e).lower():
+                        raise
                     print(f"    [!] Ошибка установки куки {k}: {e}")
             if is_post:
                 _safe_get(GLOBAL_DRIVER, "https://rutracker.org/forum/index.php")
@@ -220,7 +222,9 @@ def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
             try:
                 src = GLOBAL_DRIVER.page_source
                 title = GLOBAL_DRIVER.title
-            except Exception:
+            except Exception as loop_err:
+                if 'invalid session id' in str(loop_err).lower() or 'disconnected' in str(loop_err).lower():
+                    raise
                 src, title = '', ''
             if 'Just a moment' not in title and 'Один момент' not in title:
                 if is_post or any(kw in src for kw in wait_keywords):
@@ -275,6 +279,7 @@ def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
 
     except Exception as e:
         print(f"[!] Chrome ошибка: {e}")
+        close_driver()
 
     return page_html
 
