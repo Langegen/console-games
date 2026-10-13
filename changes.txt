@@ -1,12 +1,10 @@
-=== Обновление баз console-games: 2026-10-12 10:44:02 ===
+=== Обновление баз console-games: 2026-10-13 02:14:59 ===
 
 [PSP] Всего в базе: 898
 
-[PS1] Всего в базе: 2143
-  ~ Обновлено (1):
-    ~ [Обновлено] Mizzurna Falls [SLPS-01783] [Knreall] [RUS] v0.9
-  # Перезалит magnet (1):
-    # [Обновлено] Mizzurna Falls [SLPS-01783] [Knreall] [RUS] v0.9
+[PS1] Всего в базе: 2144
+  + Добавлено (1):
+    + Overblood [SLUS-00464] ViT Company] [Full RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -35,20 +33,13 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3513
-  ~ Обновлено (5):
-    ~ [RUS] Might and Magic VIII: Day of the Destroyer — исправленный русский перевод 
-    ~ [Обновлено] The Warriors [RUS/ENG | Переработанный перевод 1.0.1]
-    ~ Metal Saga [RUS|NTSC-U]
+  ~ Обновлено (2):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
     ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
-  # Перезалит magnet (3):
-    # [RUS] Might and Magic VIII: Day of the Destroyer — исправленный русский перевод 
-    # [Обновлено] The Warriors [RUS/ENG | Переработанный перевод 1.0.1]
-    # Metal Saga [RUS|NTSC-U]
 
-[PSVITA] Всего в базе: 418
+[PSVITA] Всего в базе: 419
   + Добавлено (1):
-    + SpongeBob HeroPants [NoNpDrm] [RUS/ENG]
+    + Oddworld: Munch's Oddysee HD [NoNpDrm] [RUS/ENG]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -59,9 +50,15 @@
   ~ Обновлено (1):
     ~ [Обновлено] Resident Evil 2 [PAL/RUS/ENG] [Akella] [Team Raccoon v2.0] (2026)
 
+[3DS] Всего в базе: 79
+
+[NDS] Всего в базе: 83
+  + Добавлено (1):
+    + 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
+
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8655 раздач
-  * Покрытие базы: 8378/8378 (100.0%)
-  * Активных сидов: 55048
-  * Всего загрузок: 22065408
+Всего в базе статистики: 8661 раздач
+  * Покрытие базы: 8381/8381 (100.0%)
+  * Активных сидов: 45793
+  * Всего загрузок: 22067753
 
