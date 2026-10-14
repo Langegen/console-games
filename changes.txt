@@ -1,14 +1,19 @@
-=== Обновление баз console-games: 2026-10-13 02:14:59 ===
+=== Обновление баз console-games: 2026-10-14 02:19:41 ===
 
 [PSP] Всего в базе: 898
+  ~ Обновлено (1):
+    ~ [Обновлено] Final Fantasy Anniversary Edition [FULL] [CSO] [RUS]
+  # Перезалит magnet (1):
+    # [Обновлено] Final Fantasy Anniversary Edition [FULL] [CSO] [RUS]
 
 [PS1] Всего в базе: 2144
-  + Добавлено (1):
-    + Overblood [SLUS-00464] ViT Company] [Full RUS]
 
 [WIIU] Всего в базе: 51
 
-[WII] Всего в базе: 310
+[WII] Всего в базе: 312
+  + Добавлено (2):
+    + Sonic and the Black Knight / Соник и Тёмный рыцарь [NTSC-U/RUS]
+    + Sonic and the Secret Rings / Соник и Мировые кольца [NTSC-U/RUS]
 
 [GAMECUBE] Всего в базе: 171
 
@@ -34,12 +39,14 @@
 
 [PS2] Всего в базе: 3513
   ~ Обновлено (2):
+    ~ [Обновлено] Might and Magic VIII: Day of the Destroyer — исправленный русский пе
     ~ Prince of Persia [Region Free / ENG / Homebrew]
-    ~ [Обновлено] ObsCure: The Aftermath [RUS / NTSC] [1С]
+  # Перезалит magnet (1):
+    # [Обновлено] Might and Magic VIII: Day of the Destroyer — исправленный русский пе
 
-[PSVITA] Всего в базе: 419
+[PSVITA] Всего в базе: 420
   + Добавлено (1):
-    + Oddworld: Munch's Oddysee HD [NoNpDrm] [RUS/ENG]
+    + Dragon Quest Builders [NoNpDrm] [RUS/ENG] [DLC]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -53,12 +60,12 @@
 [3DS] Всего в базе: 79
 
 [NDS] Всего в базе: 83
-  + Добавлено (1):
-    + 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
+  ~ Обновлено (1):
+    ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8661 раздач
-  * Покрытие базы: 8381/8381 (100.0%)
-  * Активных сидов: 45793
-  * Всего загрузок: 22067753
+Всего в базе статистики: 8664 раздач
+  * Покрытие базы: 8384/8384 (100.0%)
+  * Активных сидов: 44722
+  * Всего загрузок: 22070553
 
