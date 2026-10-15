@@ -1,19 +1,14 @@
-=== Обновление баз console-games: 2026-10-14 02:19:41 ===
+=== Обновление баз console-games: 2026-10-15 02:26:23 ===
 
 [PSP] Всего в базе: 898
-  ~ Обновлено (1):
-    ~ [Обновлено] Final Fantasy Anniversary Edition [FULL] [CSO] [RUS]
-  # Перезалит magnet (1):
-    # [Обновлено] Final Fantasy Anniversary Edition [FULL] [CSO] [RUS]
 
-[PS1] Всего в базе: 2144
+[PS1] Всего в базе: 2145
+  + Добавлено (1):
+    + Spider-Man 2: Enter Electro [SLES-03623] [RGR Studio, Vector, zyxel2k] [RUS]
 
 [WIIU] Всего в базе: 51
 
 [WII] Всего в базе: 312
-  + Добавлено (2):
-    + Sonic and the Black Knight / Соник и Тёмный рыцарь [NTSC-U/RUS]
-    + Sonic and the Secret Rings / Соник и Мировые кольца [NTSC-U/RUS]
 
 [GAMECUBE] Всего в базе: 171
 
@@ -37,16 +32,13 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3513
-  ~ Обновлено (2):
-    ~ [Обновлено] Might and Magic VIII: Day of the Destroyer — исправленный русский пе
+[PS2] Всего в базе: 3514
+  + Добавлено (1):
+    + Gunslinger Girl Volume.I [JAP / RUS / Repack]
+  ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
-  # Перезалит magnet (1):
-    # [Обновлено] Might and Magic VIII: Day of the Destroyer — исправленный русский пе
 
 [PSVITA] Всего в базе: 420
-  + Добавлено (1):
-    + Dragon Quest Builders [NoNpDrm] [RUS/ENG] [DLC]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -57,15 +49,17 @@
   ~ Обновлено (1):
     ~ [Обновлено] Resident Evil 2 [PAL/RUS/ENG] [Akella] [Team Raccoon v2.0] (2026)
 
-[3DS] Всего в базе: 79
+[3DS] Всего в базе: 80
+  + Добавлено (1):
+    + XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
 
 [NDS] Всего в базе: 83
   ~ Обновлено (1):
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8664 раздач
-  * Покрытие базы: 8384/8384 (100.0%)
-  * Активных сидов: 44722
-  * Всего загрузок: 22070553
+Всего в базе статистики: 8667 раздач
+  * Покрытие базы: 8387/8387 (100.0%)
+  * Активных сидов: 43117
+  * Всего загрузок: 22074527
 

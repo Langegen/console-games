@@ -1,5 +1,31 @@
 [
     {
+        "title": "XXXX - Grand Theft Auto: Vice City [CIA] [ENG]",
+        "size": "2 GB",
+        "magnet": "magnet:?xt=urn:btih:B40320F8E9175B71DE6495AE4A91EF6CF11F5581&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6922632",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6922632",
+        "year": "2002",
+        "genre": "экшн, шутер от третьего лица",
+        "developer": "Rockstar North",
+        "publisher": "Rockstar Games",
+        "image_format": ".CIA",
+        "interface_lang": "Unknown",
+        "voice_lang": "Unknown",
+        "performance": "Unknown",
+        "multiplayer": "Unknown",
+        "cover": "https://i128.fastpic.org/big/2026/1014/a1/45780dafcfe05adce5d24fcc6fd2dda1.jpg",
+        "screenshots": [
+            "https://i5.imageban.ru/thumbs/2026.10.14/314961689e970df4bf0466d968ce2549.png",
+            "https://i2.imageban.ru/thumbs/2026.10.14/83d41e19eb8eca3a90abb86c9d26afa2.png",
+            "https://i7.imageban.ru/thumbs/2026.10.14/ac053feab69643791767977712c1a121.png"
+        ],
+        "description": "Классическая Grand Theft Auto: Vice City теперь на твоей портативной Nintendo 3DS!\n\nВыкладываю готовую скомпилированную CIA-сборку GTA: Vice City, созданную на основе открытого проекта REGTA-3DSPort-Complete.\n\nБольше не нужно самостоятельно разбираться со сборкой проекта и компиляцией исходников — достаточно установить CIA и скопировать подготовленные игровые данные.\n\nПогрузитесь в атмосферу солнечного Vice City: неоновые улицы, пальмы, автомобили, радио и незабываемая эстетика 80-х — теперь в портативном формате.\nОсобенности\n\nГотовая CIA-сборка для установки через FBI.\n\nПолноценный игровой процесс на New Nintendo 3DS.\n\nИнтерфейс игры на нижнем экране.\n\nПоддержка сенсорного управления.\n\nПодсказки с обозначениями кнопок Nintendo.\n\nВстроенная клавиатура для ввода PC чит-кодов открывается сочетанием L + R + ZL + ZR.\n\nОптимизации загрузки и исправления графических ошибок оригинального порта.\nСовместимость и проверка\n\nСборка проверена мной на реальной консоли — игра запускается и работает.\n\nПоддерживаются:\n\nNew Nintendo 3DS\n\nNew Nintendo 3DS XL\n\nNew Nintendo 2DS XL\n\nОригинальные Nintendo 3DS, 3DS XL и 2DS без приставки New не поддерживаются.\n\nВ требовательных сценах возможны падения FPS и заикания звука — это ограничения порта.\nСсылка на оригинальный проект\n\nREGTA-3DSPort-Complete\n\n\n\nУстановка\n\n\nCIA-файл скопируйте его на SD-карту консоли.\n\nУстановите игру через FBI.\n\nФайлы GTA: Vice City разместите в папке sdmc:/3ds/miami/\n\nЗапустите игру.\n\nПри первом запуске будет происходить долгая компиляция текстур. 20-40 минут. Это нормально",
+        "title_id": null,
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "498 - Angry Birds Trilogy [ENG]",
         "size": "233.4 MB",
         "magnet": "magnet:?xt=urn:btih:E7342796B434DC83D88B203710B9334E0B15CCA2&tr=http%3A%2F%2Fbt3.t-ru.org%2Fann%3Fmagnet",
