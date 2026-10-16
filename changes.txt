@@ -1,10 +1,8 @@
-=== Обновление баз console-games: 2026-10-15 02:26:23 ===
+=== Обновление баз console-games: 2026-10-16 02:27:16 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2145
-  + Добавлено (1):
-    + Spider-Man 2: Enter Electro [SLES-03623] [RGR Studio, Vector, zyxel2k] [RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -33,12 +31,12 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3514
-  + Добавлено (1):
-    + Gunslinger Girl Volume.I [JAP / RUS / Repack]
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 420
+[PSVITA] Всего в базе: 421
+  + Добавлено (1):
+    + Guacamelee! [NoNpDrm] [RUS/ENG] [DLC]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -50,16 +48,16 @@
     ~ [Обновлено] Resident Evil 2 [PAL/RUS/ENG] [Akella] [Team Raccoon v2.0] (2026)
 
 [3DS] Всего в базе: 80
-  + Добавлено (1):
-    + XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
+  ~ Обновлено (1):
+    ~ XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
 
 [NDS] Всего в базе: 83
   ~ Обновлено (1):
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8667 раздач
-  * Покрытие базы: 8387/8387 (100.0%)
-  * Активных сидов: 43117
-  * Всего загрузок: 22074527
+Всего в базе статистики: 8668 раздач
+  * Покрытие базы: 8388/8388 (100.0%)
+  * Активных сидов: 45572
+  * Всего загрузок: 22078036
 
