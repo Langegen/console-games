@@ -1,8 +1,11 @@
-=== Обновление баз console-games: 2026-10-16 02:27:16 ===
+=== Обновление баз console-games: 2026-10-17 02:18:44 ===
 
 [PSP] Всего в базе: 898
 
-[PS1] Всего в базе: 2145
+[PS1] Всего в базе: 2147
+  + Добавлено (2):
+    + Baroque [SLPM-86328] [RUS]
+    + Twilight Syndrome: Tansaku-hen [SLPS-00102] [SvagaCore] [RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -34,9 +37,9 @@
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 421
+[PSVITA] Всего в базе: 422
   + Добавлено (1):
-    + Guacamelee! [NoNpDrm] [RUS/ENG] [DLC]
+    + Lone Survivor: The Director's Cut [NoNpDrm] [RUS/ENG]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -56,8 +59,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8668 раздач
-  * Покрытие базы: 8388/8388 (100.0%)
-  * Активных сидов: 45572
-  * Всего загрузок: 22078036
+Всего в базе статистики: 8673 раздач
+  * Покрытие базы: 8391/8391 (100.0%)
+  * Активных сидов: 44798
+  * Всего загрузок: 22079918
 
