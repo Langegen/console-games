@@ -1,11 +1,8 @@
-=== Обновление баз console-games: 2026-10-17 02:18:44 ===
+=== Обновление баз console-games: 2026-10-18 02:25:55 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2147
-  + Добавлено (2):
-    + Baroque [SLPM-86328] [RUS]
-    + Twilight Syndrome: Tansaku-hen [SLPS-00102] [SvagaCore] [RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -37,14 +34,20 @@
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 422
-  + Добавлено (1):
-    + Lone Survivor: The Director's Cut [NoNpDrm] [RUS/ENG]
-  ~ Обновлено (4):
+[PSVITA] Всего в базе: 426
+  + Добавлено (4):
+    + ZEN Pinball 2 [NoNpDrm] [ENG] [DLC]
+    + Stealth Inc: A Clone in the Dark [NoNpDrm] [RUS/ENG] [DLC]
+    + Dead or Alive 5 Plus [NoNpDrm] [RUS/ENG] [DLC]
+    + [Обновлено] Dungeon Travelers 2: The Royal Library & the Monster Seal [NoNpDrm] 
+  ~ Обновлено (5):
+    ~ [Обновлено] Ninja Gaiden Sigma Plus [NoNpDrm] [RUS/ENG]
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [VPK] [RUS/ENG] [Homebrew]
     ~ Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
+  # Перезалит magnet (1):
+    # [Обновлено] Ninja Gaiden Sigma Plus [NoNpDrm] [RUS/ENG]
 
 [DREAMCAST] Всего в базе: 561
   ~ Обновлено (1):
@@ -59,8 +62,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8673 раздач
-  * Покрытие базы: 8391/8391 (100.0%)
-  * Активных сидов: 44798
-  * Всего загрузок: 22079918
+Всего в базе статистики: 8677 раздач
+  * Покрытие базы: 8395/8395 (100.0%)
+  * Активных сидов: 48128
+  * Всего загрузок: 22078796
 
