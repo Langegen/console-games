@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-10-19 02:26:31 ===
+=== Обновление баз console-games: 2026-10-20 02:21:15 ===
 
 [PSP] Всего в базе: 898
 
@@ -34,11 +34,10 @@
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 429
-  + Добавлено (3):
-    + 10 Second Ninja X [NoNpDrm] [RUS/ENG]
-    + To Love-Ru Trouble Darkness: True Princess [NoNpDrm] [RUS/JPN] [DLC]
-    + Tetris Ultimate [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 431
+  + Добавлено (2):
+    + Pinball Heroes: Complete [NoNpDrm] [ENG]
+    + [Обновлено] The Pinball Arcade [NoNpDrm] [ENG] [DLC]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -58,8 +57,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8680 раздач
-  * Покрытие базы: 8398/8398 (100.0%)
-  * Активных сидов: 47552
-  * Всего загрузок: 22088078
+Всего в базе статистики: 8683 раздач
+  * Покрытие базы: 8400/8400 (100.0%)
+  * Активных сидов: 45209
+  * Всего загрузок: 22088126
 
