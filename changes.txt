@@ -1,8 +1,12 @@
-=== Обновление баз console-games: 2026-10-20 02:21:15 ===
+=== Обновление баз console-games: 2026-10-21 02:28:00 ===
 
 [PSP] Всего в базе: 898
 
 [PS1] Всего в базе: 2147
+  ~ Обновлено (1):
+    ~ [Обновлено] Mizzurna Falls [SLPS-01783] [RUS] + [ENG]
+  # Перезалит magnet (1):
+    # [Обновлено] Mizzurna Falls [SLPS-01783] [RUS] + [ENG]
 
 [WIIU] Всего в базе: 51
 
@@ -20,7 +24,9 @@
 
 [GBC] Всего в базе: 16
 
-[SEGA_MD] Всего в базе: 58
+[SEGA_MD] Всего в базе: 59
+  + Добавлено (1):
+    + [SATURN] [Sega Saturn] - Shining Force III [RUS-ViT Co]
 
 [SEGA_MS] Всего в базе: 7
 
@@ -30,14 +36,17 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3514
+[PS2] Всего в базе: 3515
+  + Добавлено (1):
+    + Call of Duty 3 [USA / RUS / Переработанный перевод]
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 431
-  + Добавлено (2):
-    + Pinball Heroes: Complete [NoNpDrm] [ENG]
-    + [Обновлено] The Pinball Arcade [NoNpDrm] [ENG] [DLC]
+[PSVITA] Всего в базе: 434
+  + Добавлено (3):
+    + Stick it to the Man! [NoNpDrm] [RUS]
+    + Tales of Innocence R [NoNpDrm] [ENG/JPN] [DLC]
+    + ISLAND [NoNpDrm] [ENG/JPN]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -57,8 +66,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8683 раздач
-  * Покрытие базы: 8400/8400 (100.0%)
-  * Активных сидов: 45209
-  * Всего загрузок: 22088126
+Всего в базе статистики: 8687 раздач
+  * Покрытие базы: 8405/8405 (100.0%)
+  * Активных сидов: 45197
+  * Всего загрузок: 22091248
 
