@@ -1,16 +1,13 @@
-=== Обновление баз console-games: 2026-10-23 02:42:16 ===
+=== Обновление баз console-games: 2026-10-24 02:36:17 ===
 
 [PSP] Всего в базе: 902
-  + Добавлено (3):
-    + Portal [PBP] [RUS/Multi] [Homebrew]
-    + Undertale [PBP] [ENG/JPN] [Homebrew]
-    + Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
-  ~ Обновлено (1):
+  ~ Обновлено (4):
+    ~ Portal [PBP] [RUS/Multi] [Homebrew]
+    ~ Undertale [PBP] [ENG/JPN] [Homebrew]
+    ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
 [PS1] Всего в базе: 2148
-  + Добавлено (1):
-    + Twilight Syndrome: Kyumei-hen [SvagaCore / SLPS-00405 / JAP / RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -42,9 +39,13 @@
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 439
-  + Добавлено (1):
-    + Dex [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 444
+  + Добавлено (5):
+    + Titan Attacks! [NoNpDrm] [RUS/ENG]
+    + Proteus [NoNpDrm] [RUS/ENG]
+    + Dragon Fin Soup [NoNpDrm] [RUS/ENG]
+    + King Oddball [NoNpDrm] [RUS/ENG]
+    + MouseCraft [NoNpDrm] [RUS/ENG]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -60,8 +61,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8700 раздач
-  * Покрытие базы: 8417/8417 (100.0%)
-  * Активных сидов: 46547
-  * Всего загрузок: 22095722
+Всего в базе статистики: 8705 раздач
+  * Покрытие базы: 8422/8422 (100.0%)
+  * Активных сидов: 44613
+  * Всего загрузок: 22098504
 
