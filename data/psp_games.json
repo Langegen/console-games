@@ -1,5 +1,37 @@
 [
     {
+        "title": "Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]",
+        "size": "451 MB",
+        "magnet": "magnet:?xt=urn:btih:C2FDC337C2A23327AFFDB537441948990D8535B6&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6927661",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6927661",
+        "year": "2001",
+        "genre": "Боевик от третьего лица",
+        "developer": "Rockstar North",
+        "publisher": "Unknown",
+        "image_format": "Homebrew",
+        "interface_lang": "Русский, multi",
+        "voice_lang": "Английская",
+        "performance": "Unknown",
+        "multiplayer": "Нет",
+        "cover": "https://i129.fastpic.org/big/2026/1025/ae/40a87ec0d400c5556dca2f9c1f650aae.png",
+        "screenshots": [
+            "https://i129.fastpic.org/thumb/2026/1025/09/d98c5ed9e5bf9d02e0053c5ed1872809.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/46/19dbac857fd50503b175cac54d652c46.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/e7/d65f72279eadc847a835f875745e44e7.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/45/6101bdf5fa916e0c44fc14e2941e0c45.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/53/0160bb197d28774694d3089e220f3353.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/e8/1bb2f9e7452886deb5beff5b861e0de8.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/6e/2f38a769cc70af5ffa4b95cb26d28a6e.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/79/dd7e2a21341d72e411fa9feff9d2e979.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1025/16/bbf881732920738433e15918947ccb16.jpeg"
+        ],
+        "description": "Grand Theft Auto III — это культовая компьютерная игра в жанре action-adventure и боевика от третьего лица. Действие игры разворачивается в вымышленном американском мегаполисе Либерти-Сити, прообразом которого стал Нью-Йорк, а сюжет рассказывает историю молчаливого преступника по имени Клод, который в результате предательства оказывается на самом дне криминального мира и пытается отомстить своей бывшей возлюбленной. GTA III совершила революцию в игровой индустрии, став первой трёхмерной игрой в серии, которая успешно перенесла концепцию открытого мира с полной свободой перемещения, управлением автотранспортом и стрельбой от третьего лица в полноценное 3D, что заложило основу для развития всего поджанра современных трёхмерных боевиков.\nРаботоспособность порта на PSP-1000 не проверялась.\n\n\n\nАвторы порта\n\n\nПортирование на PSP: st1x51\n\nРаботы по оптимизации и поиску багов: DenielX.\n\n\n\n\n\n\nОсобенности порта\n\n\nИгра полностью проходима, но в катсценах иногда пропадает озвучка. Отсутствует обложка в меню игры.\n\nПри запуске на эмуляторе неоходимо включить ограничение кадров в настройках игры для решения проблемы со звуком.\n\n\n\n\n\n\nУстановка\n\n\nПеренесите игру в папку PSP/GAME/",
+        "title_id": null,
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]",
         "size": "573.8 MB",
         "magnet": "magnet:?xt=urn:btih:459600D65CEB38AFC9B80C0CED2CC99C12B216AF&tr=http%3A%2F%2Fbt.t-ru.org%2Fann%3Fmagnet",

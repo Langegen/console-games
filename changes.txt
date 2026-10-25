@@ -1,6 +1,8 @@
-=== Обновление баз console-games: 2026-10-24 02:36:17 ===
+=== Обновление баз console-games: 2026-10-25 02:14:52 ===
 
-[PSP] Всего в базе: 902
+[PSP] Всего в базе: 903
+  + Добавлено (1):
+    + Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
   ~ Обновлено (4):
     ~ Portal [PBP] [RUS/Multi] [Homebrew]
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
@@ -36,16 +38,17 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3517
-  ~ Обновлено (1):
+  ~ Обновлено (2):
+    ~ [Обновлено] Gunslinger Girl Volume.I [JAP / RUS / Repack]
     ~ Prince of Persia [Region Free / ENG / Homebrew]
+  # Перезалит magnet (1):
+    # [Обновлено] Gunslinger Girl Volume.I [JAP / RUS / Repack]
 
-[PSVITA] Всего в базе: 444
-  + Добавлено (5):
-    + Titan Attacks! [NoNpDrm] [RUS/ENG]
-    + Proteus [NoNpDrm] [RUS/ENG]
-    + Dragon Fin Soup [NoNpDrm] [RUS/ENG]
-    + King Oddball [NoNpDrm] [RUS/ENG]
-    + MouseCraft [NoNpDrm] [RUS/ENG]
+[PSVITA] Всего в базе: 447
+  + Добавлено (3):
+    + Crimsonland [NoNpDrm] [RUS/ENG]
+    + Eufloria HD [NoNpDrm] [RUS/ENG]
+    + Rocketbirds: Hardboiled Chicken [NoNpDrm] [RUS/ENG] [DLC]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -61,8 +64,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8705 раздач
-  * Покрытие базы: 8422/8422 (100.0%)
-  * Активных сидов: 44613
-  * Всего загрузок: 22098504
+Всего в базе статистики: 8708 раздач
+  * Покрытие базы: 8426/8426 (100.0%)
+  * Активных сидов: 49626
+  * Всего загрузок: 22103655
 
