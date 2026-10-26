@@ -1,15 +1,16 @@
-=== Обновление баз console-games: 2026-10-25 02:14:52 ===
+=== Обновление баз console-games: 2026-10-26 02:14:51 ===
 
 [PSP] Всего в базе: 903
-  + Добавлено (1):
-    + Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
-  ~ Обновлено (4):
+  ~ Обновлено (5):
+    ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
     ~ Portal [PBP] [RUS/Multi] [Homebrew]
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
-[PS1] Всего в базе: 2148
+[PS1] Всего в базе: 2149
+  + Добавлено (1):
+    + Naruto: Shinobi no Sato no Jintori Gassen [MedySlava] / SLPS-03553 / JAP / RUS [
 
 [WIIU] Всего в базе: 51
 
@@ -38,22 +39,23 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3517
-  ~ Обновлено (2):
-    ~ [Обновлено] Gunslinger Girl Volume.I [JAP / RUS / Repack]
+  ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
-  # Перезалит magnet (1):
-    # [Обновлено] Gunslinger Girl Volume.I [JAP / RUS / Repack]
 
-[PSVITA] Всего в базе: 447
+[PSVITA] Всего в базе: 450
   + Добавлено (3):
-    + Crimsonland [NoNpDrm] [RUS/ENG]
-    + Eufloria HD [NoNpDrm] [RUS/ENG]
-    + Rocketbirds: Hardboiled Chicken [NoNpDrm] [RUS/ENG] [DLC]
+    + Brotherhood United [NoNpDrm] [ENG]
+    + Ultra Mission [NoNpDrm] [ENG]
+    + Mind Maze [NoNpDrm] [RUS/Multi]
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [VPK] [RUS/ENG] [Homebrew]
     ~ Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
+
+[DREAMCAST] Всего в базе: 562
+  + Добавлено (1):
+    + Spider-Man [T-13008N] [FullRUS] [SazanOFF] [smith1395] [Fargus] [2.02]
 
 [3DS] Всего в базе: 80
   ~ Обновлено (1):
@@ -64,8 +66,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8708 раздач
-  * Покрытие базы: 8426/8426 (100.0%)
-  * Активных сидов: 49626
-  * Всего загрузок: 22103655
+Всего в базе статистики: 8714 раздач
+  * Покрытие базы: 8431/8431 (100.0%)
+  * Активных сидов: 53115
+  * Всего загрузок: 22110564
 
