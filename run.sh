@@ -37,9 +37,9 @@ if [ ! -f "$PYTHON_EXEC" ]; then
 fi
 
 if command -v xvfb-run >/dev/null 2>&1; then
-    timeout 7200 xvfb-run -a $PYTHON_EXEC scraper.py "$@"
+    timeout 7200 xvfb-run -a $PYTHON_EXEC scraper.py "$@" 200>&-
 else
-    timeout 7200 $PYTHON_EXEC scraper.py "$@"
+    timeout 7200 $PYTHON_EXEC scraper.py "$@" 200>&-
 fi
 
 rm -rf /tmp/tmp* /tmp/playwright* /tmp/xvfb* 2>/dev/null || true
