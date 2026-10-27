@@ -165,15 +165,15 @@
     "id": "duckstation",
     "name": "DuckStation",
     "author": "shooterspps",
-    "version": "prerelease-2",
+    "version": "prerelease-3",
     "description": "Высокоточный эмулятор Sony PlayStation 1 для Switch. PGXP для устранения дрожания полигонов, масштабирование внутреннего разрешения и шейдеры.",
     "category": "sony",
-    "download_url": "https://github.com/shooterspps/duckstation/releases/download/prerelease-2/duckstation_switch_prerelease_2-a7feccf-260807.zip",
+    "download_url": "https://github.com/shooterspps/duckstation/releases/download/prerelease-3/duckstation_switch_prerelease_3-9cb25f7-261026.zip",
     "filename": "duckstation_switch.zip",
     "install_path": "sdmc:/switch/duckstation/duckstation.nro",
     "extract_dir": "sdmc:/switch/duckstation",
     "is_archive": true,
-    "file_size": 10991703,
+    "file_size": 10742021,
     "supported_console_ids": [
       "ps1"
     ],
