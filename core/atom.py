@@ -1,4 +1,5 @@
 """Парсинг Atom-лент RuTracker для ежедневного отслеживания новых и обновлённых раздач."""
+import time
 import xml.etree.ElementTree as ET
 from curl_cffi import requests as cf_requests
 
@@ -7,7 +8,7 @@ from core.network import BASE_URL, PROXY_URL, fetch_url, is_valid_html
 ATOM_BASE_URL = "https://feed.rutracker.cc/atom/f/{forum_id}.atom"
 
 
-def fetch_atom_feed(forum_id):
+def fetch_atom_feed(forum_id, max_retries=3, timeout=60):
     """Получает последние 50 раздач из Atom-ленты раздела RuTracker.
 
     Возвращает:
@@ -15,39 +16,46 @@ def fetch_atom_feed(forum_id):
     """
     url = ATOM_BASE_URL.format(forum_id=forum_id)
     print(f"[*] Получение Atom-ленты для f={forum_id} ({url})...")
-    try:
-        kwargs = {"impersonate": "chrome120", "timeout": 20}
-        if PROXY_URL:
-            kwargs["proxies"] = {"http": PROXY_URL, "https": PROXY_URL}
-        resp = cf_requests.get(url, **kwargs)
-        if resp.status_code == 200:
-            root = ET.fromstring(resp.content.decode('utf-8'))
-            entries = []
-            for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
-                id_elem = entry.find('{http://www.w3.org/2005/Atom}id')
-                title_elem = entry.find('{http://www.w3.org/2005/Atom}title')
-                link_elem = entry.find('{http://www.w3.org/2005/Atom}link')
+    kwargs = {"impersonate": "chrome120", "timeout": timeout}
+    if PROXY_URL:
+        kwargs["proxies"] = {"http": PROXY_URL, "https": PROXY_URL}
 
-                if id_elem is None or title_elem is None:
-                    continue
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = cf_requests.get(url, **kwargs)
+            if resp.status_code == 200:
+                root = ET.fromstring(resp.content.decode('utf-8'))
+                entries = []
+                for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
+                    id_elem = entry.find('{http://www.w3.org/2005/Atom}id')
+                    title_elem = entry.find('{http://www.w3.org/2005/Atom}title')
+                    link_elem = entry.find('{http://www.w3.org/2005/Atom}link')
 
-                topic_id = id_elem.text.split('/')[-1]
-                raw_title = title_elem.text or ""
-                topic_url = (
-                    link_elem.attrib.get('href', f"{BASE_URL}viewtopic.php?t={topic_id}")
-                    if link_elem is not None
-                    else f"{BASE_URL}viewtopic.php?t={topic_id}"
-                )
+                    if id_elem is None or title_elem is None:
+                        continue
 
-                entries.append({
-                    "topic_id": str(topic_id),
-                    "raw_title": raw_title,
-                    "url": topic_url
-                })
+                    topic_id = id_elem.text.split('/')[-1]
+                    raw_title = title_elem.text or ""
+                    topic_url = (
+                        link_elem.attrib.get('href', f"{BASE_URL}viewtopic.php?t={topic_id}")
+                        if link_elem is not None
+                        else f"{BASE_URL}viewtopic.php?t={topic_id}"
+                    )
 
-            print(f"[+] Из Atom-ленты f={forum_id} получено {len(entries)} последних раздач.")
-            return entries
-    except Exception as e:
-        print(f"[!] Ошибка получения Atom-ленты f={forum_id}: {e}")
+                    entries.append({
+                        "topic_id": str(topic_id),
+                        "raw_title": raw_title,
+                        "url": topic_url
+                    })
+
+                print(f"[+] Из Atom-ленты f={forum_id} получено {len(entries)} последних раздач.")
+                return entries
+            else:
+                print(f"[!] Atom-лента f={forum_id} вернула HTTP {resp.status_code} (попытка {attempt}/{max_retries})")
+        except Exception as e:
+            print(f"[!] Ошибка получения Atom-ленты f={forum_id} (попытка {attempt}/{max_retries}): {e}")
+
+        if attempt < max_retries:
+            time.sleep(3)
 
     return []
