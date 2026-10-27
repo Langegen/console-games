@@ -1,5 +1,37 @@
 [
     {
+        "title": "Kono Subarashii Sekai ni Shukufuku wo! Attack of the Destroyer / KonoSuba: Attack of the Destroyer [NoNpDrm] [RUS/ENG]",
+        "size": "66.3 MB",
+        "magnet": "magnet:?xt=urn:btih:9A4745C8B91E3BE46E4C6A402FCBBBA5267266D8&tr=http%3A%2F%2Fbt3.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6928204",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6928204",
+        "year": "2017",
+        "genre": "Вертикальный скролл-шутер",
+        "developer": "Platine Dispositif",
+        "publisher": "Unknown",
+        "image_format": "Unknown",
+        "interface_lang": "RUS, ENG, JPN",
+        "voice_lang": "Японская",
+        "performance": "Unknown",
+        "multiplayer": "Нет",
+        "cover": "https://i129.fastpic.org/big/2026/1026/49/71b936064fcc21756147a3127d709149.jpeg",
+        "screenshots": [
+            "https://i129.fastpic.org/thumb/2026/1026/1e/20f2320d421d3801424cb379014cc61e.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/45/0711158adc396151719b4549936b4945.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/b3/8cb2ec0c5a324391eab811f063a56fb3.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/76/ab13d330b3e67863c65798d7a46f8476.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/b7/72b6d45356660f12745e48ed367ef9b7.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/22/332592eb7453b965195fc3e7d6b11122.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/2b/e82bb5df213eb069954b418c9e8af02b.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/12/a21ba345e594d8ff5fcd720c4e725112.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1026/45/a1eecbc421aa214bad192719806f0345.jpeg"
+        ],
+        "description": "Kono Subarashii Sekai ni Shukufuku wo! Attack of the Destroyer (также известная как KonoSuba: Attack of the Destroyer) — это игра в жанре вертикального скролл-шутера. Игровой процесс, выполненный в ностальгическом 16-битном ретро-стиле, пародирует классические аркады вроде TwinBee и позволяет игроку управлять ключевыми персонажами одноимённого аниме и ранобэ «Богиня благословляет этот прекрасный мир!» Кадзумой, Аквой, Мэгумин и Дакнесс, каждый из которых обладает уникальными типами атаки и суперспособностями. Пользователям необходимо отбивать волны летающих монстров, зарабатывать очки и внутриигровое золото для покупки улучшений в магазине волшебницы Виз, а также сражаться с огромными боссами.\n\n\n\nАвторы русского перевода\n\n\nПеревод от команды FaceOff\n\nПортирование на PS Vita: FaceOff.\n\n\n\n\n\n\nОсобенности русского перевода\n\n\nВ настройках и таблице рекордов текст накладывается друг на друга.\n\nНадписи в магазине на транслите.\n\n\n\n\n\n\nАвторы английского перевода\n\n\nРуководитель проекта, работа с файлами и изображениями: TheRadziu.\n\nОбщая помощь с переводом: Liron.\n\nПереводчик вступления: Fifix2.\n\nПереводчик названий этапов: MPT.\n\nТестировщик: AnalogMan.\n\n\n\n\n\n\nУстановка перевода\n\n\nВ раздаче две версии перевода, устанавливать обе нельзя.\n\nУстановите плагин nonpdrm (если не был установлен ранее)\n\nДля работы перевода установите плагин repatch (если не был установлен ранее)\n\nПодключите консоль к ПК по USB\n\nЗапустите приложение VitaShell и нажмите select (ПК определит консоль как носитель)\n\nПеренесите на консоль папки \"app\", \"patch\" и \"rePatch\" из раздачи (перевод находится в папках \"RUS\" и \"ENG\")\n\nВ приложении VitaShell, находясь в корневой директории (где отображается список разделов ux0:, ur0: и т.п.), обновите livearea нажав треугольник и выбрав пункт \"refresh livearea\"\n\nПосле этого игра появится на рабочем столе\n\nПриятной игры",
+        "title_id": "PCSG-01093",
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "Mind Maze [NoNpDrm] [RUS/Multi]",
         "size": "313.3 MB",
         "magnet": "magnet:?xt=urn:btih:4954FD5229BDA1F48920FBDA0D3594AA6D6F4CEC&tr=http%3A%2F%2Fbt3.t-ru.org%2Fann%3Fmagnet",

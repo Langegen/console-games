@@ -1,16 +1,17 @@
-=== Обновление баз console-games: 2026-10-26 02:14:51 ===
+=== Обновление баз console-games: 2026-10-27 02:11:44 ===
 
 [PSP] Всего в базе: 903
-  ~ Обновлено (5):
+  ~ Обновлено (6):
+    ~ [Обновлено] Legend of Heroes, The: Trails in the Sky [FULL] [ISO] [RUS v1.1]
     ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
     ~ Portal [PBP] [RUS/Multi] [Homebrew]
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
+  # Перезалит magnet (1):
+    # [Обновлено] Legend of Heroes, The: Trails in the Sky [FULL] [ISO] [RUS v1.1]
 
 [PS1] Всего в базе: 2149
-  + Добавлено (1):
-    + Naruto: Shinobi no Sato no Jintori Gassen [MedySlava] / SLPS-03553 / JAP / RUS [
 
 [WIIU] Всего в базе: 51
 
@@ -42,11 +43,9 @@
   ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
 
-[PSVITA] Всего в базе: 450
-  + Добавлено (3):
-    + Brotherhood United [NoNpDrm] [ENG]
-    + Ultra Mission [NoNpDrm] [ENG]
-    + Mind Maze [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 451
+  + Добавлено (1):
+    + Kono Subarashii Sekai ni Shukufuku wo! Attack of the Destroyer / KonoSuba: Attac
   ~ Обновлено (4):
     ~ Jump King [VPK] [ENG] [Homebrew]
     ~ 2048 [VPK] [ENG] [Homebrew]
@@ -54,8 +53,6 @@
     ~ Five Nights at Freddy’s [VPK] [ENG] [Homebrew]
 
 [DREAMCAST] Всего в базе: 562
-  + Добавлено (1):
-    + Spider-Man [T-13008N] [FullRUS] [SazanOFF] [smith1395] [Fargus] [2.02]
 
 [3DS] Всего в базе: 80
   ~ Обновлено (1):
@@ -66,8 +63,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8714 раздач
-  * Покрытие базы: 8431/8431 (100.0%)
-  * Активных сидов: 53115
-  * Всего загрузок: 22110564
+Всего в базе статистики: 8803 раздач
+  * Покрытие базы: 8432/8432 (100.0%)
+  * Активных сидов: 53317
+  * Всего загрузок: 22309592
 
