@@ -1,8 +1,6 @@
-=== Обновление баз console-games: 2026-10-29 02:09:32 ===
+=== Обновление баз console-games: 2026-10-30 02:16:55 ===
 
 [PSP] Всего в базе: 904
-  + Добавлено (1):
-    + Tomb Raider: Anniversary [FULL] [ISO] [Текст RUS / Озвучка Новый Диск]
   ~ Обновлено (5):
     ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
     ~ Portal [PBP] [RUS/Multi] [Homebrew]
@@ -11,10 +9,6 @@
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
 [PS1] Всего в базе: 2149
-  ~ Обновлено (1):
-    ~ [Обновлено] Naruto: Shinobi no Sato no Jintori Gassen [MedySlava] / SLPS-03553 /
-  # Перезалит magnet (1):
-    # [Обновлено] Naruto: Shinobi no Sato no Jintori Gassen [MedySlava] / SLPS-03553 /
 
 [WIIU] Всего в базе: 51
 
@@ -43,26 +37,18 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3517
-  ~ Обновлено (2):
-    ~ [Обновлено] Sly Racoon (Sly Cooper and the Thievius Raccoonus) [RUS|PAL]
+  ~ Обновлено (1):
     ~ Prince of Persia [Region Free / ENG / Homebrew]
-  # Перезалит magnet (1):
-    # [Обновлено] Sly Racoon (Sly Cooper and the Thievius Raccoonus) [RUS|PAL]
 
-[PSVITA] Всего в базе: 460
-  + Добавлено (9):
-    + Lichtspeerd [NoNpDrm] [RUS/ENG]
-    + 36 Fragments of Midnight [NoNpDrm][RUS]
-    + Broken Sword 5: The Serpent's Curse Episode 2 [NoNpDrm] [RUS]
-    + Broken Sword 5: The Serpent's Curse Episode 1 [NoNpDrm] [RUS/ENG]
-    + Shu [NoNpDrm] [RUS/ENG]
-    + Rogue Aces [NoNpDrm] [RUS/ENG]
-    + CounterSpy [NoNpDrm] [RUS/ENG]
-    + Neon Chrome [NoNpDrm] [RUS/ENG]
-    + Jet Set Knights [NoNpDrm] [ENG]
-  ~ Обновлено (2):
+[PSVITA] Всего в базе: 465
+  + Добавлено (5):
+    + Reverie [NoNpDrm] [RUS/Multi]
+    + La-Mulana EX [NoNpDrm] [RUS/Multi]
+    + Tales From Space: Mutant Blobs Attack [NoNpDrm] [RUS/Multi]
+    + Puddle [NoNpDrm] [RUS/Multi]
+    + Alien Shooter [NoNpDrm] [RUS/ENG]
+  ~ Обновлено (1):
     ~ Jump King [VPK] [ENG] [Homebrew]
-    ~ 2048 [VPK] [ENG] [Homebrew]
 
 [DREAMCAST] Всего в базе: 562
 
@@ -75,8 +61,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8811 раздач
-  * Покрытие базы: 8442/8442 (100.0%)
-  * Активных сидов: 45237
-  * Всего загрузок: 22314803
+Всего в базе статистики: 8816 раздач
+  * Покрытие базы: 8447/8447 (100.0%)
+  * Активных сидов: 47212
+  * Всего загрузок: 22319000
 
