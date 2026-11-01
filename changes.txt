@@ -1,10 +1,11 @@
-=== Обновление баз console-games: 2026-10-31 02:08:05 ===
+=== Обновление баз console-games: 2026-11-01 02:06:46 ===
 
-[PSP] Всего в базе: 906
-  + Добавлено (2):
-    + Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
-    + Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
-  ~ Обновлено (5):
+[PSP] Всего в базе: 907
+  + Добавлено (1):
+    + Metal Gear Solid: Peace Walker [FULL] [ISO] [RUS]
+  ~ Обновлено (7):
+    ~ Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
+    ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
     ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
     ~ Portal [PBP] [RUS/Multi] [Homebrew]
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
@@ -41,11 +42,10 @@
 
 [PS2] Всего в базе: 3517
 
-[PSVITA] Всего в базе: 468
-  + Добавлено (3):
-    + Rogue Legacy [NoNpDrm] [RUS/Multi]
-    + Dragon Sinker [NoNpDrm] [ENG]
-    + Rabi-Ribi [NoNpDrm] [ENG/Multi]
+[PSVITA] Всего в базе: 470
+  + Добавлено (2):
+    + Puyo Puyo Tetris [NoNpDrm] [JPN] [DLC]
+    + I Am The Hero [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 562
 
@@ -58,8 +58,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8821 раздач
-  * Покрытие базы: 8452/8452 (100.0%)
-  * Активных сидов: 49867
-  * Всего загрузок: 22320337
+Всего в базе статистики: 8824 раздач
+  * Покрытие базы: 8455/8455 (100.0%)
+  * Активных сидов: 46396
+  * Всего загрузок: 22324056
 
