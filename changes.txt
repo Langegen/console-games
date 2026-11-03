@@ -1,8 +1,7 @@
-=== Обновление баз console-games: 2026-11-02 02:06:03 ===
+=== Обновление баз console-games: 2026-11-03 02:06:53 ===
 
 [PSP] Всего в базе: 907
-  ~ Обновлено (8):
-    ~ [Обновлено] Metal Gear Solid: Peace Walker [FULL] [ISO] [RUS]
+  ~ Обновлено (7):
     ~ Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
     ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
@@ -10,12 +9,8 @@
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
-  # Перезалит magnet (1):
-    # [Обновлено] Metal Gear Solid: Peace Walker [FULL] [ISO] [RUS]
 
 [PS1] Всего в базе: 2150
-  + Добавлено (1):
-    + Valkyrie Profile [SLUS-01156/01179] [RU]
 
 [WIIU] Всего в базе: 51
 
@@ -45,7 +40,9 @@
 
 [PS2] Всего в базе: 3517
 
-[PSVITA] Всего в базе: 470
+[PSVITA] Всего в базе: 471
+  + Добавлено (1):
+    + DEADBOLT [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 562
 
@@ -58,8 +55,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8825 раздач
-  * Покрытие базы: 8456/8456 (100.0%)
-  * Активных сидов: 46691
-  * Всего загрузок: 22329220
+Всего в базе статистики: 8826 раздач
+  * Покрытие базы: 8457/8457 (100.0%)
+  * Активных сидов: 47554
+  * Всего загрузок: 22336043
 
