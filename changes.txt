@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-03 02:06:53 ===
+=== Обновление баз console-games: 2026-11-04 02:06:21 ===
 
 [PSP] Всего в базе: 907
   ~ Обновлено (7):
@@ -38,11 +38,16 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3517
-
-[PSVITA] Всего в базе: 471
+[PS2] Всего в базе: 3518
   + Добавлено (1):
-    + DEADBOLT [NoNpDrm] [ENG]
+    + RahXephon \ Ра-Зефон [JAP/ENG|NTSC]
+
+[PSVITA] Всего в базе: 475
+  + Добавлено (4):
+    + Tokyo Xanadu [NoNpDrm] [ENG] [DLC]
+    + Skullgirls: 2nd Encore [NoNpDrm] [ENG/Multi]
+    + Wizards of Brandel [NoNpDrm] [ENG]
+    + 2064: Read Only Memories [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 562
 
@@ -50,13 +55,15 @@
   ~ Обновлено (1):
     ~ XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
 
-[NDS] Всего в базе: 83
+[NDS] Всего в базе: 84
+  + Добавлено (1):
+    + 5863 - Aliens: Infestation [RUS]
   ~ Обновлено (1):
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8826 раздач
-  * Покрытие базы: 8457/8457 (100.0%)
-  * Активных сидов: 47554
-  * Всего загрузок: 22336043
+Всего в базе статистики: 8832 раздач
+  * Покрытие базы: 8463/8463 (100.0%)
+  * Активных сидов: 44597
+  * Всего загрузок: 22336936
 
