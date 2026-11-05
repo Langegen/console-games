@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-04 02:06:21 ===
+=== Обновление баз console-games: 2026-11-05 02:07:22 ===
 
 [PSP] Всего в базе: 907
   ~ Обновлено (7):
@@ -10,7 +10,9 @@
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
-[PS1] Всего в базе: 2150
+[PS1] Всего в базе: 2151
+  + Добавлено (1):
+    + Twilight Syndrome: Tansaku-hen / Twilight Syndrome: Search volume / トワイライトシンドロム：
 
 [WIIU] Всего в базе: 51
 
@@ -39,15 +41,14 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3518
-  + Добавлено (1):
-    + RahXephon \ Ра-Зефон [JAP/ENG|NTSC]
 
-[PSVITA] Всего в базе: 475
-  + Добавлено (4):
-    + Tokyo Xanadu [NoNpDrm] [ENG] [DLC]
-    + Skullgirls: 2nd Encore [NoNpDrm] [ENG/Multi]
-    + Wizards of Brandel [NoNpDrm] [ENG]
-    + 2064: Read Only Memories [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 480
+  + Добавлено (5):
+    + Xeno Crisis [NoNpDrm] [ENG/Multi]
+    + 1001 Spikes [NoNpDrm] [ENG]
+    + Roommates [NoNpDrm] [ENG]
+    + The Bard's Tale: Remastered and Resnarkled [NoNpDrm] [RUS/Multi]
+    + Killer Dolls United [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 562
 
@@ -56,14 +57,13 @@
     ~ XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
 
 [NDS] Всего в базе: 84
-  + Добавлено (1):
-    + 5863 - Aliens: Infestation [RUS]
-  ~ Обновлено (1):
+  ~ Обновлено (2):
+    ~ 5863 - Aliens: Infestation [RUS]
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8832 раздач
-  * Покрытие базы: 8463/8463 (100.0%)
-  * Активных сидов: 44597
-  * Всего загрузок: 22336936
+Всего в базе статистики: 8838 раздач
+  * Покрытие базы: 8469/8469 (100.0%)
+  * Активных сидов: 50740
+  * Всего загрузок: 22345265
 
