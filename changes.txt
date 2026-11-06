@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-05 02:07:22 ===
+=== Обновление баз console-games: 2026-11-06 02:07:46 ===
 
 [PSP] Всего в базе: 907
   ~ Обновлено (7):
@@ -11,8 +11,6 @@
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
 [PS1] Всего в базе: 2151
-  + Добавлено (1):
-    + Twilight Syndrome: Tansaku-hen / Twilight Syndrome: Search volume / トワイライトシンドロム：
 
 [WIIU] Всего в базе: 51
 
@@ -42,13 +40,10 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 480
-  + Добавлено (5):
-    + Xeno Crisis [NoNpDrm] [ENG/Multi]
-    + 1001 Spikes [NoNpDrm] [ENG]
-    + Roommates [NoNpDrm] [ENG]
-    + The Bard's Tale: Remastered and Resnarkled [NoNpDrm] [RUS/Multi]
-    + Killer Dolls United [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 482
+  + Добавлено (2):
+    + Chronovolt [NoNpDrm] [RUS/ENG] [DLC]
+    + Mercenary Kings: Reloaded Edition [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 562
 
@@ -62,8 +57,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8838 раздач
-  * Покрытие базы: 8469/8469 (100.0%)
-  * Активных сидов: 50740
-  * Всего загрузок: 22345265
+Всего в базе статистики: 8841 раздач
+  * Покрытие базы: 8471/8471 (100.0%)
+  * Активных сидов: 52903
+  * Всего загрузок: 22351122
 
