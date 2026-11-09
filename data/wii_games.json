@@ -1,5 +1,32 @@
 [
     {
+        "title": "GoldenEye 007 [PAL / Multi]",
+        "size": "4.38 GB",
+        "magnet": "magnet:?xt=urn:btih:9CE810C8EBCBB7A20EC6F421ED6C89822EBBED6B&tr=http%3A%2F%2Fbt2.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6934607",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6934607",
+        "year": "2010",
+        "genre": "Action / Shooter (FPS)",
+        "developer": "Eurocom",
+        "publisher": "Unknown",
+        "image_format": "Лицензия",
+        "interface_lang": "Multi",
+        "voice_lang": "Multi",
+        "performance": "Unknown",
+        "multiplayer": "4х",
+        "cover": "https://i129.fastpic.org/big/2026/1107/43/370ff3ed22430f1b8968f28b16fa1943.png",
+        "screenshots": [
+            "https://i129.fastpic.org/thumb/2026/1107/6e/_9c92d8756ef13d54460262a4d46bac6e.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1107/60/_65f3db8af73787b85753bda28bcdf260.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1107/71/_81f7eb6121ca3933db84845e21d22971.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1107/af/_875e49b83704f1e1408bc89bdb2d79af.jpeg"
+        ],
+        "description": "GoldenEye 007 — переосмысление культового шутера 1997 года для Nintendo 64, созданное студией Eurocom специально для Wii. Сюжет основан на фильме «Золотой глаз», но перенесён в наши дни, а роль Джеймса Бонда исполняет Дэниел Крейг. Агенту 007 предстоит раскрыть заговор вокруг космического оружия «Золотой глаз» и остановить своего бывшего напарника Алека Тревельяна.\n\nМногие задания можно пройти по-разному: скрытно, бесшумно устраняя охрану, или в открытом бою. Помимо одиночной кампании, в игре есть мультиплеер на разделённом экране для четырёх игроков с множеством режимов и настраиваемыми правилами.",
+        "title_id": "SJBP52",
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "Sonic and the Secret Rings / Соник и Мировые кольца [NTSC-U/RUS]",
         "size": "3.61 GB",
         "magnet": "magnet:?xt=urn:btih:157337F230B807ED396815969F66EDE21E1F39F6&tr=http%3A%2F%2Fbt3.t-ru.org%2Fann%3Fmagnet",

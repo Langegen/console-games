@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-08 02:04:15 ===
+=== Обновление баз console-games: 2026-11-09 02:06:03 ===
 
 [PSP] Всего в базе: 907
   ~ Обновлено (7):
@@ -11,14 +11,12 @@
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
 [PS1] Всего в базе: 2151
-  ~ Обновлено (1):
-    ~ [Обновлено] Valkyrie Profile [SLUS-01156/01179] [RUS]
-  # Перезалит magnet (1):
-    # [Обновлено] Valkyrie Profile [SLUS-01156/01179] [RUS]
 
 [WIIU] Всего в базе: 51
 
-[WII] Всего в базе: 312
+[WII] Всего в базе: 313
+  + Добавлено (1):
+    + GoldenEye 007 [PAL / Multi]
 
 [GAMECUBE] Всего в базе: 171
 
@@ -43,12 +41,22 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3518
+  ~ Обновлено (1):
+    ~ [Обновлено] Tales of Destiny 2 [RUS/JPN|NTSC] [JAP / Repack]
+  # Перезалит magnet (1):
+    # [Обновлено] Tales of Destiny 2 [RUS/JPN|NTSC] [JAP / Repack]
 
-[PSVITA] Всего в базе: 486
+[PSVITA] Всего в базе: 491
+  + Добавлено (5):
+    + Valkyrie Drive: Bhikkhuni [NoNpDrm] [ENG] [DLC]
+    + Resident Evil: Revelations 2 [NoNpDrm] [RUS/Multi]
+    + Bit Dungeon Plus [NoNpDrm] [RUS/Multi]
+    + The Idolmaster: Must Songs Blue Album [NoNpDrm] [JPN]
+    + The Idolmaster: Must Songs Red Album [NoNpDrm] [JPN]
+
+[DREAMCAST] Всего в базе: 563
   + Добавлено (1):
-    + The Deer God [NoNpDrm] [ENG]
-
-[DREAMCAST] Всего в базе: 562
+    + Magic - The Gathering [RUS]
 
 [3DS] Всего в базе: 80
   ~ Обновлено (1):
@@ -60,8 +68,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8845 раздач
-  * Покрытие базы: 8475/8475 (100.0%)
-  * Активных сидов: 56286
-  * Всего загрузок: 22357247
+Всего в базе статистики: 8851 раздач
+  * Покрытие базы: 8482/8482 (100.0%)
+  * Активных сидов: 61332
+  * Всего загрузок: 22360232
 
