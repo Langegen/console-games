@@ -188,15 +188,15 @@
     "id": "ppsspp",
     "name": "PPSSPP-nx",
     "author": "NaGaa95",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Порт эмулятора Sony PlayStation Portable для Switch от NaGaa95. Высокая производительность, апскейлинг разрешения, поддержка шейдеров и читов.",
     "category": "sony",
-    "download_url": "https://github.com/NaGaa95/ppsspp-nx/releases/download/1.0.0/PPSSPP.nro",
+    "download_url": "https://github.com/NaGaa95/ppsspp-nx/releases/download/1.1.0/PPSSPP.nro",
     "filename": "PPSSPP.nro",
     "install_path": "sdmc:/switch/ppsspp/PPSSPP.nro",
     "extract_dir": "",
     "is_archive": false,
-    "file_size": 68341670,
+    "file_size": 74917318,
     "supported_console_ids": [
       "psp"
     ],
@@ -353,7 +353,7 @@
     "id": "mupen64plus_next",
     "name": "Mupen64Plus-Next (RetroArch Core)",
     "author": "Libretro",
-    "version": "nightly-2026.11.09",
+    "version": "nightly-2026.11.10",
     "description": "Высокопроизводительное ядро эмулятора Nintendo 64 для RetroArch на Nintendo Switch. Отличная совместимость с популярными 3D-играми N64.",
     "category": "retroarch",
     "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/mupen64plus_next_libretro_libnx.nro.zip",
@@ -361,7 +361,7 @@
     "install_path": "sdmc:/retroarch/cores/mupen64plus_next_libretro_libnx.nro",
     "extract_dir": "sdmc:/retroarch/cores",
     "is_archive": true,
-    "file_size": 9506272,
+    "file_size": 9507249,
     "supported_console_ids": [
       "n64"
     ],
@@ -376,7 +376,7 @@
     "id": "picodrive",
     "name": "PicoDrive (RetroArch Core)",
     "author": "Libretro",
-    "version": "nightly-2026.11.09",
+    "version": "nightly-2026.11.10",
     "description": "Быстрое ядро эмулятора Sega 32X и Mega Drive для RetroArch на Nintendo Switch с поддержкой специфического чипсета 32X.",
     "category": "retroarch",
     "download_url": "https://buildbot.libretro.com/nightly/nintendo/switch/libnx/latest/picodrive_libretro_libnx.nro.zip",
@@ -384,7 +384,7 @@
     "install_path": "sdmc:/retroarch/cores/picodrive_libretro_libnx.nro",
     "extract_dir": "sdmc:/retroarch/cores",
     "is_archive": true,
-    "file_size": 8157616,
+    "file_size": 8160289,
     "supported_console_ids": [
       "sega_32x"
     ],
