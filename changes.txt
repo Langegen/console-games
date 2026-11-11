@@ -1,6 +1,8 @@
-=== Обновление баз console-games: 2026-11-10 02:00:58 ===
+=== Обновление баз console-games: 2026-11-11 02:04:21 ===
 
-[PSP] Всего в базе: 907
+[PSP] Всего в базе: 908
+  + Добавлено (1):
+    + Naruto Shippuden: Ultimate Ninja Impact [FULL] [CSO] [RUS] [MedySlava]
   ~ Обновлено (7):
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
@@ -40,15 +42,18 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 498
-  + Добавлено (7):
-    + Senran Kagura: Estival Versus [NoNpDrm] [ENG] [DLC]
-    + Romancing SaGa 3 [NoNpDrm] [ENG]
-    + Asdivine Hearts II [NoNpDrm] [ENG]
-    + Exist Archive: The Other Side of the Sky [NoNpDrm] [ENG] [DLC]
-    + Hotline Miami 2: Wrong Number [NoNpDrm] [RUS/Multi]
-    + Z-Run [NoNpDrm] [ENG]
-    + NightCry [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 508
+  + Добавлено (10):
+    + BADLAND: Game of the Year Edition [NoNpDrm] [RUS/Multi]
+    + Miracle Girls Festival [NoNpDrm] [JPN] [DLC]
+    + Magical Beat [NoNpDrm] [JPN] [DLC]
+    + Shakedown Hawaii [NoNpDrm] [RUS/ENG]
+    + Retro City Rampage DX [NoNpDrm] [RUS/Multi]
+    + BigFest [NoNpDrm] [RUS/Multi]
+    + Jungle Rumble: Freedom, Happiness and Bananas [NoNpDrm] [ENG]
+    + Imaginstruments [NoNpDrm] [RUS/Multi]
+    + Musynx [NoNpDrm] [ENG/Multi]
+    + Bad Apple Wars [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -64,8 +69,8 @@
     ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8858 раздач
-  * Покрытие базы: 8489/8489 (100.0%)
-  * Активных сидов: 59372
-  * Всего загрузок: 22354267
+Всего в базе статистики: 8869 раздач
+  * Покрытие базы: 8500/8500 (100.0%)
+  * Активных сидов: 58239
+  * Всего загрузок: 22355174
 
