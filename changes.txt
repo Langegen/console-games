@@ -1,8 +1,6 @@
-=== Обновление баз console-games: 2026-11-11 02:04:21 ===
+=== Обновление баз console-games: 2026-11-12 02:04:03 ===
 
 [PSP] Всего в базе: 908
-  + Добавлено (1):
-    + Naruto Shippuden: Ultimate Ninja Impact [FULL] [CSO] [RUS] [MedySlava]
   ~ Обновлено (7):
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
@@ -24,7 +22,9 @@
 
 [SNES] Всего в базе: 32
 
-[N64] Всего в базе: 16
+[N64] Всего в базе: 17
+  + Добавлено (1):
+    + Castlevania / Akumajou Dracula Mokushiroku (RUS V1.0)
 
 [GBA] Всего в базе: 26
 
@@ -42,18 +42,10 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 508
-  + Добавлено (10):
-    + BADLAND: Game of the Year Edition [NoNpDrm] [RUS/Multi]
-    + Miracle Girls Festival [NoNpDrm] [JPN] [DLC]
-    + Magical Beat [NoNpDrm] [JPN] [DLC]
-    + Shakedown Hawaii [NoNpDrm] [RUS/ENG]
-    + Retro City Rampage DX [NoNpDrm] [RUS/Multi]
-    + BigFest [NoNpDrm] [RUS/Multi]
-    + Jungle Rumble: Freedom, Happiness and Bananas [NoNpDrm] [ENG]
-    + Imaginstruments [NoNpDrm] [RUS/Multi]
-    + Musynx [NoNpDrm] [ENG/Multi]
-    + Bad Apple Wars [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 510
+  + Добавлено (2):
+    + Atelier Totori Plus: The Adventurer of Arland [NoNpDrm] [ENG] [DLC]
+    + Ratchet & Clank: QForce / Ratchet & Clank: Full Frontal Assault [NoNpDrm] [RUS/M
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -64,13 +56,12 @@
     ~ XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
 
 [NDS] Всего в базе: 84
-  ~ Обновлено (2):
+  ~ Обновлено (1):
     ~ 5863 - Aliens: Infestation [RUS]
-    ~ 4124 - Nanashi no Geemu Me (Безымянная игра: Глаз) [Japan/RUS/ENG] [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8869 раздач
-  * Покрытие базы: 8500/8500 (100.0%)
-  * Активных сидов: 58239
-  * Всего загрузок: 22355174
+Всего в базе статистики: 8873 раздач
+  * Покрытие базы: 8503/8503 (100.0%)
+  * Активных сидов: 42147
+  * Всего загрузок: 22366246
 
