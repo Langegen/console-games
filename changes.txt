@@ -1,6 +1,8 @@
-=== Обновление баз console-games: 2026-11-12 02:04:03 ===
+=== Обновление баз console-games: 2026-11-13 02:06:38 ===
 
-[PSP] Всего в базе: 908
+[PSP] Всего в базе: 909
+  + Добавлено (1):
+    + Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
   ~ Обновлено (7):
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
@@ -23,8 +25,6 @@
 [SNES] Всего в базе: 32
 
 [N64] Всего в базе: 17
-  + Добавлено (1):
-    + Castlevania / Akumajou Dracula Mokushiroku (RUS V1.0)
 
 [GBA] Всего в базе: 26
 
@@ -42,10 +42,14 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 510
-  + Добавлено (2):
-    + Atelier Totori Plus: The Adventurer of Arland [NoNpDrm] [ENG] [DLC]
-    + Ratchet & Clank: QForce / Ratchet & Clank: Full Frontal Assault [NoNpDrm] [RUS/M
+[PSVITA] Всего в базе: 516
+  + Добавлено (6):
+    + Burly Men At Sea [NoNpDrm] [RUS/Multi]
+    + Back to Bed [NoNpDrm] [RUS/Multi]
+    + Alteric [NoNpDrm] [RUS/Multi]
+    + The Bridge [NoNpDrm] [RUS/Multi]
+    + Bridge Constructor [NoNpDrm] [RUS/Multi]
+    + Assassin's Creed III (3): Liberation [NoNpDrm] [RUS/Multi] [DLC]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -60,8 +64,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8873 раздач
-  * Покрытие базы: 8503/8503 (100.0%)
-  * Активных сидов: 42147
-  * Всего загрузок: 22366246
+Всего в базе статистики: 8880 раздач
+  * Покрытие базы: 8510/8510 (100.0%)
+  * Активных сидов: 46524
+  * Всего загрузок: 22361605
 
