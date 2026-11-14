@@ -1,9 +1,10 @@
-=== Обновление баз console-games: 2026-11-13 02:06:38 ===
+=== Обновление баз console-games: 2026-11-14 02:06:09 ===
 
-[PSP] Всего в базе: 909
+[PSP] Всего в базе: 910
   + Добавлено (1):
-    + Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
-  ~ Обновлено (7):
+    + Initial D Street Stage [FULL] [ISO] [RUS] Перевод (Slav art) [FULL] [ISO] [RUS]
+  ~ Обновлено (8):
+    ~ [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
     ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
@@ -11,8 +12,13 @@
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
+  # Перезалит magnet (1):
+    # [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
 
-[PS1] Всего в базе: 2151
+[PS1] Всего в базе: 2153
+  + Добавлено (2):
+    + Evil Dead: Hail to the King [ViT Co. / SLUS-01072/01326 / USA / RUS]
+    + [Обновлено] Final Fantasy VII [SCUS-94163/94164/94165] [FFRTT / DigitalM00N] [RU
 
 [WIIU] Всего в базе: 51
 
@@ -42,30 +48,31 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 516
-  + Добавлено (6):
-    + Burly Men At Sea [NoNpDrm] [RUS/Multi]
-    + Back to Bed [NoNpDrm] [RUS/Multi]
-    + Alteric [NoNpDrm] [RUS/Multi]
-    + The Bridge [NoNpDrm] [RUS/Multi]
-    + Bridge Constructor [NoNpDrm] [RUS/Multi]
-    + Assassin's Creed III (3): Liberation [NoNpDrm] [RUS/Multi] [DLC]
+[PSVITA] Всего в базе: 525
+  + Добавлено (9):
+    + Doodle God [NoNpDrm] [RUS/Multi]
+    + Doodle Kingdom [NoNpDrm] [RUS/Multi]
+    + Doodle Devil [NoNpDrm] [RUS/Multi]
+    + Entwined [NoNpDrm] [RUS/Multi]
+    + Downwell [NoNpDrm] [RUS/Multi]
+    + Demetrios The Big Cynical Adventure [NoNpDrm] [RUS/Multi]
+    + The Count Lucanor [NoNpDrm] [RUS/Multi]
+    + Blasting Agent: Ultimate Edition [NoNpDrm] [RUS/Multi]
+    + Day D Tower Rush [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
     ~ Magic - The Gathering [RUS]
 
 [3DS] Всего в базе: 80
-  ~ Обновлено (1):
-    ~ XXXX - Grand Theft Auto: Vice City [CIA] [ENG]
 
 [NDS] Всего в базе: 84
   ~ Обновлено (1):
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8880 раздач
-  * Покрытие базы: 8510/8510 (100.0%)
-  * Активных сидов: 46524
-  * Всего загрузок: 22361605
+Всего в базе статистики: 8892 раздач
+  * Покрытие базы: 8522/8522 (100.0%)
+  * Активных сидов: 53725
+  * Всего загрузок: 22365330
 
