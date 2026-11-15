@@ -1,8 +1,6 @@
-=== Обновление баз console-games: 2026-11-14 02:06:09 ===
+=== Обновление баз console-games: 2026-11-15 02:06:38 ===
 
 [PSP] Всего в базе: 910
-  + Добавлено (1):
-    + Initial D Street Stage [FULL] [ISO] [RUS] Перевод (Slav art) [FULL] [ISO] [RUS]
   ~ Обновлено (8):
     ~ [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
@@ -12,13 +10,8 @@
     ~ Undertale [PBP] [ENG/JPN] [Homebrew]
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
-  # Перезалит magnet (1):
-    # [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
 
 [PS1] Всего в базе: 2153
-  + Добавлено (2):
-    + Evil Dead: Hail to the King [ViT Co. / SLUS-01072/01326 / USA / RUS]
-    + [Обновлено] Final Fantasy VII [SCUS-94163/94164/94165] [FFRTT / DigitalM00N] [RU
 
 [WIIU] Всего в базе: 51
 
@@ -48,17 +41,13 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 525
-  + Добавлено (9):
-    + Doodle God [NoNpDrm] [RUS/Multi]
-    + Doodle Kingdom [NoNpDrm] [RUS/Multi]
-    + Doodle Devil [NoNpDrm] [RUS/Multi]
-    + Entwined [NoNpDrm] [RUS/Multi]
-    + Downwell [NoNpDrm] [RUS/Multi]
-    + Demetrios The Big Cynical Adventure [NoNpDrm] [RUS/Multi]
-    + The Count Lucanor [NoNpDrm] [RUS/Multi]
-    + Blasting Agent: Ultimate Edition [NoNpDrm] [RUS/Multi]
-    + Day D Tower Rush [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 530
+  + Добавлено (5):
+    + Medieval Defenders [NoNpDrm] [RUS/Multi]
+    + SUPERBEAT: XONiC [NoNpDrm] [ENG]
+    + Get Off My Lawn! [NoNpDrm] [RUS/Multi]
+    + Hatoful Boyfriend: Holiday Star [NoNpDrm] [ENG/Multi]
+    + Hatoful Boyfriend [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -71,8 +60,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8892 раздач
-  * Покрытие базы: 8522/8522 (100.0%)
-  * Активных сидов: 53725
-  * Всего загрузок: 22365330
+Всего в базе статистики: 8897 раздач
+  * Покрытие базы: 8527/8527 (100.0%)
+  * Активных сидов: 56130
+  * Всего загрузок: 22373837
 
