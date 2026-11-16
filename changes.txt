@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-15 02:06:38 ===
+=== Обновление баз console-games: 2026-11-16 02:06:02 ===
 
 [PSP] Всего в базе: 910
   ~ Обновлено (8):
@@ -11,7 +11,9 @@
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
-[PS1] Всего в базе: 2153
+[PS1] Всего в базе: 2154
+  + Добавлено (1):
+    + Crash Bandicoot [BearTeam / SCUS-94900 / USA / RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -41,13 +43,9 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 530
-  + Добавлено (5):
-    + Medieval Defenders [NoNpDrm] [RUS/Multi]
-    + SUPERBEAT: XONiC [NoNpDrm] [ENG]
-    + Get Off My Lawn! [NoNpDrm] [RUS/Multi]
-    + Hatoful Boyfriend: Holiday Star [NoNpDrm] [ENG/Multi]
-    + Hatoful Boyfriend [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 531
+  + Добавлено (1):
+    + Fort Defense: North Menace [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -60,8 +58,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8897 раздач
-  * Покрытие базы: 8527/8527 (100.0%)
-  * Активных сидов: 56130
-  * Всего загрузок: 22373837
+Всего в базе статистики: 8899 раздач
+  * Покрытие базы: 8529/8529 (100.0%)
+  * Активных сидов: 55949
+  * Всего загрузок: 22373815
 
