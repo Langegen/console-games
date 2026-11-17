@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-16 02:06:02 ===
+=== Обновление баз console-games: 2026-11-17 09:40:30 ===
 
 [PSP] Всего в базе: 910
   ~ Обновлено (8):
@@ -12,8 +12,6 @@
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
 [PS1] Всего в базе: 2154
-  + Добавлено (1):
-    + Crash Bandicoot [BearTeam / SCUS-94900 / USA / RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -43,9 +41,15 @@
 
 [PS2] Всего в базе: 3518
 
-[PSVITA] Всего в базе: 531
-  + Добавлено (1):
-    + Fort Defense: North Menace [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 538
+  + Добавлено (7):
+    + Frobisher Says! [NoNpDrm] [RUS/Multi] [DLC]
+    + Devious Dungeon 2 [NoNpDrm] [RUS/Multi]
+    + Fort Defense [NoNpDrm] [RUS/Multi]
+    + Devious Dungeon [NoNpDrm] [RUS/Multi]
+    + Exile's End [NoNpDrm] [RUS/ENG]
+    + Gunslugs [NoNpDrm] [RUS/Multi]
+    + Space Hulk [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -58,8 +62,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8899 раздач
-  * Покрытие базы: 8529/8529 (100.0%)
-  * Активных сидов: 55949
-  * Всего загрузок: 22373815
+Всего в базе статистики: 8906 раздач
+  * Покрытие базы: 8536/8536 (100.0%)
+  * Активных сидов: 58671
+  * Всего загрузок: 22381634
 
