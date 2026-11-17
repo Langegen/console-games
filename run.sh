@@ -18,6 +18,7 @@ if [ -f .env ]; then
     set -a
     . ./.env
     set +a
+export PYTHONUNBUFFERED=1
 fi
 
 # Проверяем и включаем sparse-checkout
