@@ -33,7 +33,8 @@ if ENV_COOKIES_RAW:
     for _item in ENV_COOKIES_RAW.split(';'):
         if '=' in _item:
             _k, _v = _item.strip().split('=', 1)
-            SESSION_COOKIES[_k.strip()] = _v.strip()
+            if _k.strip() != 'cf_clearance':
+                SESSION_COOKIES[_k.strip()] = _v.strip()
 
 CF_SESSION_INITIALIZED = False
 PROXY_URL = os.environ.get("RUTRACKER_PROXY", "").strip()
@@ -65,7 +66,8 @@ def init_env(env_path=None):
                             for item in v.split(';'):
                                 if '=' in item:
                                     ck, cv = item.strip().split('=', 1)
-                                    SESSION_COOKIES[ck.strip()] = cv.strip()
+                                    if ck.strip() != 'cf_clearance':
+                                        SESSION_COOKIES[ck.strip()] = cv.strip()
                         elif k == 'RUTRACKER_UA':
                             USER_AGENT = v
                         elif k == 'RUTRACKER_PROXY':
@@ -207,6 +209,8 @@ def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
 
         if SESSION_COOKIES:
             for k, v in SESSION_COOKIES.items():
+                if k == 'cf_clearance':
+                    continue
                 try:
                     GLOBAL_DRIVER.add_cookie({'name': k, 'value': v, 'domain': '.rutracker.org'})
                 except Exception as e:
@@ -299,7 +303,9 @@ def _bypass_request(url, is_post=False, post_data=None):
         if is_post:
             headers['X-Requested-With'] = 'XMLHttpRequest'
         if SESSION_COOKIES:
-            headers['Cookie'] = '; '.join(f'{k}={v}' for k, v in SESSION_COOKIES.items())
+            bypass_cookies = {k: v for k, v in SESSION_COOKIES.items() if k != 'cf_clearance'}
+            if bypass_cookies:
+                headers['Cookie'] = '; '.join(f'{k}={v}' for k, v in bypass_cookies.items())
         kwargs = {'impersonate': 'chrome120', 'timeout': 60}
         if is_post:
             resp = cf_requests.post(mirror_url, data=post_data, headers=headers, **kwargs)
