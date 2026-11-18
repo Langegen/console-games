@@ -1,5 +1,27 @@
 [
     {
+        "title": "Metal Gear Solid 3 - Snake Eater[RU/NTSC]",
+        "size": "4.27 GB",
+        "magnet": "magnet:?xt=urn:btih:8148EB33DD230BCCF364286A8EE040EFC5AF3368&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6939224",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6939224",
+        "year": "2004",
+        "genre": "Tactical Espionage Action",
+        "developer": "KCEJ",
+        "publisher": "Unknown",
+        "image_format": "Repack",
+        "interface_lang": "Русско-английский",
+        "voice_lang": "Английский",
+        "performance": "Unknown",
+        "multiplayer": "нет",
+        "cover": "https://i4.imageban.ru/out/2026/11/17/8145c53b5f7d3ecc12b92e2f3c3125f5.jpeg",
+        "screenshots": [],
+        "description": "Metal Gear Solid 3: Snake Eater — третья игра в серии MGS. Издана в 2004 году компанией Konami на PlayStation 2. По сути, является приквелом к первой Metal Gear. Главный герой — Нейкед Снейк (англ. Naked Snake), также известный как Биг Босс (Big Boss).\nДополнительная информация:\n\nВпервые версия для Playstation 2 с субтитрами на русском языке. На основе перевода Mr.President. Спасибо cobrrraa за помощь!\nПереведено:\n\n- катсцены (DEMO) и видеоролики (MOVIE);\n\n- реплики во время игры (VOX);\n\n- меню, названия и описания предметов, подсказки, окна R2/L2, крики охраны, режим Snake vs Monkey (скрипты уровней GCX);\n\n- кодек\nНе переведено:\n\n- надписи на текстурах (главное меню, вступительный текст про холодную войну, названия камуфляжа и оружия на иконках);\n\n- сообщения карты памяти, сетевые и DNAS;\n\n- названия песен и бренд Calorie Mate;\n\n- названия локаций на карте и папка /ABC/.\n\n- меню выбора оружия, карты и CURE - «Лечение» ;\n\n- сетевые сообщения: в них есть двухбайтовые коды, которые могут отображаться неправильно; встречаются только при сетевых функциях;\nПроходится полностью на PS2 c OPL 1.2.\n\nОбраз влезет на DVD-5 и на exFAT-флешку для OPL он помещается, на FAT32 — нет.",
+        "title_id": "SLUS-20915",
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "RahXephon \\ Ра-Зефон [JAP/ENG|NTSC]",
         "size": "4.36 GB",
         "magnet": "magnet:?xt=urn:btih:CC9244576C98F1A379BBB1627FD49A432E95F758&tr=http%3A%2F%2Fbt2.t-ru.org%2Fann%3Fmagnet",
@@ -21,10 +43,10 @@
             "https://i60.fastpic.org/big/2015/0415/f8/e470cde3566292ec3014a3c7d2af3df8.png",
             "https://i129.fastpic.org/thumb/2026/1103/71/_77da781af8a7a33895e5c362203b0671.jpeg",
             "https://i129.fastpic.org/thumb/2026/1103/4e/ef76e11b41813585626f89a9031bf14e.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1114/93/dad40fc9a6ff1710289073a05d868f93.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1114/cd/4c763f6da6376105e555d5c4c7a8b2cd.jpeg",
             "https://i129.fastpic.org/thumb/2026/1103/3f/765a6f040bb091dd5aaee470ccc0593f.jpeg",
-            "https://i129.fastpic.org/thumb/2026/1103/a7/_3698c0ce35b5e48691c90a7c1af30ca7.jpeg",
-            "https://i129.fastpic.org/thumb/2026/1103/00/_a8cad41ef9a98d82af8b3939b57b6f00.jpeg",
-            "https://i129.fastpic.org/thumb/2026/1103/76/_7f10566a571a85b18a9295d321e3b276.jpeg"
+            "https://i129.fastpic.org/thumb/2026/1114/2d/7a93de7ba6afbafcb46acb2fa1a0452d.jpeg"
         ],
         "description": "RahXephon — кинематографичная экшен-адвенчура, которая детально воссоздает и расширяет сюжет оригинального аниме-сериала. Игра сочетает в себе два совершенно разных игровых процесса: повседневную жизнь подростка и масштабные сражения на гигантских роботах. Игрок перемещается в 3-мерном мире, узнавая о местах и отношениях персонажей и продвигая игру к одной из 4 разных концовок. Игровые персонажи озвучивались их оригинальными сэйю и были анимированы во время разговоров. Для игры были созданы новые анимационные ролики. В action-вставках игрок сражается с Долемами с помощью Ра-Зефона; оружие и усовершенствования для Ра-Зефона могут быть открыты в ходе игры.Дополнительная информация:\n\nЭто фанатский перевод на английский. Переведен весь текст, добавлены субтитры в роликах.",
         "title_id": "SLPS-25264",

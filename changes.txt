@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-17 09:40:30 ===
+=== Обновление баз console-games: 2026-11-18 02:14:34 ===
 
 [PSP] Всего в базе: 910
   ~ Обновлено (8):
@@ -39,17 +39,15 @@
 
 [SEGA_32X] Всего в базе: 5
 
-[PS2] Всего в базе: 3518
+[PS2] Всего в базе: 3519
+  + Добавлено (1):
+    + Metal Gear Solid 3 - Snake Eater[RU/NTSC]
 
-[PSVITA] Всего в базе: 538
-  + Добавлено (7):
-    + Frobisher Says! [NoNpDrm] [RUS/Multi] [DLC]
-    + Devious Dungeon 2 [NoNpDrm] [RUS/Multi]
-    + Fort Defense [NoNpDrm] [RUS/Multi]
-    + Devious Dungeon [NoNpDrm] [RUS/Multi]
-    + Exile's End [NoNpDrm] [RUS/ENG]
-    + Gunslugs [NoNpDrm] [RUS/Multi]
-    + Space Hulk [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 541
+  + Добавлено (3):
+    + Attractio [NoNpDrm] [RUS/Multi]
+    + Ice Cream Surfer [NoNpDrm] [RUS/Multi]
+    + Fat Princess: Piece of Cake / Fat Princess: Пара пустяков [NoNpDrm] [RUS/Multi]
 
 [DREAMCAST] Всего в базе: 563
   ~ Обновлено (1):
@@ -62,8 +60,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8906 раздач
-  * Покрытие базы: 8536/8536 (100.0%)
-  * Активных сидов: 58671
-  * Всего загрузок: 22381634
+Всего в базе статистики: 8910 раздач
+  * Покрытие базы: 8540/8540 (100.0%)
+  * Активных сидов: 53669
+  * Всего загрузок: 22388528
 
