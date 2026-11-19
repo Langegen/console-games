@@ -1,4 +1,4 @@
-=== Обновление баз console-games: 2026-11-18 02:14:34 ===
+=== Обновление баз console-games: 2026-11-19 02:15:06 ===
 
 [PSP] Всего в базе: 910
   ~ Обновлено (8):
@@ -15,7 +15,9 @@
 
 [WIIU] Всего в базе: 51
 
-[WII] Всего в базе: 313
+[WII] Всего в базе: 314
+  + Добавлено (1):
+    + The Amazing Spider-man [PAL / RUS]
 
 [GAMECUBE] Всего в базе: 171
 
@@ -40,16 +42,22 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3519
+
+[PSVITA] Всего в базе: 550
+  + Добавлено (9):
+    + Xenon Valkyrie+ [NoNpDrm] [ENG/Multi]
+    + Die!Die!Die! [NoNpDrm] [RUS/Multi]
+    + Treasure Park / Парк сокровищ [NoNpDrm] [RUS/Multi]
+    + @field [NoNpDrm] [JPN] [DLC]
+    + CastleStorm [NoNpDrm] [ENG/Multi] [DLC]
+    + Mekorama [NoNpDrm] [ENG/Multi]
+    + Riddled Corpses EX [NoNpDrm] [ENG]
+    + Attack on Titan 2 / A.O.T. 2 [NoNpDrm] [RUS/JPN]
+    + Hue [NoNpDrm] [RUS/Multi]
+
+[DREAMCAST] Всего в базе: 564
   + Добавлено (1):
-    + Metal Gear Solid 3 - Snake Eater[RU/NTSC]
-
-[PSVITA] Всего в базе: 541
-  + Добавлено (3):
-    + Attractio [NoNpDrm] [RUS/Multi]
-    + Ice Cream Surfer [NoNpDrm] [RUS/Multi]
-    + Fat Princess: Piece of Cake / Fat Princess: Пара пустяков [NoNpDrm] [RUS/Multi]
-
-[DREAMCAST] Всего в базе: 563
+    + Vermilion Desert [RUS]
   ~ Обновлено (1):
     ~ Magic - The Gathering [RUS]
 
@@ -60,8 +68,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8910 раздач
-  * Покрытие базы: 8540/8540 (100.0%)
-  * Активных сидов: 53669
-  * Всего загрузок: 22388528
+Всего в базе статистики: 8921 раздач
+  * Покрытие базы: 8551/8551 (100.0%)
+  * Активных сидов: 54263
+  * Всего загрузок: 22389193
 

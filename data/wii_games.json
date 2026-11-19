@@ -1,5 +1,35 @@
 [
     {
+        "title": "The Amazing Spider-man [PAL / RUS]",
+        "size": "2.52 GB",
+        "magnet": "magnet:?xt=urn:btih:6B1EA7769818922CCA8454D3D8DB044629345FEB&tr=http%3A%2F%2Fbt.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6939403",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6939403",
+        "year": "2012",
+        "genre": "Action-adventure, Platform",
+        "developer": "Benox",
+        "publisher": "Unknown",
+        "image_format": "Неофициальное",
+        "interface_lang": "Русский",
+        "voice_lang": "Русский",
+        "performance": "Unknown",
+        "multiplayer": "Нет",
+        "cover": "https://i129.fastpic.org/big/2026/1118/7b/3cdbabe486bc4b89fae3090bcaa9057b.jpg",
+        "screenshots": [
+            "https://i129.fastpic.org/thumb/2026/1118/34/289b55d742de860e54e667a529f0f234.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/7f/7ffc724769bac27b967617c50ad2527f.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/ff/daf757a5f1089f9825538c6ca18e32ff.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/21/_bfd88e4ff3c6a092dc977103f4519e21.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/bc/_1fcb6900bcad85903210c176358d7ebc.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/fc/_3cb19c8e1c7766058d7b67347d16d4fc.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/fd/_c4919814176947ba54a6d2e1cedf9efd.jpeg"
+        ],
+        "description": "Во время экскурсии Питера Паркера и Гвен Стейси из лабораторий сбегают гибриды человека и животных. Они заражают Нью-Йорк смертельным вирусом, и Человеку-пауку приходится объединиться с Коннорсом для создания вакцины.",
+        "title_id": "SAFELY",
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "GoldenEye 007 [PAL / Multi]",
         "size": "4.38 GB",
         "magnet": "magnet:?xt=urn:btih:9CE810C8EBCBB7A20EC6F421ED6C89822EBBED6B&tr=http%3A%2F%2Fbt2.t-ru.org%2Fann%3Fmagnet",

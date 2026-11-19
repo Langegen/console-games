@@ -1,5 +1,37 @@
 [
     {
+        "title": "Vermilion Desert [RUS]",
+        "size": "1.11 GB",
+        "magnet": "magnet:?xt=urn:btih:23D1D5DA8C5C6A4674BFA8C07DBBD756CA6CF606&tr=http%3A%2F%2Fbt2.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6939641",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6939641",
+        "year": "1999",
+        "genre": "Strategy",
+        "developer": "River Hill Software",
+        "publisher": "Riverhillsoft Inc",
+        "image_format": "GDI",
+        "interface_lang": "русский",
+        "voice_lang": "Unknown",
+        "performance": "Unknown",
+        "multiplayer": "Unknown",
+        "cover": "https://i.ibb.co/yBcVGT2v/599px-Vermilion-Desert-DC-JP-Box-Front.jpg",
+        "screenshots": [
+            "https://i129.fastpic.org/thumb/2026/1118/0c/8ad9f73f1b07f518dbd895fbc6d6590c.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/78/942263bcf500979cafc792e948f34f78.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/1d/604cd25005c94cc0240c9a1bc0e3c41d.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/fe/e41c04c238a205b4e8806f392393b0fe.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/d1/c60d3bc213e27a4ce5beb8f69dbfe6d1.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/c0/6cf1bb55404aabd4ac8f642616899dc0.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/28/d8892f864b1dbf4c8510edad31081628.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/de/8f0b8d6bf2978a05ed92a46482f67ede.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1118/98/_4bd7cc753dec5b2680c7b506ec3e0e98.jpeg"
+        ],
+        "description": "105 год эры ＮＣ. Принц Омакан взошёл на престол королевства Аргана. Юному королю было всего 14 лет. При новом короле страна провозгласила независимость и начала вторжение в соседние государства. За одну ночь королевство превратилось в империю. Военная мощь Империи оказалась сокрушительной: всего за 7 дней с начала войны она захватила 40% континента. Уцелевшие государства объединились под лозунгом свержения Империи, создав Армию Свободной Федерации. Несмотря на отчаянное сопротивление, разрыв в военных технологиях и организации войск был огромен. Через 3 года после вторжения Федерация оказалась на грани потери более 70% континента. Встревоженное этим правительство Свободной Федерации создало отряд специального назначения, чтобы получить преимущество в локальных боях. Так появился особый отряд наёмников ≪Сильверфокс≫.\nДополнительная информация: мОДИФИЦИРОВАНЫ:\n\n1ST_READ.BIN\n\nVDFNT24.BMP\n\nSYSTEM.MSB\n\nMAP00.MSB\n\nMAP01.MSB\nАльфа версия. Перевод сыроват, в тектуры и глубоко в 1ST_READ.BIN не лез, условно переведены, обучающая миссия, вступление и интерфайс, как видно из скриншотов, текст идет с разным интервалом, возможно в будущем поправлю или поправят.",
+        "title_id": null,
+        "is_romset": false,
+        "content_type": "game"
+    },
+    {
         "title": "Magic - The Gathering [RUS]",
         "size": "1.11 GB",
         "magnet": "magnet:?xt=urn:btih:07F26EB3AF34789ECCC53BC34D5D3A1940B68459&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet",
