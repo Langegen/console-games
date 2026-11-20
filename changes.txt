@@ -1,6 +1,8 @@
-=== Обновление баз console-games: 2026-11-19 02:15:06 ===
+=== Обновление баз console-games: 2026-11-20 02:13:15 ===
 
-[PSP] Всего в базе: 910
+[PSP] Всего в базе: 911
+  + Добавлено (1):
+    + Sonic Mania [FULL] [ISO] [ENG/Multi] [Homebrew]
   ~ Обновлено (8):
     ~ [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
@@ -11,15 +13,17 @@
     ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
     ~ Undertale [FULL] [PBP] [RUS/JPN] [Homebrew]
 
-[PS1] Всего в базе: 2154
+[PS1] Всего в базе: 2155
+  + Добавлено (1):
+    + Redump - Sony PlayStation [NTSC-U + NTSC-J + PAL / ENG + JPN + Multi] (2025-12-0
 
 [WIIU] Всего в базе: 51
 
 [WII] Всего в базе: 314
-  + Добавлено (1):
-    + The Amazing Spider-man [PAL / RUS]
 
-[GAMECUBE] Всего в базе: 171
+[GAMECUBE] Всего в базе: 172
+  + Добавлено (1):
+    + Redump - Nintendo GameCube [NTSC-U + NTSC-J + PAL / RUS + ENG + Multi] (2026-01-
 
 [NES] Всего в базе: 53
 
@@ -43,22 +47,15 @@
 
 [PS2] Всего в базе: 3519
 
-[PSVITA] Всего в базе: 550
-  + Добавлено (9):
-    + Xenon Valkyrie+ [NoNpDrm] [ENG/Multi]
-    + Die!Die!Die! [NoNpDrm] [RUS/Multi]
-    + Treasure Park / Парк сокровищ [NoNpDrm] [RUS/Multi]
-    + @field [NoNpDrm] [JPN] [DLC]
-    + CastleStorm [NoNpDrm] [ENG/Multi] [DLC]
-    + Mekorama [NoNpDrm] [ENG/Multi]
-    + Riddled Corpses EX [NoNpDrm] [ENG]
-    + Attack on Titan 2 / A.O.T. 2 [NoNpDrm] [RUS/JPN]
-    + Hue [NoNpDrm] [RUS/Multi]
+[PSVITA] Всего в базе: 553
+  + Добавлено (3):
+    + LEGO Batman 2: DC Super Heroes [NoNpDrm] [RUS/Multi]
+    + A.W.: Phoenix Festa [NoNpDrm] [ENG]
+    + Abunai Koi no Sousashitsu: Eternal Happiness [NoNpDrm] [JPN]
 
 [DREAMCAST] Всего в базе: 564
-  + Добавлено (1):
-    + Vermilion Desert [RUS]
-  ~ Обновлено (1):
+  ~ Обновлено (2):
+    ~ Vermilion Desert [RUS]
     ~ Magic - The Gathering [RUS]
 
 [3DS] Всего в базе: 80
@@ -68,8 +65,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8921 раздач
-  * Покрытие базы: 8551/8551 (100.0%)
-  * Активных сидов: 54263
-  * Всего загрузок: 22389193
+Всего в базе статистики: 8928 раздач
+  * Покрытие базы: 8557/8557 (100.0%)
+  * Активных сидов: 51813
+  * Всего загрузок: 22385299
 

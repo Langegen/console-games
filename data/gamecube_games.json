@@ -1,5 +1,37 @@
 [
     {
+        "title": "Redump - Nintendo GameCube [NTSC-U + NTSC-J + PAL / RUS + ENG + Multi] (2026-01-11)",
+        "size": "2.203 TB",
+        "magnet": "magnet:?xt=urn:btih:4E27F56DDF34CB23B82C1BD7799AA076F35797C5&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet",
+        "topic_id": "6939844",
+        "url": "https://rutracker.org/forum/viewtopic.php?t=6939844",
+        "year": "2001—2007",
+        "genre": "Action, Adventure, Platformer, RPG, Racing, Fighting и многие другие",
+        "developer": "Nintendo, Capcom, Konami, Namco, Sega, Hudson Soft, Factor 5, Retro Studios и другие",
+        "publisher": "Nintendo, Capcom, Konami, Namco, Sega, Electronic Arts, Activision, Ubisoft и другие",
+        "image_format": "Лицензия (кроме изданий с меткой \"Unl\")",
+        "interface_lang": "английский, японский, другие",
+        "voice_lang": "английский, японский, другие",
+        "performance": "Unknown",
+        "multiplayer": "нет / 2x / 4x / больше 4х / другой",
+        "cover": "https://i129.fastpic.org/big/2026/1119/f2/2eff28ebab450ab7bf8abbc677a1aaf2.png",
+        "screenshots": [
+            "https://i129.fastpic.org/thumb/2026/1119/85/d95994f7386f10250030965ac2ba3a85.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/2a/2ec180216991bc1d1c3c811e100c122a.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/c1/7f7a9d7fa42cb26c93a017084b2941c1.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/74/c035da6522ed311b31c64d19c4488e74.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/06/edc22244a59ce96e2f83fed947c2aa06.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/f9/a5547b62154806201a121e905cd831f9.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/ef/811abb2f01af1c2c0dde6752ba1445ef.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/5d/01cad1584638ce0b29cf8410f726745d.jpeg",
+            "https://i129.fastpic.org/thumb/2026/1119/a1/fea265e8d3626daba1ae3748369019a1.jpeg"
+        ],
+        "description": "Nintendo GameCube — игровая консоль шестого поколения, разработанная и выпущенная компанией Nintendo. Она стала преемницей Nintendo 64 и первой приставкой Nintendo, использовавшей оптические носители: вместо картриджей применялись диски собственного формата mini-DVD диаметром 8 см ёмкостью около 1,5 ГБ. Консоль вышла в Японии в сентябре 2001 года, в Северной Америке — в ноябре 2001 года, в Европе — в мае 2002 года. Аппаратная часть строилась на процессоре IBM PowerPC Gekko и графическом чипе ATI Flipper, а характерной особенностью стали четыре порта для контроллеров, удобная «рукоятка» для переноски и возможность подключать Game Boy Advance в качестве второго экрана и дополнительного контроллера. Библиотека игр включала такие проекты, как Super Smash Bros. Melee, The Legend of Zelda: The Wind Waker, Metroid Prime, Super Mario Sunshine, Mario Kart: Double Dash!!, Pikmin и временный эксклюзив Resident Evil 4. Несмотря на сильную библиотеку и относительно низкую цену, слабый старт, репутация «детской» приставки, отсутствие поддержки DVD-видео и жёсткая конкуренция со стороны PlayStation 2 и Xbox ограничили её распространение: GameCube заняла лишь третье место в поколении с тиражом около 22 млн экземпляров, а её производство было прекращено в 2007 году.",
+        "title_id": "DESERT",
+        "is_romset": true,
+        "content_type": "romset"
+    },
+    {
         "title": "Metal Gear Solid: The Twin Snakes [NTSC-U / RUS] [ViT Company]",
         "size": "2.51 GB",
         "magnet": "magnet:?xt=urn:btih:C93A923F4D468469D2753A505C4051108D4BC89F&tr=http%3A%2F%2Fbt2.t-ru.org%2Fann%3Fmagnet",
