@@ -73,15 +73,15 @@
     "id": "vita3k",
     "name": "Vita3K-nx",
     "author": "NaGaa95",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "Экспериментальный порт эмулятора PlayStation Vita для Switch от NaGaa95. Запуск коммерческих игр формата VPK и NoNpDrm с рендерингом Vulkan.",
     "category": "sony",
-    "download_url": "https://github.com/NaGaa95/Vita3K-nx/releases/download/1.4.1/Vita3K.nro",
+    "download_url": "https://github.com/NaGaa95/Vita3K-nx/releases/download/1.4.2/Vita3K.nro",
     "filename": "Vita3K.nro",
     "install_path": "sdmc:/switch/Vita3K/Vita3K.nro",
     "extract_dir": "",
     "is_archive": false,
-    "file_size": 90740928,
+    "file_size": 81804784,
     "supported_console_ids": [
       "psvita"
     ],
