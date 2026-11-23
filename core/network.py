@@ -288,34 +288,41 @@ def _fetch_with_chrome(url, wait_keywords=None, is_post=False, post_data=None):
     return page_html
 
 
-def _bypass_request(url, is_post=False, post_data=None):
+def _bypass_request(url, is_post=False, post_data=None, max_retries=2):
     """Запрос через локальный CloudflareBypassForScraping (mirror mode)."""
     if not CF_BYPASS_URL:
         return None
-    try:
-        parsed = urllib.parse.urlsplit(url)
-        path = parsed.path + (('?' + parsed.query) if parsed.query else '')
-        mirror_url = CF_BYPASS_URL + path
-        headers = {
-            'User-Agent': USER_AGENT,
-            'x-hostname': parsed.netloc,
-        }
-        if is_post:
-            headers['X-Requested-With'] = 'XMLHttpRequest'
-        if SESSION_COOKIES:
-            bypass_cookies = {k: v for k, v in SESSION_COOKIES.items() if k != 'cf_clearance'}
-            if bypass_cookies:
-                headers['Cookie'] = '; '.join(f'{k}={v}' for k, v in bypass_cookies.items())
-        kwargs = {'impersonate': 'chrome120', 'timeout': 60}
-        if is_post:
-            resp = cf_requests.post(mirror_url, data=post_data, headers=headers, **kwargs)
-        else:
-            resp = cf_requests.get(mirror_url, headers=headers, **kwargs)
-        if resp.status_code == 200 and resp.text:
-            return resp.text
-        print(f"    [!] CF-bypass статус {resp.status_code}")
-    except Exception as e:
-        print(f"    [!] CF-bypass ошибка: {e}")
+    parsed = urllib.parse.urlsplit(url)
+    path = parsed.path + (('?' + parsed.query) if parsed.query else '')
+    mirror_url = CF_BYPASS_URL + path
+    headers = {
+        'User-Agent': USER_AGENT,
+        'x-hostname': parsed.netloc,
+    }
+    if is_post:
+        headers['X-Requested-With'] = 'XMLHttpRequest'
+    if SESSION_COOKIES:
+        bypass_cookies = {k: v for k, v in SESSION_COOKIES.items() if k != 'cf_clearance'}
+        if bypass_cookies:
+            headers['Cookie'] = '; '.join(f'{k}={v}' for k, v in bypass_cookies.items())
+
+    for attempt in range(max_retries):
+        try:
+            kwargs = {'impersonate': 'chrome120', 'timeout': 60}
+            if is_post:
+                resp = cf_requests.post(mirror_url, data=post_data, headers=headers, **kwargs)
+            else:
+                resp = cf_requests.get(mirror_url, headers=headers, **kwargs)
+            if resp.status_code == 200 and resp.text:
+                return resp.text
+            print(f"    [!] CF-bypass статус {resp.status_code}")
+            # При 520-526 origin сервер RuTracker недоступен или выдал SSL handshake error
+            if resp.status_code in (520, 521, 522, 523, 524, 525, 526, 404, 410):
+                return None
+        except Exception as e:
+            print(f"    [!] CF-bypass ошибка (попытка {attempt + 1}/{max_retries}): {e}")
+        if attempt < max_retries - 1:
+            time.sleep(1.5)
     return None
 
 
@@ -333,7 +340,8 @@ def fetch_url(url, forum_url=False, is_post=False, post_data=None, wait_keywords
         html = _bypass_request(url, is_post=is_post, post_data=post_data)
         if html and (is_post or is_valid_html(html, keywords)):
             return html
-        print("    [!] CF-bypass не вернул страницу, пробуем другие способы...")
+        print(f"    [!] CF-bypass не смог получить страницу: {url}")
+        return None
 
     html = _fetch_with_curl(url, wait_keywords=wait_kw, is_post=is_post, post_data=post_data)
     if html and (is_post or is_valid_html(html, keywords)):

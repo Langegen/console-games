@@ -272,6 +272,10 @@ def update_forum_via_atom(forum_id, target_platforms=None, sweep=False):
                     cached_details = get_topic_data(tid, platform_key=p)
                 details = dict(cached_details)
 
+                if not details.get('magnet'):
+                    print(f"  [!] Не удалось получить magnet для [{p}] [{tid}], пропускаем добавление.")
+                    continue
+
                 if details['size'] == 'Unknown' and feed_sz != 'Unknown':
                     details['size'] = feed_sz
 
