@@ -1,15 +1,21 @@
-=== Обновление баз console-games: 2026-11-21 02:13:51 ===
+=== Обновление баз console-games: 2026-11-23 08:47:00 ===
 
-[PSP] Всего в базе: 911
-  ~ Обновлено (8):
+[PSP] Всего в базе: 915
+  ~ Обновлено (9):
+    ~ After Burner: Black Falcon [FULL] [ISO] [ENG/Multi]
+    ~ Iron Man 2 [FULL] [ISO] [RUS]
+    ~ Need for Speed: Underground 2 [PBP] [ENG] [Homebrew]
+    ~ Need for Speed: Underground 2 [PBP] [RUS] [Homebrew]
     ~ Sonic Mania [FULL] [ISO] [ENG/Multi] [Homebrew]
     ~ [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
     ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
-    ~ Portal [PBP] [RUS/Multi] [Homebrew]
-    ~ Undertale [PBP] [ENG/JPN] [Homebrew]
-    ~ Бесконечное лето / Everlasting Summer [PBP] [RUS] [Homebrew]
+  # Перезалит magnet (4):
+    # After Burner: Black Falcon [FULL] [ISO] [ENG/Multi]
+    # Iron Man 2 [FULL] [ISO] [RUS]
+    # Need for Speed: Underground 2 [PBP] [ENG] [Homebrew]
+    # Need for Speed: Underground 2 [PBP] [RUS] [Homebrew]
 
 [PS1] Всего в базе: 2155
 
@@ -40,33 +46,23 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3520
-  + Добавлено (1):
-    + God Hand [RUS/Multi5|PAL]
 
-[PSVITA] Всего в базе: 558
+[PSVITA] Всего в базе: 565
   + Добавлено (5):
-    + Captain Earth: Mind Labyrinth [NoNpDrm] [JPN]
-    + Haiyore! Nyaruko-San: Meijoushigatai Game no You na Mono [NoNpDrm] [JPN]
-    + Binary Star [NoNpDrm] [JPN]
-    + Bara ni Kakusareshi Verite [NoNpDrm] [JPN]
-    + Army Corps of Hell [NoNpDrm] [ENG] [DLC]
+    + Period: Cube Shackles of Amadeus [NoNpDrm] [ENG]
+    + Nil Admirari no Tenbin: Teito Genwaku Kitan [NoNpDrm] [JPN]
+    + Kenka Bancho Otome [NoNpDrm] [JPN]
+    + Nil Admirari no Tenbin Kuroyuri En'youtan [NoNpDrm] [JPN]
+    + The Longest Five Minutes [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 564
   ~ Обновлено (2):
-    ~ Vermilion Desert [RUS]
+    ~ [Обновлено] Vermilion Desert [RUS]
     ~ Magic - The Gathering [RUS]
-  # Перезалит magnet (1):
-    # Vermilion Desert [RUS]
 
 [3DS] Всего в базе: 80
 
 [NDS] Всего в базе: 84
   ~ Обновлено (1):
     ~ 5863 - Aliens: Infestation [RUS]
-
-=== Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8934 раздач
-  * Покрытие базы: 8563/8563 (100.0%)
-  * Активных сидов: 52142
-  * Всего загрузок: 22336108
 
