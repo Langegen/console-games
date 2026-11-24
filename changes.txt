@@ -1,21 +1,17 @@
-=== Обновление баз console-games: 2026-11-23 08:47:00 ===
+=== Обновление баз console-games: 2026-11-24 01:54:05 ===
 
-[PSP] Всего в базе: 915
-  ~ Обновлено (9):
-    ~ After Burner: Black Falcon [FULL] [ISO] [ENG/Multi]
-    ~ Iron Man 2 [FULL] [ISO] [RUS]
+[PSP] Всего в базе: 918
+  + Добавлено (3):
+    + Ridge Racer [FULL] [ISO] [ENG/Multi]
+    + F1 Grand Prix [FULL] [ISO] [ENG/Multi]
+    + Crazy Taxi: Fare Wars [FULL] [ISO] [ENG/Multi]
+  ~ Обновлено (6):
     ~ Need for Speed: Underground 2 [PBP] [ENG] [Homebrew]
     ~ Need for Speed: Underground 2 [PBP] [RUS] [Homebrew]
     ~ Sonic Mania [FULL] [ISO] [ENG/Multi] [Homebrew]
     ~ [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
     ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
-    ~ Grand Theft Auto III [PBP] [RUS/Multi] [Homebrew]
-  # Перезалит magnet (4):
-    # After Burner: Black Falcon [FULL] [ISO] [ENG/Multi]
-    # Iron Man 2 [FULL] [ISO] [RUS]
-    # Need for Speed: Underground 2 [PBP] [ENG] [Homebrew]
-    # Need for Speed: Underground 2 [PBP] [RUS] [Homebrew]
 
 [PS1] Всего в базе: 2155
 
@@ -47,13 +43,11 @@
 
 [PS2] Всего в базе: 3520
 
-[PSVITA] Всего в базе: 565
-  + Добавлено (5):
-    + Period: Cube Shackles of Amadeus [NoNpDrm] [ENG]
-    + Nil Admirari no Tenbin: Teito Genwaku Kitan [NoNpDrm] [JPN]
-    + Kenka Bancho Otome [NoNpDrm] [JPN]
-    + Nil Admirari no Tenbin Kuroyuri En'youtan [NoNpDrm] [JPN]
-    + The Longest Five Minutes [NoNpDrm] [ENG]
+[PSVITA] Всего в базе: 568
+  + Добавлено (3):
+    + Madden NFL 13 [NoNpDrm] [ENG]
+    + LittleBigPlanet PS Vita [NoNpDrm] [ENG/Multi] [DLC]
+    + TxK [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 564
   ~ Обновлено (2):
@@ -65,4 +59,10 @@
 [NDS] Всего в базе: 84
   ~ Обновлено (1):
     ~ 5863 - Aliens: Infestation [RUS]
+
+=== Статистика раздач (tracker.php & viewtopic.php) ===
+Всего в базе статистики: 8951 раздач
+  * Покрытие базы: 8580/8580 (100.0%)
+  * Активных сидов: 51309
+  * Всего загрузок: 22354947
 
