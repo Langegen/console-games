@@ -1,10 +1,14 @@
-=== Обновление баз console-games: 2026-11-24 01:54:05 ===
+=== Обновление баз console-games: 2026-11-25 01:55:06 ===
 
-[PSP] Всего в базе: 918
-  + Добавлено (3):
-    + Ridge Racer [FULL] [ISO] [ENG/Multi]
-    + F1 Grand Prix [FULL] [ISO] [ENG/Multi]
-    + Crazy Taxi: Fare Wars [FULL] [ISO] [ENG/Multi]
+[PSP] Всего в базе: 925
+  + Добавлено (7):
+    + Nogizaka Haruka no Himitsu: Doujinshi Hajimemashita [FULL] [ISO] [JPN]
+    + Metal Gear Solid: Portable Ops Plus (+) [FULL] [ISO] [ENG/Multi]
+    + WTF: Work Time Fun [FULL] [ISO] [ENG]
+    + WRC: FIA World Rally Championship [FULL] [ISO] [ENG/Multi]
+    + Boku wa Tomodachi ga Sukunai Portable [FULL] [ISO] [RUS]
+    + What Did I Do to Deserve This, My Lord!? 2 [FULL] [ISO] [ENG]
+    + What Did I Do to Deserve This, My Lord!? [FULL] [ISO] [ENG]
   ~ Обновлено (6):
     ~ Need for Speed: Underground 2 [PBP] [ENG] [Homebrew]
     ~ Need for Speed: Underground 2 [PBP] [RUS] [Homebrew]
@@ -44,10 +48,6 @@
 [PS2] Всего в базе: 3520
 
 [PSVITA] Всего в базе: 568
-  + Добавлено (3):
-    + Madden NFL 13 [NoNpDrm] [ENG]
-    + LittleBigPlanet PS Vita [NoNpDrm] [ENG/Multi] [DLC]
-    + TxK [NoNpDrm] [ENG]
 
 [DREAMCAST] Всего в базе: 564
   ~ Обновлено (2):
@@ -61,8 +61,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8951 раздач
-  * Покрытие базы: 8580/8580 (100.0%)
-  * Активных сидов: 51309
-  * Всего загрузок: 22354947
+Всего в базе статистики: 8958 раздач
+  * Покрытие базы: 8587/8587 (100.0%)
+  * Активных сидов: 52114
+  * Всего загрузок: 22362151
 
