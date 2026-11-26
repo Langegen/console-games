@@ -1,14 +1,22 @@
-=== Обновление баз console-games: 2026-11-25 01:55:06 ===
+=== Обновление баз console-games: 2026-11-26 01:52:15 ===
 
-[PSP] Всего в базе: 925
-  + Добавлено (7):
-    + Nogizaka Haruka no Himitsu: Doujinshi Hajimemashita [FULL] [ISO] [JPN]
-    + Metal Gear Solid: Portable Ops Plus (+) [FULL] [ISO] [ENG/Multi]
-    + WTF: Work Time Fun [FULL] [ISO] [ENG]
-    + WRC: FIA World Rally Championship [FULL] [ISO] [ENG/Multi]
-    + Boku wa Tomodachi ga Sukunai Portable [FULL] [ISO] [RUS]
-    + What Did I Do to Deserve This, My Lord!? 2 [FULL] [ISO] [ENG]
-    + What Did I Do to Deserve This, My Lord!? [FULL] [ISO] [ENG]
+[PSP] Всего в базе: 940
+  + Добавлено (15):
+    + SOCOM: U.S. Navy SEALs Tactical Strike [FULL] [ISO] [ENG]
+    + SOCOM: U.S. Navy SEALs Fireteam Bravo 2 [FULL] [ISO] [ENG]
+    + SOCOM: U.S. Navy SEALs Fireteam Bravo [FULL] [ISO] [ENG/Multi]
+    + Densha de Go! Pocket: Yamanotesen Hen [FULL] [ISO] [JPN]
+    + Densha de Go! Pocket: Yamanotesen Hen [FULL] [ISO] [ENG]
+    + Densha de Go! Pocket: Yamanotesen Hen [FULL] [ISO] [RUS]
+    + Densha de Go! Pocket: Chuuousen Hen [FULL] [ISO] [JPN]
+    + Densha de Go! Pocket: Chuuousen Hen [FULL] [ISO] [ENG]
+    + Densha de Go! Pocket: Chuuousen Hen [FULL] [ISO] [RUS]
+    + Densha de Go! Pocket: Osaka Kanjousen Hen [FULL] [ISO] [JPN]
+    + Densha de Go! Pocket: Osaka Kanjousen Hen [FULL] [ISO] [ENG]
+    + Densha de Go! Pocket: Osaka Kanjousen Hen [FULL] [ISO] [RUS]
+    + Densha de Go! Pocket Toukaidousen Hen [FULL] [ISO] [JPN]
+    + Densha de Go! Pocket Toukaidousen Hen [FULL] [ISO] [ENG]
+    + Densha de Go! Pocket Toukaidousen Hen [FULL] [ISO] [RUS]
   ~ Обновлено (6):
     ~ Need for Speed: Underground 2 [PBP] [ENG] [Homebrew]
     ~ Need for Speed: Underground 2 [PBP] [RUS] [Homebrew]
@@ -61,8 +69,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8958 раздач
-  * Покрытие базы: 8587/8587 (100.0%)
-  * Активных сидов: 52114
-  * Всего загрузок: 22362151
+Всего в базе статистики: 8974 раздач
+  * Покрытие базы: 8602/8602 (100.0%)
+  * Активных сидов: 52268
+  * Всего загрузок: 22366794
 
