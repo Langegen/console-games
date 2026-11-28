@@ -1,20 +1,23 @@
-=== Обновление баз console-games: 2026-11-27 02:06:28 ===
+=== Обновление баз console-games: 2026-11-28 02:07:37 ===
 
-[PSP] Всего в базе: 941
-  + Добавлено (1):
-    + Portable Island: Te no Hira no Resort [FULL] [ISO] [RUS]
+[PSP] Всего в базе: 944
+  + Добавлено (3):
+    + Suzumiya Haruhi no Tsuisou [FULL] [ISO] [RUS]
+    + Tanteibu: The Detective Club - Tantei to Yuurei to Kaitou to [FULL] [ISO] [RUS]
+    + God of War: Betrayal [PBP] [RUS/Multi] [Homebrew]
   ~ Обновлено (6):
+    ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ [Обновлено] Need for Speed: Underground 2 [ISO] [ENG] [Homebrew]
     ~ [Обновлено] Need for Speed: Underground 2 [ISO] [RUS] [Homebrew]
     ~ Sonic Mania [FULL] [ISO] [ENG/Multi] [Homebrew]
     ~ [Обновлено] Resident Evil 4: Mobile Edition [PBP] [RUS/Multi] [Homebrew]
-    ~ [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
     ~ Counter-Strike 1.6 [PBP] [ENG] [Homebrew]
-  # Перезалит magnet (2):
-    # [Обновлено] Need for Speed: Underground 2 [ISO] [ENG] [Homebrew]
-    # [Обновлено] Need for Speed: Underground 2 [ISO] [RUS] [Homebrew]
+  # Перезалит magnet (1):
+    # [Обновлено] Grand Theft Auto: Vice City [PBP] [RUS/Multi] [Homebrew]
 
-[PS1] Всего в базе: 2155
+[PS1] Всего в базе: 2156
+  + Добавлено (1):
+    + Silent Hill [SLUS-00707] [FireCross] [RUS]
 
 [WIIU] Всего в базе: 51
 
@@ -43,18 +46,10 @@
 [SEGA_32X] Всего в базе: 5
 
 [PS2] Всего в базе: 3521
-  + Добавлено (1):
-    + Sly 2: Band of Thieves [RUS|PAL]
-  # Перезалит magnet (1):
-    # [Обновлено] Sly Racoon (Sly Cooper and the Thievius Raccoonus) [RUS|PAL]
 
-[PSVITA] Всего в базе: 573
-  + Добавлено (5):
-    + Root Infinity Rexx [NoNpDrm] [JPN]
-    + Ro-Kyu-Bu! Naisho no Shutter Chance [NoNpDrm] [JPN]
-    + RE:VICE[D] [NoNpDrm] [JPN]
-    + Diabolik Lovers: Vandead Carnival [NoNpDrm] [JPN]
-    + Diabolik Lovers: Lost Eden [NoNpDrm] [JPN]
+[PSVITA] Всего в базе: 574
+  + Добавлено (1):
+    + Rozen Maiden: Wechseln Sie Welt ab [NoNpDrm] [RUS/JPN]
 
 [DREAMCAST] Всего в базе: 564
   ~ Обновлено (2):
@@ -68,8 +63,8 @@
     ~ 5863 - Aliens: Infestation [RUS]
 
 === Статистика раздач (tracker.php & viewtopic.php) ===
-Всего в базе статистики: 8981 раздач
-  * Покрытие базы: 8609/8609 (100.0%)
-  * Активных сидов: 47473
-  * Всего загрузок: 22372850
+Всего в базе статистики: 8988 раздач
+  * Покрытие базы: 8614/8614 (100.0%)
+  * Активных сидов: 48226
+  * Всего загрузок: 22376398
 
